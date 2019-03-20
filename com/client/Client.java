@@ -14872,6 +14872,7 @@ public class Client extends RSApplet {
 	public Sprite loginAsset2 = new Sprite("Login/remember2");
 	public Sprite loginAsset3 = new Sprite("Login/remember3");
 	public Sprite loginAsset4 = new Sprite("Login/logo");
+	public Sprite loginAsset5 = new Sprite("Login/login_button_nohover");
 	private String firstLoginMessage = "";
 	private String secondLoginMessage = "";
     Image icon = null;
@@ -14896,16 +14897,13 @@ public class Client extends RSApplet {
                // currentLogin++;
                 lastLogin = System.currentTimeMillis();
             }
-		//loginBackground2.drawSprite(0,0);
 
-		// 270 && super.saveClickY <= 283 && super.saveClickX >= 286 - extraPos &&
-		// super.saveClickX <= 301 - extraPos
 		int extraPos = 18;
-		// rememberPasswordHover = mouseInRegion(286 - extraPos, 270, 301 - extraPos,
-		// 283);
-		rememberMeHover = mouseInRegion(286 - extraPos, 300, 301 - extraPos, 313);
-		// rememberMeHover = mouseInRegion(286 - extraPos, 282, 301 - extraPos, 295);
-		rememberPasswordHover = mouseInRegion(416 - extraPos, 300, 433 - extraPos, 313);
+
+		
+		rememberMeHover = mouseInRegion(248 - extraPos, 310, 263, 323);
+		rememberPasswordHover = mouseInRegion(416 - extraPos, 310, 433 - extraPos, 323);
+		loginButtonHover = mouseInRegion(244, 268, 525, 298);
 
 		// Background
 		//screenImages.get("background").drawAdvancedSprite(0, 0);
@@ -14918,8 +14916,8 @@ public class Client extends RSApplet {
 
 			int j = centerY - 40;
 			if (firstLoginMessage.length() > 0) {
-				newBoldFont.drawCenteredString(firstLoginMessage, centerX - 3, j - 11, 0xffffff, 0x191919, 255);
-				newBoldFont.drawCenteredString(secondLoginMessage, centerX - 3, j + 300, 0xffffff, 0x191919, 255);
+				newBoldFont.drawCenteredString(firstLoginMessage, centerX - 3, j - 30, 0xffffff, 0x191919, 255);
+				newBoldFont.drawCenteredString(secondLoginMessage, centerX - 3, j + 250, 0xffffff, 0x191919, 255);
 				j += 30;
 			} else {
 				newBoldFont.drawString(secondLoginMessage, myWidth / 2 - 3, j - 7, 0xffff00, 0x191919, 255);
@@ -14929,13 +14927,13 @@ public class Client extends RSApplet {
 			// newBoldFont.drawCenteredString("@yel@" + firstLoginMessage ,(myWidth / 2) -
 			// 4, myHeight / 2 - 48,0xffffff,0x191919, 255);
 			newBoldFont.drawString(
-					"Login: " + myUsername + ((loginScreenCursorPos == 0) ? "@blu@|" : ""),
-					(myWidth / 2) - 119, myHeight / 2 - 21, 0xffffff, 0x191919, 255);
+					myUsername + ((loginScreenCursorPos == 0) ? "@whi@|" : ""),
+					(myWidth / 2) - 107, myHeight / 2 - 40, 0xffffff, 0x191919, 255);
 			j += 15;
 			newBoldFont.drawString(
-					"Password: " + TextClass.passwordAsterisks(myPassword)
-							+ ((loginScreenCursorPos == 1) ? "@blu@|" : ""),
-					(myWidth / 2) - 119, myHeight / 2 + 31, 0xffffff, 0x191919, 255);
+					TextClass.passwordAsterisks(myPassword)
+							+ ((loginScreenCursorPos == 1) ? "@whi@|" : ""),
+					(myWidth / 2) - 107, myHeight / 2 - 2, 0xffffff, 0x191919, 255);
 
 			// Buttons
 			//titleButton.drawBackground((myWidth / 2 - 72) + (78) + 3, (myHeight / 2) + 50 - 11);
@@ -14946,34 +14944,38 @@ public class Client extends RSApplet {
 			//newSmallFont.drawString("@yel@Forgotten your password? @whi@Click here.", 280, 346, 0xffffff, 0x191919,
 					//255);
 
-			newSmallFont.drawString("Remember username", 283, 308, 0xffffff, 0x191919, 255);
-			newSmallFont.drawString("Remember password", 414, 308, 0xffffff, 0x191919, 255);
+			newSmallFont.drawString("Remember username", 268, 323, 0xffffff, 0x191919, 255);
+			newSmallFont.drawString("Remember password", 414, 323, 0xffffff, 0x191919, 255);
 
+			if(!loginButtonHover) {
+				loginAsset5.drawSprite(241, 268);
+			}
+			
 			if (!informationFile.isUsernameRemembered()) {
 				if (!rememberMeHover) {
-					loginAsset0.drawSprite(264, 295);
+					loginAsset0.drawSprite(249, 310);
 				} else {
-					loginAsset1.drawSprite(264, 295);
+					loginAsset1.drawSprite(249, 310);
 				}
 			} else {
 				if (!rememberMeHover) {
-					loginAsset2.drawSprite(264, 295);
+					loginAsset2.drawSprite(249, 310);
 				} else {
-					loginAsset3.drawSprite(264, 295);
+					loginAsset3.drawSprite(249, 310);
 				}
 			}
 			loginAsset4.drawARGBSprite2(currentGameWidth / 2 - (336 / 2), 25);
 			if (!informationFile.isPasswordRemembered()) {
 				if (!rememberPasswordHover) {
-					loginAsset0.drawSprite(395, 295);
+					loginAsset0.drawSprite(395, 310);
 				} else {
-					loginAsset1.drawSprite(395, 295);
+					loginAsset1.drawSprite(395, 310);
 				}
 			} else {
 				if (!rememberPasswordHover) {
-					loginAsset2.drawSprite(395, 295);
+					loginAsset2.drawSprite(395, 310);
 				} else {
-					loginAsset3.drawSprite(395, 295);
+					loginAsset3.drawSprite(395, 310);
 				}
 			}
 
@@ -15397,6 +15399,7 @@ public class Client extends RSApplet {
 	}
 
 	public boolean rememberPasswordHover;
+	public boolean loginButtonHover;
 
 	@SuppressWarnings("static-access")
 	private void processLoginScreenInput() {
@@ -15405,12 +15408,17 @@ public class Client extends RSApplet {
 		int j = super.myHeight / 2 - 40;
 		j += 30;
 		j += 25;
-		if (super.clickMode3 == 1 && super.saveClickX >= 272 && super.saveClickX <= 525 && super.saveClickY >= 210
-				&& super.saveClickY <= 234)
+		
+		/*
+		 * newBoldFont.drawCenteredString(firstLoginMessage, centerX - 3, j - 30, 0xffffff, 0x191919, 255);
+				newBoldFont.drawCenteredString(secondLoginMessage, centerX - 3, j + 250, 0xffffff, 0x191919, 255);
+		 */
+		if (super.clickMode3 == 1 && super.saveClickX >= 272 && super.saveClickX <= 519 && super.saveClickY >= 189
+				&& super.saveClickY <= 218)
 			loginScreenCursorPos = 0;
 		j += 15;
-		if (super.clickMode3 == 1 && super.saveClickX >= 272 && super.saveClickX <= 525 && super.saveClickY >= 264
-				&& super.saveClickY <= 294)
+		if (super.clickMode3 == 1 && super.saveClickX >= 272 && super.saveClickX <= 519 && super.saveClickY >= 225
+				&& super.saveClickY <= 254)
 			loginScreenCursorPos = 1;
 		j += 15;
 		int extraPos = 18;
@@ -15426,15 +15434,15 @@ public class Client extends RSApplet {
 				e.printStackTrace();
 			}
 		}
-
-		if (super.clickMode3 == 1 && super.saveClickY >= 300 && super.saveClickY <= 313
-				&& super.saveClickX >= 286 - extraPos && super.saveClickX <= 301 - extraPos) {
+		//remember pw and user clicks
+		if (super.clickMode3 == 1 && super.saveClickY >= 310 && super.saveClickY <= 323
+				&& super.saveClickX >= 248 && super.saveClickX <= 263) {
 			informationFile.setUsernameRemembered(!informationFile.isUsernameRemembered());
 			if (informationFile.isUsernameRemembered()) {
 				informationFile.setStoredUsername(myUsername);
 			}
 		}
-		if (super.clickMode3 == 1 && super.saveClickY >= 300 && super.saveClickY <= 313
+		if (super.clickMode3 == 1 && super.saveClickY >= 310 && super.saveClickY <= 323
 				&& super.saveClickX >= 416 - extraPos && super.saveClickX <= 433 - extraPos) {
 			informationFile.setPasswordRemembered(!informationFile.isPasswordRemembered());
 			if (informationFile.isPasswordRemembered()) {
@@ -15446,8 +15454,9 @@ public class Client extends RSApplet {
 		k1 += 20;
 		// System.out.println("saveClickX = " + super.saveClickX + ", saveClickY = " +
 		// super.saveClickY);
-		if (super.clickMode3 == 1 && super.saveClickX >= 231 && super.saveClickX <= 376 && super.saveClickY >= 323
-				&& super.saveClickY <= 353) {
+		//241, 268 --  (246, 268, 525, 298);
+		if (super.clickMode3 == 1 && super.saveClickX >= 244 && super.saveClickX <= 520 && super.saveClickY >= 268
+				&& super.saveClickY <= 298) {
 
 			if (Configuration.gameWorld == 1) {
 				// loginScreenState = 3;
@@ -15463,6 +15472,7 @@ public class Client extends RSApplet {
 			// loginScreenState = 2;
 		}
 		i1 = super.myWidth / 2 + 80;
+		//JUMP BACK HERE
 		if (super.clickMode3 == 1 && super.saveClickX >= i1 - 75 && super.saveClickX <= i1 + 75
 				&& super.saveClickY >= k1 - 20 && super.saveClickY <= k1 + 20) {
 			loginScreenState = 0;
@@ -17378,7 +17388,6 @@ public class Client extends RSApplet {
 		channelButtonHoverPosition = -1;
 		channelButtonClickPosition = 0;
 		server1 = Configuration.LIVE_SERVER ? "127.0.0.1" : "0.0.0.0";
-		//server1 = Configuration.LIVE_SERVER ? "69.30.255.92" : "0.0.0.0";
 		anIntArrayArray825 = new int[104][104];
 		friendsNodeIDs = new int[200];
 		groundArray = new NodeList[4][104][104];
