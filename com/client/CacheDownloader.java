@@ -120,10 +120,10 @@ public class CacheDownloader {
 				float speedInBytes = 1000f * numWritten / elapsedTime;
 				int timeRemaining =  (int) ((fileSize - numWritten) / speedInBytes);
 				
-				drawLoadingText(percentage, "Mystic-PS - Downloading Cache " + percentage + "%", downloadSpeed, timeRemaining);
+				drawLoadingText(percentage, "Anguish - Downloading Cache " + percentage + "%", downloadSpeed, timeRemaining);
 			}
 			System.out.println(localFileName + "\t" + numWritten);
-			drawLoadingText("Mystic-PS - Unzipping...");
+			drawLoadingText("Anguish - Unzipping...");
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		} finally {

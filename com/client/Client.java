@@ -4353,9 +4353,9 @@ public class Client extends RSApplet {
 		new DrawingArea().drawAlphaGradient(x + ((int) Math.round(percentage * offset)), y,
 				width - ((int) Math.round(percentage * offset) / 2), height, 0x000000, 0x000000, 200);
 		if (percentage >= 198) {
-			newBoldFont.drawCenteredString("Finished loading Mystic-PS", (765 / 2), y + height / 2, 0xffffff, 1);
+			newBoldFont.drawCenteredString("Finished loading Anguish", (765 / 2), y + height / 2, 0xffffff, 1);
 		} else {
-			newBoldFont.drawCenteredString("Loading Mystic-PS - Please wait - " + (percentage) + "%", (765 / 2),
+			newBoldFont.drawCenteredString("Loading Anguish - Please wait - " + (percentage) + "%", (765 / 2),
 					y + height / 2, 0xffffff, 1);
 		}
 		loginScreenGraphicsBuffer.drawGraphics(0, 0, super.graphics);
@@ -4581,8 +4581,9 @@ public class Client extends RSApplet {
 			stream.writeWord(-1);
 			experienceCounter = 0L;
 		}
-		if(l==852){//goon
-			launchURL("http://mysticps.everythingrs.com/services/heatmaps");
+		if(l==852){//goon 
+			//launchURL("http://mysticps.everythingrs.com/services/heatmaps");
+			launchURL("https://oldschool.tools/world-map");
 		}
 		if (l == 1850) {
 			stream.createFrame(185);
@@ -8866,7 +8867,7 @@ public class Client extends RSApplet {
 				return;
 			}
 			if (k == 6) {
-				firstLoginMessage = "Mystic-PS has been updated!";
+				firstLoginMessage = "Anguish has been updated!";
 				secondLoginMessage = "Please restart the client.";
 				return;
 			}
@@ -8904,7 +8905,7 @@ public class Client extends RSApplet {
 				return;
 			}
 			if (k == 14) {
-				firstLoginMessage = "Mystic-PS is currently being updated.";
+				firstLoginMessage = "Anguish is currently being updated.";
 				secondLoginMessage = "Please wait one minute and try again.";
 				return;
 			}
@@ -11483,9 +11484,9 @@ public class Client extends RSApplet {
 			k += 50;
 			g.setColor(Color.white);
 			g.setFont(new Font("Helvetica", 1, 12));
-			g.drawString("1: Go to your user files and delete Mystic-PS_.32 folder", 30, k);
+			g.drawString("1: Go to your user files and delete AnguishCache folder", 30, k);
 			k += 30;
-			g.drawString("2: Delete the Mystic-PS.jar and redownload the loader from our homepage", 30, k);
+			g.drawString("2: Delete the Anguish.jar and redownload the loader from our homepage", 30, k);
 			k += 30;
 			g.drawString("3: After deleting cache and redownloading client, go ahead and open it", 30, k);
 			k += 30;
@@ -11503,16 +11504,16 @@ public class Client extends RSApplet {
 			aBoolean831 = false;
 			g.setColor(Color.yellow);
 			int l = 35;
-			g.drawString("Error a copy of Mystic-PS already appears to be loaded", 30, l);
+			g.drawString("Error a copy of Anguish already appears to be loaded", 30, l);
 			l += 50;
 			g.setColor(Color.white);
 			g.drawString("To fix this try the following (in order):", 30, l);
 			l += 50;
 			g.setColor(Color.white);
 			g.setFont(new Font("Helvetica", 1, 12));
-			g.drawString("1: Go to your user files and delete Mystic-PS_.32 folder", 30, l);
+			g.drawString("1: Go to your user files and delete AnguishCache folder", 30, l);
 			l += 30;
-			g.drawString("2: Delete the Mystic-PS.jar and redownload the loader from our homepage", 30, l);
+			g.drawString("2: Delete the Anguish.jar and redownload the loader from our homepage", 30, l);
 			l += 30;
 			g.drawString("3: After deleting cache and redownloading client, go ahead and open it", 30, l);
 			l += 30;

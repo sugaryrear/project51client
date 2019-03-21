@@ -30,7 +30,7 @@ public class Configuration {
 	public static int chatColor = 0;
     public static int fogColor = 0xDCDBDF;
 	public static long fogDelay = 500;
-	public static final String CLIENT_TITLE = "Mystic-PS";
+	public static final String CLIENT_TITLE = "Anguish";
 	public static final int CLIENT_VERSION = 4;
 	public static Boolean LIVE_SERVER = true;
 	public static final int PORT = 43594;
@@ -44,12 +44,12 @@ public class Configuration {
 	 * Sounds/Music Index 4 = Maps You can only do up to 300 files at a time
 	 */
 
-	public static final String CACHE_NAME = "Mystic-PS_.32";
+	public static final String CACHE_NAME = "AnguishCache";
 
 	public static boolean repackIndexOne = false, repackIndexTwo = false, repackIndexThree = false,
 			repackIndexFour = false;
 
-	public static final String CACHE_LINK = "https://www.dl.dropboxusercontent.com/s/8x00rniqdmvla5i/Mystic-PS_.32.zip"; // Link for every client below client
+	public static final String CACHE_LINK = "https://www.dropbox.com/s/8qp1l9ncpoew0k5/AnguishCache.zip?dl=1"; // Link for every client below client
 	// v1.12 - being deprecated after
 	// everyone updates
 	public static final String MEDIA_ARCHIVES_LINK = "https://www.dl.dropboxusercontent.com/sh/qpw6qpe1gqm8zq6/AABqDA9gScRH72FQBebyKm0Ba"; // Link for every
