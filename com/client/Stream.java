@@ -461,4 +461,8 @@ public final class Stream extends NodeSub {
     public static int anInt1412;
     public static final NodeList nodeList = new NodeList();
 
+	public void skip(int offset) {
+		this.currentOffset += offset;
+	}
+
 }

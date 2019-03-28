@@ -33,6 +33,7 @@ public final class NpcDefinition {
 		entityDef.interfaceType = i;
 		entityDef.readValues(stream);
 
+
 		if (i == 506) {
 			entityDef.name = "Iron man shop keeper";
 			entityDef.description = "A shop specifically for iron men.";
@@ -74,39 +75,8 @@ public final class NpcDefinition {
 			entityDef.actions = new String[] { "Teleport", "Previous Location", null, null, null };
 			entityDef.description = "This wizard has the power to teleport you to many locations.";
 		}
-		if (i == 8026) {
-			entityDef.name = "Vorkath";
-			// entityDef.combatLevel = 732;
-			entityDef.models = new int[] { 35023 };
-			entityDef.standAnim = 7946;
-			entityDef.onMinimap = true;
-			entityDef.actions = new String[5];
-			entityDef.actions = new String[] { "Poke", null, null, null, null };
-			entityDef.anInt86 = 100;
-			entityDef.anInt91 = 100;
-		}
-		if (i == 8027) {
-			entityDef.name = "Vorkath";
-			entityDef.combatLevel = 732;
-			entityDef.models = new int[] { 35023 };
-			entityDef.standAnim = 7950;
-			entityDef.onMinimap = true;
-			entityDef.actions = new String[5];
-			entityDef.actions = new String[] { null, null, null, null, null };
-			entityDef.anInt86 = 100;
-			entityDef.anInt91 = 100;
-		}
-		if (i == 8028) {
-			entityDef.name = "Vorkath";
-			entityDef.combatLevel = 732;
-			entityDef.models = new int[] { 35023 };
-			entityDef.standAnim = 7948;
-			entityDef.onMinimap = true;
-			entityDef.actions = new String[5];
-			entityDef.actions = new String[] { null, "Attack", null, null, null };
-			entityDef.anInt86 = 100;
-			entityDef.anInt91 = 100;
-		}
+	
+
 		if(i==7144){
 	entityDef.anInt75 = 0;
 		}
@@ -138,60 +108,18 @@ public final class NpcDefinition {
 		cache = new NpcDefinition[20];
 		for (int k = 0; k < 20; k++)
 			cache[k] = new NpcDefinition();
-		for (int index = 0; index < totalAmount; index++) {
+		/*for (int index = 0; index < totalAmount; index++) {
 			NpcDefinition ed = forID(index);
 			if (ed == null)
 				continue;
 			if (ed.name == null)
 				continue;
-		}
+		}*/
 	}
 
-	/*
-	 * public void readValues(Stream stream) { do { int i =
-	 * stream.readUnsignedByte(); if (i == 0) return; if (i == 1) { int j =
-	 * stream.readUnsignedByte(); models = new int[j]; for (int j1 = 0; j1 < j;
-	 * j1++) models[j1] = stream.readUnsignedWord();
-	 * 
-	 * } else if (i == 2) name = stream.readString(); else if (i == 3) description =
-	 * stream.readString(); else if (i == 12) squareLength =
-	 * stream.readSignedByte(); else if (i == 13) standAnim =
-	 * stream.readUnsignedWord(); else if (i == 14) walkAnim =
-	 * stream.readUnsignedWord(); else if (i == 17) { walkAnim =
-	 * stream.readUnsignedWord(); anInt58 = stream.readUnsignedWord(); anInt83 =
-	 * stream.readUnsignedWord(); anInt55 = stream.readUnsignedWord(); if (anInt58
-	 * == 65535) { anInt58 = -1; } if (anInt83 == 65535) { anInt83 = -1; } if
-	 * (anInt55 == 65535) { anInt55 = -1; } } else if (i >= 30 && i < 40) { if
-	 * (actions == null) actions = new String[5]; actions[i - 30] =
-	 * stream.readString(); if (actions[i - 30].equalsIgnoreCase("hidden"))
-	 * actions[i - 30] = null; } else if (i == 40) { int k =
-	 * stream.readUnsignedByte(); originalColors = new int[k]; newColors = new
-	 * int[k]; for (int k1 = 0; k1 < k; k1++) { originalColors[k1] =
-	 * stream.readUnsignedWord(); newColors[k1] = stream.readUnsignedWord(); }
-	 * 
-	 * } else if (i == 60) { int l = stream.readUnsignedByte(); dialogueModels = new
-	 * int[l]; for (int l1 = 0; l1 < l; l1++) dialogueModels[l1] =
-	 * stream.readUnsignedWord();
-	 * 
-	 * } else if (i == 90) stream.readUnsignedWord(); else if (i == 91)
-	 * stream.readUnsignedWord(); else if (i == 92) stream.readUnsignedWord(); else
-	 * if (i == 93) minimapDot = false; else if (i == 95) combatLevel =
-	 * stream.readUnsignedWord(); else if (i == 97) anInt91 =
-	 * stream.readUnsignedWord(); else if (i == 98) anInt86 =
-	 * stream.readUnsignedWord(); else if (i == 99) aBoolean93 = true; else if (i ==
-	 * 100) anInt85 = stream.readSignedByte(); else if (i == 101) anInt92 =
-	 * stream.readSignedByte() * 5; else if (i == 102) anInt75 =
-	 * stream.readUnsignedByte(); else if (i == 103) getDegreesToTurn =
-	 * stream.readUnsignedByte(); else if (i == 106) { anInt57 =
-	 * stream.readUnsignedWord(); if (anInt57 == 65535) anInt57 = -1; anInt59 =
-	 * stream.readUnsignedWord(); if (anInt59 == 65535) anInt59 = -1; int i1 =
-	 * stream.readUnsignedByte(); childrenIDs = new int[i1 + 1]; for (int i2 = 0; i2
-	 * <= i1; i2++) { childrenIDs[i2] = stream.readUnsignedWord(); if
-	 * (childrenIDs[i2] == 65535) childrenIDs[i2] = -1; }
-	 * 
-	 * } else if (i == 107) aBoolean84 = false; } while (true); }
-	 */
+	
 	private void readValues(Stream stream) {
+		int last = -1;
 		while (true) {
 			int opcode = stream.readUnsignedByte();
 			if (opcode == 0)
@@ -212,6 +140,8 @@ public final class NpcDefinition {
 				standAnim = stream.readUnsignedWord();
 			else if (opcode == 14)
 				walkAnim = stream.readUnsignedWord();
+			else if(opcode == 15 || opcode == 16)
+				stream.readUnsignedWord();
 			else if (opcode == 17) {
 				walkAnim = stream.readUnsignedWord();
 				anInt58 = stream.readUnsignedWord();
@@ -228,7 +158,7 @@ public final class NpcDefinition {
 				}
 			} else if (opcode >= 30 && opcode < 40) {
 				if (actions == null)
-					actions = new String[5];
+					actions = new String[10];
 				actions[opcode - 30] = stream.readString();
 				if (actions[opcode - 30].equalsIgnoreCase("hidden"))
 					actions[opcode - 30] = null;
@@ -239,6 +169,12 @@ public final class NpcDefinition {
 				for (int k1 = 0; k1 < k; k1++) {
 					originalColors[k1] = stream.readUnsignedWord();
 					newColors[k1] = stream.readUnsignedWord();
+				}
+			} else if (opcode == 41) {
+				int k = stream.readUnsignedByte();
+				for (int k1 = 0; k1 < k; k1++) {
+					stream.readUnsignedWord();
+					stream.readUnsignedWord();
 				}
 
 			} else if (opcode == 60) {
@@ -262,25 +198,39 @@ public final class NpcDefinition {
 			else if (opcode == 101)
 				anInt92 = stream.readSignedByte();
 			else if (opcode == 102)
-				anInt75 = stream.readSignedByte();
+				anInt75 = stream.readUnsignedWord();
 			else if (opcode == 103)
-				getDegreesToTurn = stream.readSignedByte();
-			else if (opcode == 106) {
+				getDegreesToTurn = stream.readUnsignedWord();
+			else if (opcode == 106 || opcode == 118) {
 				anInt57 = stream.readUnsignedWord();
 				if (anInt57 == 65535)
 					anInt57 = -1;
 				anInt59 = stream.readUnsignedWord();
 				if (anInt59 == 65535)
 					anInt59 = -1;
+				
+				int var3 = -1;
+				if(opcode == 118) {
+					var3 = stream.readUnsignedWord();
+				}
 				int i1 = stream.readUnsignedByte();
-				childrenIDs = new int[i1 + 1];
+				childrenIDs = new int[i1 + 2];
 				for (int i2 = 0; i2 <= i1; i2++) {
 					childrenIDs[i2] = stream.readUnsignedWord();
 					if (childrenIDs[i2] == 65535)
 						childrenIDs[i2] = -1;
 				}
+				childrenIDs[i1 + 1] = var3;
+				
 			} else if (opcode == 107)
 				aBoolean84 = false;
+			else if(opcode == 111 || opcode == 107 || opcode == 109) {
+				
+			} else {
+				System.out.println("Missing NPC opcode " + opcode + "last: " + last);
+				continue;
+			}
+			last = opcode;
 		}
 	}
 
@@ -321,7 +271,7 @@ public final class NpcDefinition {
 
 	public NpcDefinition method161() {
 		int j = -1;
-		if (anInt57 != -1 && anInt57 <= 2113) {
+		if (anInt57 != -1) {
 			VarBit varBit = VarBit.cache[anInt57];
 			int k = varBit.anInt648;
 			int l = varBit.anInt649;
@@ -330,10 +280,13 @@ public final class NpcDefinition {
 			j = clientInstance.variousSettings[k] >> l & j1;
 		} else if (anInt59 != -1)
 			j = clientInstance.variousSettings[anInt59];
-		if (j < 0 || j >= childrenIDs.length || childrenIDs[j] == -1)
-			return null;
+		int var2;
+		if(j >= 0 && j < childrenIDs.length)
+			var2 = childrenIDs[j];
 		else
-			return forID(childrenIDs[j]);
+			var2 = childrenIDs[childrenIDs.length - 1];
+		
+			return var2 == -1 ? null : forID(var2);
 	}
 
 	public Model method164(int j, int k, int ai[]) {
@@ -417,7 +370,7 @@ public final class NpcDefinition {
 
 	public static void dumpList() {
 		try {
-			File file = new File(System.getProperty("user.home") + "/Desktop/npcList " + Configuration.dumpID + ".txt");
+			File file = new File(System.getProperty("user.home") + "/Desktop/npcList 178" + Configuration.dumpID + ".txt");
 
 			if (!file.exists()) {
 				file.createNewFile();

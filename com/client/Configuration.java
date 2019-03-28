@@ -30,9 +30,9 @@ public class Configuration {
 	public static int chatColor = 0;
     public static int fogColor = 0xDCDBDF;
 	public static long fogDelay = 500;
-	public static final String CLIENT_TITLE = "Anguish";
 	public static final int CLIENT_VERSION = 4;
-	public static Boolean LIVE_SERVER = true;
+	public static final String CLIENT_TITLE = "Anguish";
+	public static Boolean LIVE_SERVER = false;
 	public static final int PORT = 43594;
 
 	public static Boolean DUMP_DATA = false;
@@ -49,7 +49,7 @@ public class Configuration {
 	public static boolean repackIndexOne = false, repackIndexTwo = false, repackIndexThree = false,
 			repackIndexFour = false;
 
-	public static final String CACHE_LINK = "https://www.dropbox.com/s/8qp1l9ncpoew0k5/AnguishCache.zip?dl=1"; // Link for every client below client
+	public static final String CACHE_LINK = "https://www.dropbox.com/s/z39lh2a94sx19d4/AnguishCache.zip?dl=1"; // Link for every client below client
 	// v1.12 - being deprecated after
 	// everyone updates
 	public static final String MEDIA_ARCHIVES_LINK = "https://www.dl.dropboxusercontent.com/sh/qpw6qpe1gqm8zq6/AABqDA9gScRH72FQBebyKm0Ba"; // Link for every

@@ -455,10 +455,13 @@ public final class ObjectDefinition {
 			i = clientInstance.variousSettings[j] >> k & i1;
 		} else if (anInt749 != -1)
 			i = clientInstance.variousSettings[anInt749];
-		if (i < 0 || i >= childrenIDs.length || childrenIDs[i] == -1)
-			return null;
+		int var2;
+		if(i >= 0 && i < childrenIDs.length)
+			var2 = childrenIDs[i];
 		else
-			return forID(childrenIDs[i]);
+			var2 = childrenIDs[childrenIDs.length - 1];
+		
+			return var2 == -1 ? null : forID(var2);
 	}
 
 	private Model method581(int j, int k, int l) {
@@ -691,7 +694,7 @@ public final class ObjectDefinition {
 				aByte742 = stream.readSignedByte();
 			else if (type >= 30 && type < 39) {
 				if (actions == null)
-					actions = new String[9];
+					actions = new String[10];
 				actions[type - 30] = stream.readString();
 				if (actions[type - 30].equalsIgnoreCase("hidden"))
 					actions[type - 30] = null;
@@ -711,7 +714,7 @@ public final class ObjectDefinition {
 					originalTexture[i2] = (short) stream.readUnsignedWord();
 					modifiedTexture[i2] = (short) stream.readUnsignedWord();
 				}
-			} else if (type == 82)
+			} else if (type == 60)
 				anInt746 = stream.readUnsignedWord();
 			else if (type == 62)
 				aBoolean751 = true;
@@ -739,19 +742,48 @@ public final class ObjectDefinition {
 				aBoolean766 = true;
 			else if (type == 75)
 				anInt760 = stream.readUnsignedByte();
-			else if (type == 77) {
+			else if (type == 77 || type == 92) {
 				anInt774 = stream.readUnsignedWord();
 				if (anInt774 == 65535)
 					anInt774 = -1;
 				anInt749 = stream.readUnsignedWord();
 				if (anInt749 == 65535)
 					anInt749 = -1;
+				int var3 = -1;
+				if(type == 92) {
+					var3 = stream.readUnsignedWord();
+				}
 				int j1 = stream.readUnsignedByte();
-				childrenIDs = new int[j1 + 1];
+				childrenIDs = new int[j1 + 2];
 				for (int j2 = 0; j2 <= j1; j2++) {
 					childrenIDs[j2] = stream.readUnsignedWord();
 					if (childrenIDs[j2] == 65535)
 						childrenIDs[j2] = -1;
+				}
+
+				childrenIDs[j1 + 1] = var3;
+			} else if(type == 78) {//TODO Figure out what these do in OSRS
+				//First short = ambient sound
+            	stream.skip(3);
+			} else if(type == 79) {
+				stream.skip(5);
+				int count = stream.readSignedByte();
+				stream.skip(2 * count);
+			} else if(type == 81) {
+				stream.skip(1);//Clip type?
+			} else if (type == 82) {
+				stream.readUnsignedWord();//AreaType
+				
+			} else if(type == 249) {
+				int var1 = stream.readUnsignedByte();
+				for(int var2 = 0;var2<var1;var2++) {
+					boolean b = stream.readUnsignedByte() == 1;
+					stream.skip(3);
+					if(b) {
+						stream.readString();
+					} else {
+						stream.readDWord();
+					}
 				}
 			}
 		} while (true);

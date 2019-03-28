@@ -25,7 +25,7 @@ public final class Player extends Entity {
 				Model model_3 = new Model(true, Class36.method532(super.anInt1521), false, model_2);
 				model_3.method475(0, -super.anInt1524, 0);
 				model_3.method469();
-				model_3.method470(spotAnim.aAnimation_407.anIntArray353[super.anInt1521]);
+				model_3.method470(spotAnim.aAnimation_407.primaryFrames[super.anInt1521]);
 				model_3.faceGroups = null;
 				model_3.vertexGroups = null;
 				if (spotAnim.anInt410 != 128 || spotAnim.anInt411 != 128)
@@ -164,9 +164,9 @@ public final class Player extends Entity {
 		if (desc != null) {
 			int j = -1;
 			if (super.anim >= 0 && super.anInt1529 == 0)
-				j = AnimationDefinition.anims[super.anim].anIntArray353[super.anInt1527];
+				j = AnimationDefinition.anims[super.anim].primaryFrames[super.anInt1527];
 			else if (super.anInt1517 >= 0)
-				j = AnimationDefinition.anims[super.anInt1517].anIntArray353[super.anInt1518];
+				j = AnimationDefinition.anims[super.anInt1517].primaryFrames[super.anInt1518];
 			Model model = desc.method164(-1, j, null);
 			return model;
 		}
@@ -177,9 +177,9 @@ public final class Player extends Entity {
 		int k1 = -1;
 		if (super.anim >= 0 && super.anInt1529 == 0) {
 			AnimationDefinition animation = AnimationDefinition.anims[super.anim];
-			k = animation.anIntArray353[super.anInt1527];
+			k = animation.primaryFrames[super.anInt1527];
 			if (super.anInt1517 >= 0 && super.anInt1517 != super.anInt1511)
-				i1 = AnimationDefinition.anims[super.anInt1517].anIntArray353[super.anInt1518];
+				i1 = AnimationDefinition.anims[super.anInt1517].primaryFrames[super.anInt1518];
 			if (animation.anInt360 >= 0) {
 				j1 = animation.anInt360;
 				l += j1 - equipment[5] << 40;
@@ -189,7 +189,7 @@ public final class Player extends Entity {
 				l += k1 - equipment[3] << 48;
 			}
 		} else if (super.anInt1517 >= 0)
-			k = AnimationDefinition.anims[super.anInt1517].anIntArray353[super.anInt1518];
+			k = AnimationDefinition.anims[super.anInt1517].primaryFrames[super.anInt1518];
 		Model model_1 = (Model) mruNodes.insertFromCache(l);
 		if (model_1 == null) {
 			boolean flag = false;

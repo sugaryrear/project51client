@@ -50,9 +50,9 @@ public final class GraphicsDefinition {
 			} else if (i == 6) {
 				anInt412 = stream.readUnsignedWord();
 			} else if (i == 7) {
-				anInt413 = stream.readUnsignedWord();
+				anInt413 = stream.readUnsignedByte();
 			} else if (i == 8) {
-				anInt414 = stream.readUnsignedWord();
+				anInt414 = stream.readUnsignedByte();
 			} else if (i == 40) {
 				int j = stream.readUnsignedByte();
 				for (int k = 0; k < j; k++) {

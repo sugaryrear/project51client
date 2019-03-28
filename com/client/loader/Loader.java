@@ -245,7 +245,7 @@ public class Loader {
     }
 
     private static File updateCache() {
-        File ret = new File(Signlink.getCacheDirectory() + "Mystic-PS_.32.zip");
+        File ret = new File(Signlink.getCacheDirectory() + "AnguishCache.zip");
         try {
         		OutputStream out = new FileOutputStream(ret);
             URLConnection conn = new URL(Configuration.CACHE_LINK).openConnection();

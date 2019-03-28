@@ -7,8 +7,8 @@ import com.client.sign.Signlink;
 
 public class FloorOverlayDefinition {
 
-    public static void unpackConfig(StreamLoader streamLoader) {
-        Stream stream = new Stream(FileOperations.readFile(Signlink.getCacheDirectory() + "/data/flo2.dat"));
+    public static void unpackConfig(Stream stream) {
+      //  Stream stream = new Stream(FileOperations.readFile(Signlink.getCacheDirectory() + "/data/flo2.dat"));
         int cacheSize = stream.readUnsignedWord();
         if (overlays == null)
             overlays = new FloorOverlayDefinition[cacheSize];

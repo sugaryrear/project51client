@@ -9,7 +9,7 @@ import com.client.sign.Signlink;
 public final class FloorUnderlayDefinition {
 
 	public static void unpackConfig(StreamLoader streamLoader) {
-		Stream stream = new Stream(FileOperations.readFile(Signlink.getCacheDirectory() + "/data/flo.dat"));
+		Stream stream = new Stream(streamLoader.getDataForName("flo.dat"));
 		int cacheSize = stream.readUnsignedWord();
 		if (underlays == null)
 			underlays = new FloorUnderlayDefinition[cacheSize];
@@ -19,23 +19,32 @@ public final class FloorUnderlayDefinition {
 			}
 			underlays[j].readValues(stream);
 		}
+		
+		FloorOverlayDefinition.unpackConfig(stream);
 	}
 
 	private void readValues(Stream stream) {
-		anInt390 = stream.read3Bytes();
-		if (Client.snowVisible) {
-			if (anInt390 == 0x35720A || 
-				anInt390 == 0x50680B || 
-				anInt390 == 0x78680B || 
-				anInt390 == 0x6CAC10 || 
-				anInt390 == 0x819531 || 
-				anInt390 == 0x4C5610 ||
-				anInt390 == 0x6A3C00 || 
-				anInt390 == 0x58680B) {
-				anInt390 = 0xffffff;
+		while(true) {
+		int opcode = stream.readUnsignedByte();
+		if(opcode == 0) {
+			break;
+		} else if(opcode == 1) {
+			anInt390 = stream.read3Bytes();
+			if (Client.snowVisible) {
+				if (anInt390 == 0x35720A || 
+					anInt390 == 0x50680B || 
+					anInt390 == 0x78680B || 
+					anInt390 == 0x6CAC10 || 
+					anInt390 == 0x819531 || 
+					anInt390 == 0x4C5610 ||
+					anInt390 == 0x6A3C00 || 
+					anInt390 == 0x58680B) {
+					anInt390 = 0xffffff;
+				}
 			}
+			method262(anInt390);
 		}
-		method262(anInt390);
+		}
 	}
 
 	private void method262(int i) {

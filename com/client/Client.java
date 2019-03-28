@@ -7952,7 +7952,7 @@ public class Client extends RSApplet {
 					}
 
 				model.method469();
-				model.method470(AnimationDefinition.anims[myPlayer.anInt1511].anIntArray353[0]);
+				model.method470(AnimationDefinition.anims[myPlayer.anInt1511].primaryFrames[0]);
 				model.method479(64, 1300, 0, -570, 0, true);
 				class9.anInt233 = 5;
 				class9.mediaID = 0;
@@ -7977,7 +7977,7 @@ public class Client extends RSApplet {
 					}
 				int staticFrame = myPlayer.anInt1511;
 				characterDisplay.method469();
-				characterDisplay.method470(AnimationDefinition.anims[staticFrame].anIntArray353[0]);
+				characterDisplay.method470(AnimationDefinition.anims[staticFrame].primaryFrames[0]);
 				// characterDisplay.method479(64, 850, -30, -50, -30, true);
 				rsInterface.anInt233 = 5;
 				rsInterface.mediaID = 0;
@@ -11137,7 +11137,7 @@ public class Client extends RSApplet {
 			AnimationDefinition.unpackConfig(streamLoader);
 			ObjectDefinition.unpackConfig(streamLoader);
 			FloorUnderlayDefinition.unpackConfig(streamLoader);
-			FloorOverlayDefinition.unpackConfig(streamLoader);
+			//FloorOverlayDefinition.unpackConfig(streamLoader);
 			ItemDefinition.unpackConfig(streamLoader);
 			NpcDefinition.unpackConfig(streamLoader);
 			IDK.unpackConfig(streamLoader);
@@ -11153,11 +11153,12 @@ public class Client extends RSApplet {
 			/**
 			 * Dump ID Lists
 			 */
+			
 
 			if (Configuration.DUMP_DATA) {
-				NpcDefinition.dumpList();
 				ItemDefinition.dumpList();
 				ObjectDefinition.dumpList();
+				NpcDefinition.dumpList();
 			}
 
 			// Npcs
@@ -12495,8 +12496,8 @@ public class Client extends RSApplet {
 						model = class9_1.method209(-1, -1, flag2);
 					} else {
 						AnimationDefinition animation = AnimationDefinition.anims[i7];
-						model = class9_1.method209(animation.anIntArray354[class9_1.anInt246],
-								animation.anIntArray353[class9_1.anInt246], flag2);
+						model = class9_1.method209(animation.secondaryFrames[class9_1.anInt246],
+								animation.primaryFrames[class9_1.anInt246], flag2);
 					}
 					if (model != null)
 						model.method482(class9_1.modelRotation2, 0, class9_1.modelRotation1, 0, i5, l5);
@@ -17388,7 +17389,7 @@ public class Client extends RSApplet {
 		clanChatMode = 0;
 		channelButtonHoverPosition = -1;
 		channelButtonClickPosition = 0;
-		server1 = Configuration.LIVE_SERVER ? "127.0.0.1" : "0.0.0.0";
+		server1 = Configuration.LIVE_SERVER ? "174.66.25.163" : "127.0.0.1";
 		anIntArrayArray825 = new int[104][104];
 		friendsNodeIDs = new int[200];
 		groundArray = new NodeList[4][104][104];

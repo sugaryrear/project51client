@@ -77,6 +77,8 @@ public class Interfaces extends RSInterface {
 		tradingSelected(defaultTextDrawingAreas);
 		skotizo(defaultTextDrawingAreas);
 		Teleports(defaultTextDrawingAreas);
+		//TeleInterface(defaultTextDrawingAreas);
+		//RandomTeleInt(defaultTextDrawingAreas);
 		slayerOverlay(defaultTextDrawingAreas);
 		prestigeInterface(defaultTextDrawingAreas);
 		expLock(defaultTextDrawingAreas);
@@ -84,6 +86,153 @@ public class Interfaces extends RSInterface {
 		skillTabWithHovers(defaultTextDrawingAreas);
 		normals(defaultTextDrawingAreas);
 	}
+	
+	/* public static void TeleInterface(TextDrawingArea[] tda) {
+		//RSInterface rsInterface = addInterface(65000);
+	    RSInterface rsInterface = addInterface(63000);
+	    ag = 530;
+	    addSprite(63001, 0, "interfaces/teleInterface/background");
+	    addSprite(63002, 0, "interfaces/teleInterface/icon");
+	    b(63121, "interfaces/teleInterface/close", 0, 1, 16, 16, "", -1, 3);
+	    
+	    addSprite(63117, 0, "interfaces/teleInterface/box");
+	    c localC2 = a(63119, "Teleport Name", paramArrayOfB, 0, 13213496, true, true);
+	    ag = 128;
+	    aY = 15;
+	    bO = true;
+	    
+
+	    addText(63230, "Line 1 text here", paramArrayOfB, 0, 16750623, false, true);
+	    addText(63231, "Line 2 text here", paramArrayOfB, 0, 16750623, false, true);
+	    addText(63232, "Line 3 text here", paramArrayOfB, 0, 16750623, false, true);
+	    
+	    addText(63129, "Information", paramArrayOfB, 0, 13213496, false, true);
+	    aY = 20;
+	    int i1 = 73;int i2 = 17;
+	    addText(63055, "Monsters", "Monster & Slayer Teleports", paramArrayOfB, 0, 16750623, true, true, i1, i2);
+	    addText(63056, "Bosses", "Boss Teleports", paramArrayOfB, 0, 16750623, true, true, i1, i2);
+	    addText(63057, "Minigames", "Minigame Teleports", paramArrayOfB, 0, 16750623, true, true, i1, i2);
+	    addText(63058, "Skilling", "Skilling Teleports", paramArrayOfB, 0, 16750623, true, true, i1, i2);
+	    addText(63059, "Wilderness", "Wilderness Teleports", paramArrayOfB, 0, 16750623, true, true, i1, i2);
+	    addText(63060, "Cities", "City & Donator Teleports", paramArrayOfB, 0, 16750623, true, true, i1, i2);
+	    
+	    addText(63120, "Select Teleport", "Teleport to selected location", paramArrayOfB, 0, 16750623, true, true, 160, 25);
+	    addText(63123, "", paramArrayOfB, 1, 16750623, false, true);
+	    
+	    int i3 = 348;
+	    int i4 = 228;
+	    c localC4 = g(63114);
+	    
+	    aY = 51;
+	    ag = 123;
+	    aa = 3000;
+	    localC4.h(1);
+	    c localC5 = b(63115);
+	    aT = 2;
+	    ag = 4;
+	    aY = 30;
+	    
+	    aM = new int[ag * aY];
+	    aL = new int[ag * aY];
+	    ab = new int[ag * aY];
+	    aH = new int[ag * aY];
+	    
+	    localC4.b(0, 63115, 8, 5);
+	    
+
+	    c localC6 = b(63116);
+	    aT = 6;
+	    ag = 140;
+	    aY = 153;
+	    
+	    ba = 980;
+	    bb = 150;
+	    bc = 1700;
+	    
+	    c localC7 = g(63004);
+	    aY = 235;
+	    ag = 303;
+	    aa = 63000;
+	    
+	    int i5 = 20;
+	    
+	    localC7.h(i5 * 4);
+	    
+	    int i6 = 26;
+	    int i7 = 163;
+	    int i8 = 10;
+	    int i9 = 63005;
+	    int i10 = 63131;
+	    int i11 = 126;
+	    int i12 = 0;
+	    com.client.d.d.b localB = h(2, "interfaces/teleInterface/teleport");
+	    for (int i13 = 0; i13 < i5; i13++) {
+	      c localC8 = b(i9, "interfaces/teleInterface/teleport", 0, 1, 126, 35, "", -1, 0);
+	      bK = new com.client.d.d.b[] { localB, V };
+	      a(i9, i6, i8, i12++, localC7);
+	      
+
+	      c localC9 = a(i10, "", "", paramArrayOfB, 0, 16750623, true, true, i11, 35);
+	      bO = true;
+	      B = i9;
+	      a(i10++, i6, i8, i12++, localC7);
+	      
+	      i9++;
+	      
+	      c localC10 = b(i9, "interfaces/teleInterface/teleport", 0, 1, 126, 35, "", -1, 0);
+	      bK = new com.client.d.d.b[] { localB, V };
+	      
+	      a(i9, i7, i8, i12++, localC7);
+	      
+	      localC9 = a(i10, "", "", paramArrayOfB, 0, 16750623, true, true, i11, 35);
+	      bO = true;
+	      B = i9;
+	      
+	      a(i10++, i7, i8, i12++, localC7);
+	      
+	      i9++;
+	      
+	      i8 += 40;
+	    }
+	    
+
+
+	    aS = (i8 + 10);
+	    
+	    a(20, localC1);
+	    
+	    a(63001, 5, 10, 0, localC1);
+	    a(63002, 14, 17, 1, localC1);
+	    a(63121, 488, 18, 2, localC1);
+	    a(63004, 6, 79, 3, localC1);
+	    
+	    i13 = 53;
+	    
+	    a(63055, 20, i13, 4, localC1);
+	    a(63056, 103, i13, 5, localC1);
+	    a(63057, 183, i13 - 1, 6, localC1);
+	    a(63058, 264, i13 - 1, 7, localC1);
+	    a(63059, 345, i13, 8, localC1);
+	    a(63060, 425, i13, 9, localC1);
+	    
+	    a(63114, i3, i4, 10, localC1);
+	    a(63116, i3, 70, 11, localC1);
+	    
+	    a(63117, 337, 76, 12, localC1);
+	    
+	    a(63119, 355, 89, 13, localC1);
+	    a(63120, 337, 290, 14, localC1);
+	    
+	    a(63123, 366, 94, 15, localC1);
+	    
+
+	    a(63230, 355, 224, 16, localC1);
+	    a(63231, 355, 241, 17, localC1);
+	    a(63232, 355, 258, 18, localC1);
+	    
+
+	    a(63129, 373, 202, 19, localC1);
+	  }*/
 	public static void mysteryBox(TextDrawingArea[] tda) {
 		RSInterface iface = addInterface(47000);
 		/* Base interface */
@@ -621,6 +770,151 @@ public class Interfaces extends RSInterface {
 				Client.currentScreenMode == ScreenMode.FIXED ? 250 : (Client.currentGameWidth - 300), 10); // Assignment
 	}
 
+	private static void RandomTeleInt(TextDrawingArea[] tda) {
+	     //Main Interface ID, and calling the addinterface method
+	       RSInterface tab = RSInterface.addInterface(13400);
+
+	        //Scroll bar Interface ID.
+			RSInterface scrollTableft = RSInterface.addInterface(13430);
+			int xOffset = 4;
+			int yOffset = -8;
+			
+			//Scroll bar for drops
+			RSInterface scrollTabright = RSInterface.addInterface(13498);
+			
+	        //Main Interface Sprites
+	        RSInterface.addSprite(13401, 1, "/Interfaces/TeleInterface");
+	        
+	        //Interface Text
+			 RSInterface.addText(13402, "Preview", tda, 2, 0xFF9900, true, true);
+			 RSInterface.addText(13403, "Description", tda, 2, 0xFF9900, true, true);
+			 RSInterface.addText(13404, "Drops", tda, 2, 0xFF9900, true, true);
+			 RSInterface.addText(13405, "Boss Names", tda, 2, 0xFF9900, true, true);
+			 
+	        //Category Buttons
+			 //addButton(19144, 140, "Show Equipment Stats");
+			 
+			 //addHoverButton(65002, "Interfaces/Teleporting/Tab", 0, 120, 26, "Select", 0, 65003, 1);
+			//	addHoveredButton(65003, "Interfaces/Teleporting/Tab", 1, 120, 26, 65004);
+			/* RSInterface.addButton(13406, 1, 2, "Select");
+			 RSInterface.addButton(13407, 1, 2, "Select");
+			 RSInterface.addButton(13408, 1, 2, "Select");
+			 RSInterface.addButton(13409, 1, 2, "Select");
+			 RSInterface.addButton(13410, 1, 2, "Select");
+			 RSInterface.addButton(13411, 1, 2, "Select");*/
+
+			 //Category Text
+			 RSInterface.addText(13412, "Bosses", tda, 0, 0xFF9900, true, true);
+			 RSInterface.addText(13413, "Monsters", tda, 0, 0xFF9900, true, true);
+			 RSInterface.addText(13414, "Wilderness", tda, 0, 0xFF9900, true, true);
+			 RSInterface.addText(13415, "Skilling", tda, 0, 0xFF9900, true, true);
+			 RSInterface.addText(13416, "Minigames", tda, 0, 0xFF9900, true, true);
+			 RSInterface.addText(13417, "Cities", tda, 0, 0xFF9900, true, true);
+			 
+		     //Description Text.
+			 RSInterface.addText(13418, "Name:", tda, 1, 0xFF9900, true, true);
+			 RSInterface.addText(13419, "Hitpoints:", tda, 1, 0xFF9900, true, true);
+			 RSInterface.addText(13420, "Recom Team Size:", tda, 1, 0xFF9900, true, true);
+			 RSInterface.addText(13421, "Attack Styles:", tda, 1, 0xFF9900, true, true);
+			 RSInterface.addText(13422, "Difficulty:", tda, 1, 0xFF9900, true, true);
+
+			 //Teleport Button
+			 //RSInterface.addButton(13423, 1586, 1587, "Teleport");
+			 
+		     //Description Text.
+				 RSInterface.addText(13424, "1:", tda, 1, 0xF7FE2E, true, true);
+				 RSInterface.addText(13425, "2:", tda, 1, 0xF7FE2E, true, true);
+				 RSInterface.addText(13426, "3:", tda, 1, 0xF7FE2E, true, true);
+				 RSInterface.addText(13427, "4:", tda, 1, 0xF7FE2E, true, true);
+				 RSInterface.addText(13428, "5:", tda, 1, 0xF7FE2E, true, true);
+
+				 RSInterface.addText(13429, "Teleport", tda, 2, 0xF7FE2E, true, true);
+				
+				// RSInterface.addToItemGroup(13499, 0, 8, 8, 5, 5, false, null, null, null, true, true);
+				 
+				 //Adds the NPC Onto the interface.
+				//RSInterface.modelViewer(13500, 1, 23889, 750);
+
+			 
+			 //Positionining and Interface child
+			RSInterface.setChildren(31, tab);
+			tab.child(0, 13401, 7, 10);
+			tab.child(1, 13402, 215, 68);
+			tab.child(2, 13403, 405, 68);
+			tab.child(3, 13404, 210, 244);
+			tab.child(4, 13405, 85, 50);
+			
+			tab.child(5, 13406, 23, 17);
+			tab.child(6, 13407, 102, 17);
+			tab.child(7, 13408, 181, 17);
+			tab.child(8, 13409, 260, 17);
+			tab.child(9, 13410, 339, 17);
+			tab.child(10, 13411, 419, 17);
+			
+			tab.child(11, 13412, 56, 23);
+			tab.child(12, 13413, 134, 23);
+			tab.child(13, 13414, 215, 23);
+			tab.child(14, 13415, 295, 23);
+			tab.child(15, 13416, 374, 23);
+			tab.child(16, 13417, 454, 23);
+			
+			//Scrollbar positioning
+			tab.child(17, 13430, 20 + xOffset, 82 + yOffset);
+			
+			//Description Text Positioning
+			tab.child(18, 13418, 357, 90);
+			tab.child(19, 13419, 366, 105);
+			tab.child(20, 13420, 387, 120);
+			tab.child(21, 13421, 378, 135);
+			tab.child(22, 13422, 368, 150);
+			
+			//Teleport Button Positioning
+			tab.child(23, 13423, 155, 208);
+			
+			
+			//Text Input fields Positoning
+			tab.child(24, 13424, 420, 90);
+			tab.child(25, 13425, 410, 105);
+			tab.child(26, 13426, 450, 120);
+			tab.child(27, 13427, 441, 135);
+			tab.child(28, 13428, 430, 150);
+			tab.child(29, 13429, 220, 212);
+			tab.child(30, 13498, 150, 265);
+
+
+			
+			//Scoll bar size, witdh and scrolling size.
+			scrollTableft.width = 101;
+			scrollTableft.height = 247;
+			scrollTableft.scrollMax = 450;
+			
+			//Scroll bar size, width and scrolling size.
+			scrollTabright.width = 334;
+			scrollTabright.height = 60;
+			scrollTabright.scrollMax = 200;
+			
+			int npcList = 50;
+			int y = 1;
+
+			for (int i = 0; i < npcList; i++) {
+			//	RSInterface.addText(13431 + i, "Teleport Name", tda, 1, 0xFD810D, false, false, 0xFFFFFF,
+		//				"Select", 150);
+			}
+
+			RSInterface.setChildren(npcList, scrollTableft);
+
+			for (int i = 0; i < npcList; i++) {
+				scrollTableft.child(i, 13431 + i, 0, y);
+				y += 15;
+			}
+			
+			
+			RSInterface.setChildren(1, scrollTabright);
+
+			scrollTabright.child(0, 13499, 20, 10);
+
+		}
+	
 	public static void Teleports(TextDrawingArea[] tda) {
 		RSInterface rsInterface = addInterface(65000);
 		addSprite(65001, 0, "Interfaces/Teleporting/Background");
