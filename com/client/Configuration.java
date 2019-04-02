@@ -35,7 +35,7 @@ public class Configuration {
 	public static Boolean LIVE_SERVER = false;
 	public static final int PORT = 43594;
 
-	public static Boolean DUMP_DATA = false;
+	public static Boolean DUMP_DATA = true;
 	public static int dumpID = 149;
 	public static Boolean DUMP_OTHER = false;
 

@@ -917,6 +917,174 @@ public class Interfaces extends RSInterface {
 	
 	public static void Teleports(TextDrawingArea[] tda) {
 		RSInterface rsInterface = addInterface(65000);
+		
+		//Scroll bar Interface ID.
+		RSInterface scrollTableft = RSInterface.addInterface(65030);
+		int xOffset = 4;
+		int yOffset = -8;
+				
+		//Scroll bar for drops
+		RSInterface scrollTabright = RSInterface.addInterface(65098);
+		
+		
+		addSprite(65001, 0, "Interfaces/TeleInterface/SPRITE");
+		
+		addText(65002, "Preview", tda, 2, 0xFF9900, true, true);
+		addText(65003, "Description", tda, 2, 0xFF9900, true, true);
+		addText(65004, "Drops", tda, 2, 0xFF9900, true, true);
+		addText(65005, "Boss Names", tda, 2, 0xFF9900, true, true);
+		
+		//addClickableText(36037 + j + (i * 100), "Achievement: " + j, "Select", tda, 0, 0xff9040, false, true,112);
+		
+		//catagory buttons
+		addButton(65006, 1, "Interfaces/TeleInterface/SPRITE", "Select");
+
+		//catagory text
+		addClickableText(65011,"Bosses", "Select", tda, 0, 0xff9040, true, true, 71);
+		addClickableText(65012,"Monsters", "Select", tda, 0, 0xff9040, true, true, 71);
+		addClickableText(65013,"Wilderness", "Select", tda, 0, 0xff9040, true, true, 71);
+		addClickableText(65014,"Skilling", "Select", tda, 0, 0xff9040, true, true, 71);
+		addClickableText(65015,"Minigames", "Select", tda, 0, 0xff9040, true, true, 71);
+		addClickableText(65016,"Cities", "Select", tda, 0, 0xff9040, true, true, 71);
+		
+		//description text:
+		addText(65017, "Name:", tda, 1, 0xFF9900, true, true);
+		addText(65018, "Hitpoints:", tda, 1, 0xFF9900, true, true);
+		addText(65019, "Recom Team Size:", tda, 1, 0xFF9900, true, true);
+		addText(65020, "Attack Styles:", tda, 1, 0xFF9900, true, true);
+		addText(65021, "Difficulty:", tda, 1, 0xFF9900, true, true);
+		
+		//Teleport button:
+		addButton(65022, 3, "Interfaces/TeleInterface/SPRITE", "Teleport");
+		
+		//Desc text:
+		addText(65023, "1:", tda, 1, 0xffff00, true, true);
+		addText(65024, "2:", tda, 1, 0xffff00, true, true);
+		addText(65025, "3:", tda, 1, 0xffff00, true, true);
+		addText(65026, "4:", tda, 1, 0xffff00, true, true);
+		addText(65027, "5:", tda, 1, 0xffff00, true, true);
+		addText(65028, "Teleport", tda, 2, 0xffff00, true, true);
+		addToItemGroup(65098,/*0,*/ 8, 8, 5, 5, false, null, null, null, null, null, null);
+
+		//interfaceCache[65099 + i].TYPE_MODEL = 5;
+		/*
+		 * interfaceCache[34010 + i].inv[0] = 14485;
+			interfaceCache[34010 + i].invStackSizes[0] = 1;
+		 */
+	
+		setChildren(25, rsInterface);
+		rsInterface.child(0, 65001, 7, 10); // Background
+		rsInterface.child(1, 65002, 215, 68); // "preview"
+		rsInterface.child(2, 65003, 405, 68); //"description"
+		rsInterface.child(3, 65004, 210, 244); //"drops"
+		rsInterface.child(4, 65005, 85, 50);
+		//rsInterface.child(5, 65006, 23, 17);
+		//rsInterface.child(6, 65006, 102, 17);
+		//rsInterface.child(7, 65006, 181, 17);
+		//rsInterface.child(8, 65006, 260, 17);
+		//rsInterface.child(9, 65006, 339, 17);
+		//rsInterface.child(10, 65006, 418, 17);
+		rsInterface.child(5, 65011, 21, 22);
+		rsInterface.child(6, 65012, 100, 22);
+		rsInterface.child(7, 65013, 180, 22);
+		rsInterface.child(8, 65014, 259, 22);
+		rsInterface.child(9, 65015, 338, 22);
+		rsInterface.child(10, 65016, 416, 22);
+		//scrollbar positioning
+		rsInterface.child(11, 65030, 20 + xOffset, 82 + yOffset);
+
+		//Desc text position
+		rsInterface.child(12, 65017, 357, 90);
+		rsInterface.child(13, 65018, 366, 105);
+		rsInterface.child(14, 65019, 387, 120);
+		rsInterface.child(15, 65020, 378, 135);
+		rsInterface.child(16, 65021, 368, 150);
+		//Teleport Button Positioning
+		rsInterface.child(17, 65022, 155, 208);
+		
+		//Text Input fields Positoning
+		rsInterface.child(18, 65023, 420, 90);
+		rsInterface.child(19, 65024, 410, 105);
+		rsInterface.child(20, 65025, 450, 120);
+		rsInterface.child(21, 65026, 441, 135);
+		rsInterface.child(22, 65027, 430, 150);
+		rsInterface.child(23, 65028, 220, 212);
+		rsInterface.child(24, 65098, 150, 265);
+		
+		//Scoll bar size, witdh and scrolling size.
+		scrollTableft.width = 101;
+		scrollTableft.height = 247;
+		scrollTableft.scrollMax = 450;
+				
+		//Scroll bar size, width and scrolling size.
+		scrollTabright.width = 334;
+		scrollTabright.height = 60;
+		scrollTabright.scrollMax = 200;
+				
+		int npcList = 50;
+		int y = 1;
+		
+		for (int i = 0; i < npcList; i++) {
+			RSInterface.addClickableText(65031 + i, "Teleport Name", "Select", tda, 1, 0xFFA500, false, false, 150);
+		}
+		RSInterface.setChildren(npcList, scrollTableft);
+		for (int i = 0; i < npcList; i++) {
+			scrollTableft.child(i, 65031 + i, 0, y);
+			y += 15;
+		}
+		RSInterface.setChildren(1, scrollTabright);
+
+		scrollTabright.child(0, 13499, 20, 10);
+		//rsInterface.child(2, 65003, 14, 41); // Tab 1
+		/*rsInterface.child(3, 65005, 14, 67); // Tab 2 Hover
+		rsInterface.child(4, 65006, 14, 67); // Tab 2
+		rsInterface.child(5, 65008, 14, 93); // Tab 3 Hover
+		rsInterface.child(6, 65009, 14, 93); // Tab 3
+		rsInterface.child(7, 65011, 14, 119); // Tab 4 Hover
+		rsInterface.child(8, 65012, 14, 119); // Tab 4
+		rsInterface.child(9, 65014, 14, 145); // Tab 5 Hover
+		rsInterface.child(10, 65015, 14, 145); // Tab 5
+		rsInterface.child(11, 65017, 14, 171); // Tab 6 Hover
+		rsInterface.child(12, 65018, 14, 171); // Tab 6
+		rsInterface.child(13, 65020, 14, 197); // Tab 7 Hover
+		rsInterface.child(14, 65021, 14, 197); // Tab 7
+		rsInterface.child(15, 65023, 480, 17); // Close Hover
+		rsInterface.child(16, 65024, 480, 17); // Close
+		rsInterface.child(17, 65026, 75, 50); // Title 1
+		rsInterface.child(18, 65027, 75, 75); // Title 2
+		rsInterface.child(19, 65028, 75, 103); // Title 3
+		rsInterface.child(20, 65029, 75, 127); // Title 4
+		rsInterface.child(21, 65030, 75, 155); // Title 5
+		rsInterface.child(22, 65031, 75, 179); // Title 6
+		rsInterface.child(23, 65032, 75, 203); // Title 7
+		rsInterface.child(24, 65033, 258, 18); // Title
+		rsInterface.child(25, 65049, 135, 41); // Scroll menu*/
+		/*RSInterface scroll = addInterface(65049);
+		scroll.width = 346;
+		scroll.height = 238;
+		scroll.scrollMax = 550;
+		int ChildNum = 40; // Must be a multiple of 2 (This adds more buttons)
+		setChildren(ChildNum, scroll);
+		int count = 0, y = 0, id = 65050;
+		for (int i = 0; i < 10; i++) {
+			addButton(id, 0, "Interfaces/Teleporting/Button", "Teleport");
+			scroll.child(count, id++, 20, 15 + y); // Button 1
+			count++;
+			addText(id, "" + id + "", tda, 0, 0xff981f, true, true); // ""+id+"" prints the id of the text
+			scroll.child(count, id++, 88, 25 + y); // Button 1 text
+			count++;
+			addButton(id, 0, "Interfaces/Teleporting/Button", "Teleport");
+			scroll.child(count, id++, 190, 15 + y); // Button 2
+			count++;
+			addText(id, "" + id + "", tda, 0, 0xff981f, true, true); // ""+id+"" prints the id of the text
+			scroll.child(count, id++, 255, 25 + y); // Button 2 text
+			count++;
+			y += 47;
+		}*/
+	}
+	
+	/*public static void Teleports(TextDrawingArea[] tda) {
+		RSInterface rsInterface = addInterface(65000);
 		addSprite(65001, 0, "Interfaces/Teleporting/Background");
 		addHoverButton(65002, "Interfaces/Teleporting/Tab", 0, 120, 26, "Select", 0, 65003, 1);
 		addHoveredButton(65003, "Interfaces/Teleporting/Tab", 1, 120, 26, 65004);
@@ -991,7 +1159,7 @@ public class Interfaces extends RSInterface {
 			count++;
 			y += 47;
 		}
-	}
+	}*/
 
 	/*
 	 * for (int i = 0; i < 10; i++) { if (i != 0) id++; //51 addHoverButton(id,

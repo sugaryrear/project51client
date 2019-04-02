@@ -46,6 +46,17 @@ public final class ObjectDefinition {
             objectDef.name = "@red@Deadly Chest";
             break;
         //EndDeadlyChest
+            
+        //home portal
+        case 4387:
+        	objectDef.actions = new String[] { "Enter", null, null, null, null };
+			objectDef.name = "Teleport Hub";
+			break;
+        case 4004:
+        	objectDef.actions = new String[] { "Add Items", null, null, null, null };
+			objectDef.name = "Well of Goodwill";
+			break;
+			
 		case 8207:
 			objectDef.actions = new String[] { "Care-To", null, null, null, null };
 			objectDef.name = "Herb Patch";

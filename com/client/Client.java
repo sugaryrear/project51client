@@ -11157,8 +11157,8 @@ public class Client extends RSApplet {
 
 			if (Configuration.DUMP_DATA) {
 				ItemDefinition.dumpList();
-				ObjectDefinition.dumpList();
-				NpcDefinition.dumpList();
+				//ObjectDefinition.dumpList();
+				//NpcDefinition.dumpList();
 			}
 
 			// Npcs

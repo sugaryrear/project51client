@@ -651,7 +651,7 @@ public class RSInterface {
 	public static void questTab(TextDrawingArea[] tda) {
 		RSInterface tab = addTabInterface(10220);
 		addText(10221, "@or1@Control Panel", tda, 2, 16750899, false, true);
-		addText(10222, "@or1@Mystic-PS", tda, 2, 16750899, true, true);
+		addText(10222, "@or1@Anguish", tda, 2, 16750899, true, true);
 		addSprite(10224, 0, "Interfaces/infoTab/SPRITE");
 		addButton(10403, 2, "Interfaces/infoTab/TAB", "Refresh Tab");
 		addButton(10404, 4, "Interfaces/infoTab/TAB", "View Diaries");
@@ -2485,6 +2485,8 @@ public class RSInterface {
 		}
 		rsi.type = 2;
 	}
+	
+	
 
 	public static void addToItemGroup(int id, int w, int h, int x, int y, boolean actions, String action1,
 			String action2, String action3) {
@@ -2631,7 +2633,7 @@ public class RSInterface {
 	//
 	// }
 
-	public static void teleport(TextDrawingArea[] tda) {
+	public static void teleport(TextDrawingArea[] tda) { //hop back here
 		RSInterface inter = addInterface(51000);
 		int extraX = 5;
 		addHoverButton(41249, "/Interfaces/Teleportation/SPRITE", -1, 157, 45, "Select", -1, 41250, 1);
@@ -5456,6 +5458,7 @@ public class RSInterface {
 		tab.anInt239 = 0;
 		tab.tooltip = tooltip;
 	}
+
 
 	public int hoverTextColor;
 
