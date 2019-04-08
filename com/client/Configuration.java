@@ -12,7 +12,7 @@ public class Configuration {
 	public static int npcAttackOptionPriority = 2;
 
 	public static boolean debug = true;
-	public static final boolean DUMP_SPRITES = false;
+	public static final boolean DUMP_SPRITES = true;
 
 	public static int xpSize = 0;
 	public static int xpSpeed = 0;

@@ -650,23 +650,55 @@ public class RSInterface {
     }
 	public static void questTab(TextDrawingArea[] tda) {
 		RSInterface tab = addTabInterface(10220);
-		addText(10221, "@or1@Control Panel", tda, 2, 16750899, false, true);
+		
+		
+		//addText(10221, "@or1@Control Panel", tda, 2, 16750899, false, true);
 		addText(10222, "@or1@Anguish", tda, 2, 16750899, true, true);
 		addSprite(10224, 0, "Interfaces/infoTab/SPRITE");
-		addButton(10403, 2, "Interfaces/infoTab/TAB", "Refresh Tab");
-		addButton(10404, 4, "Interfaces/infoTab/TAB", "View Diaries");
-		addSprite(10223, 1, "Interfaces/infoTab/SPRITE");
-		addText(10405, "@cr10@", tda, 2, 16750899, false, true);
-		tab.totalChildren(9);
-		tab.child(0, 10221, 20, 7);
-		tab.child(1, 10222, 95, 240);
-		tab.child(2, 10224, 0, 35);
-		tab.child(3, 10223, 0, 230);
-		tab.child(4, 10403, 172, 15);
-		tab.child(5, 10223, 0, 32);
-		tab.child(6, 10280, 2, 34);
-		tab.child(7, 10404, 154, 15);
-		tab.child(8, 10405, 3, 10);
+		addSprite(10225, 1, "Interfaces/infoTab/SPRITE");
+		configHoverButton(10403, "Select1", "Interfaces/OSRSQuestTab/SPRITE", 1, 2, 3, 3, false, new int[] { 10404, 10405, 10406 });
+		configHoverButton(10404, "Select2", "Interfaces/OSRSQuestTab/SPRITE", 4, 5, 6, 6, false, new int[] { 10403, 10405, 10406 });
+		configHoverButton(10405, "Select3", "Interfaces/OSRSQuestTab/SPRITE", 7, 8, 9, 9, false, new int[] { 10403, 10404, 10406 });
+		configHoverButton(10406, "Select4", "Interfaces/OSRSQuestTab/SPRITE", 10, 11, 12, 12, false, new int[] { 10403, 10404, 10405 });
+		
+		/*
+		 * Blue Tab Text
+		 */
+		
+		/*
+		 * Red Tab
+		 */
+		
+		/*
+		 * Yellow Tab
+		 */
+		
+		/*
+		 * Purple Tab
+		 */
+		
+		tab.totalChildren(21);
+		tab.child(0, 10224, 0, 35); //pic
+		tab.child(1, 10222, 95, 240); //anguish
+		tab.child(2, 10404, 8, 12); //begin buttons
+		tab.child(3, 10405, 52, 12);
+		tab.child(4, 10406, 96, 13);
+		tab.child(5, 10403, 138, 12);
+		tab.child(6, 10225, 0, 32);
+		tab.child(7, 10225, 0, 230);
+		
+		int xPos = 0;
+		int yPos = 37;
+		int tabcount = 8;
+		for(int i=10407; i < 13+10407; i++) {
+			addHoverText(i, "Apple", "View", tda, 0, 16711680, false, true, 150);
+			tab.child(tabcount, i, xPos, yPos);
+			tabcount++;
+			yPos += 15;
+		}
+	
+		
+		/*
 		RSInterface infoList = addTabInterface(10280);
 		infoList.height = 196;
 		infoList.width = 172;
@@ -681,6 +713,10 @@ public class RSInterface {
 		addHoverText(10411, "@cr9@@or1@ Current deal: @red@None", "View Details", tda, 0, 1022259, false, true, 150);
 		addText(10412, "@or1@Player information", tda, 2, 16750899, false, true);
 
+		
+		
+		
+		
 		infoList.totalChildren(58);
 		infoList.child(0, 10406, 1, 3);
         infoList.child(1, 10407, 1, 25);
@@ -699,57 +735,59 @@ public class RSInterface {
 			frameID++;
 			Ypos += 13;
 			Ypos++;
-		}
+		}*/
 
 
 
-		RSInterface aDiary = addTabInterface(29465);
+		
 		try
 		{
-			addText(29466, "@cr17@@or1@ Diaries", tda, 2, 16750899, false, true);
-			addSprite(29467, 0, "Interfaces/infoTab/SPRITE");
-			//addButton(29468, 0, "Interfaces/infoTab/TAB", "View Main Information");
-			//addButton(29469, 1, "Interfaces/infoTab/TAB", "Quick Load Preset");
-			//addButton(29470, 2, "Interfaces/infoTab/TAB", "Refresh");
-			addButton(29471, 4, "Interfaces/infoTab/TAB", "Main tab");
-			addButton(29472, 2, "Interfaces/infoTab/TAB", "Refresh");
-			addSprite(29473, 1, "Interfaces/infoTab/SPRITE");
-			addText(29474, "@or1@Diaries Completed: @gre@0", tda, 2, 16750899, true, true);
-
-			RSInterface diaryList = addTabInterface(29475);
-			diaryList.height = 196;
-			diaryList.width = 172;
-			diaryList.scrollMax = 222;
-			diaryList.newScroller = false;
-
-			aDiary.totalChildren(8);
-			aDiary.child(0, 29466, 10, 10);
-			aDiary.child(1, 29467, 0, 35);
-			aDiary.child(2, 29473, 0, 230);
-			//aDiary.child(3, 29468, 95, 15);
-			//aDiary.child(4, 29469, 114, 15);
-			//aDiary.child(5, 29470, 133, 15);
-			aDiary.child(3, 29471, 154, 15);
-			aDiary.child(4, 29472, 172, 15);
-			aDiary.child(5, 29473, 0, 32);
-			aDiary.child(6, 29474, 95, 240);
-			aDiary.child(7, 29475, 2, 34);
-
-			diaryList.totalChildren(16);
-			int Ypos2 = 8;
-			int frameID2 = 0;
-			for (int iD2 = 29480; iD2 <= 29495; iD2++) {
-				addHoverText(iD2, "", "View", tda,
-						0, 16711680, false, true, 150);
-				diaryList.child(frameID2, iD2, 8, Ypos2);
-				frameID2++;
-				Ypos2 += 13;
-				Ypos2++;
-			}
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+			RSInterface aDiary = addTabInterface(29465);
+								addText(29466, "@cr17@@or1@ Diaries", tda, 2, 16750899, false, true);
+								addSprite(29467, 0, "Interfaces/infoTab/SPRITE");
+								//addButton(29468, 0, "Interfaces/infoTab/TAB", "View Main Information");
+								//addButton(29469, 1, "Interfaces/infoTab/TAB", "Quick Load Preset");
+								//addButton(29470, 2, "Interfaces/infoTab/TAB", "Refresh");
+								addButton(29471, 4, "Interfaces/infoTab/TAB", "Main tab");
+								addButton(29472, 2, "Interfaces/infoTab/TAB", "Refresh");
+								addSprite(29473, 1, "Interfaces/infoTab/SPRITE");
+								addText(29474, "@or1@Diaries Completed: @gre@0", tda, 2, 16750899, true, true);
+					
+								RSInterface diaryList = addTabInterface(29475);
+								diaryList.height = 196;
+								diaryList.width = 172;
+								diaryList.scrollMax = 222;
+								diaryList.newScroller = false;
+					
+								
+								aDiary.totalChildren(8);
+								aDiary.child(0, 29466, 10, 10);
+								aDiary.child(1, 29467, 0, 35);
+								aDiary.child(2, 29473, 0, 230);
+								//aDiary.child(3, 29468, 95, 15);
+								//aDiary.child(4, 29469, 114, 15);
+								//aDiary.child(5, 29470, 133, 15);
+								aDiary.child(3, 29471, 154, 15);
+								aDiary.child(4, 29472, 172, 15);
+								aDiary.child(5, 29473, 0, 32);
+								aDiary.child(6, 29474, 95, 240);
+								aDiary.child(7, 29475, 2, 34);
+					
+								diaryList.totalChildren(16);
+								int Ypos2 = 8;
+								int frameID2 = 0;
+								for (int iD2 = 29480; iD2 <= 29495; iD2++) {
+									addHoverText(iD2, "", "View", tda,
+											0, 16711680, false, true, 150);
+									diaryList.child(frameID2, iD2, 8, Ypos2);
+									frameID2++;
+									Ypos2 += 13;
+									Ypos2++;
+								}
+							}
+							catch (Exception e) {
+								e.printStackTrace();
+							}
 
 	}
 
@@ -3771,6 +3809,43 @@ public class RSInterface {
 		tab.height = tab.sprite1.myHeight;
 		tab.enabledAltSprite = Client.cacheSprite3[enabledAltSprite];
 		tab.disabledAltSprite = Client.cacheSprite3[disabledAltSprite];
+		tab.buttonsToDisable = buttonsToDisable;
+		tab.active = active;
+		tab.toggled = active;
+		tab.spriteOpacity = 255;
+	}
+	
+	
+	/*public static void addButton(int id, int sid, String spriteName, String tooltip) {
+		RSInterface tab = interfaceCache[id] = new RSInterface();
+		tab.id = id;
+		tab.parentID = id;
+		tab.type = 5;
+		tab.atActionType = 1;
+		tab.contentType = 0;
+		tab.aByte254 = (byte) 0;
+		tab.mOverInterToTrigger = 52;
+		tab.sprite1 = imageLoader(sid, spriteName);
+		tab.sprite2 = imageLoader(sid, spriteName);
+		tab.width = tab.sprite1.myWidth;
+		tab.height = tab.sprite2.myHeight;
+		tab.tooltip = tooltip;
+	}*/
+	//addButton(10403, 2, "Interfaces/infoTab/TAB", "Refresh Tab");
+	public static void configHoverButton(int id, String tooltip, String spriteName, int sprite2, int sprite1, int enabledAltSprite,
+			int disabledAltSprite, boolean active, int... buttonsToDisable) {
+		
+		RSInterface tab = addInterface(id);
+
+		tab.tooltip = tooltip;
+		tab.atActionType = OPTION_OK;
+		tab.type = TYPE_CONFIG_HOVER;
+		tab.sprite2 = imageLoader(sprite2, spriteName);
+		tab.sprite1 = imageLoader(sprite1, spriteName);
+		tab.width = tab.sprite2.myWidth;
+		tab.height = tab.sprite1.myHeight;
+		tab.enabledAltSprite = imageLoader(enabledAltSprite, spriteName);
+		tab.disabledAltSprite = imageLoader(disabledAltSprite, spriteName);
 		tab.buttonsToDisable = buttonsToDisable;
 		tab.active = active;
 		tab.toggled = active;
