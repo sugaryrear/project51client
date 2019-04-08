@@ -32,6 +32,7 @@ public class SpriteLoader {
 				sprites = new Sprite[totalSprites];
 			}
 			for (int i = 0; i < totalSprites; i++) {
+				System.out.print("Reading sprites: total = " + totalSprites);
 				int id = indexFile.readInt();
 				if (cache[id] == null) {
 					cache[id] = new SpriteLoader();

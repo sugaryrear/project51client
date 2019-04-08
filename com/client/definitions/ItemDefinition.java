@@ -406,62 +406,6 @@ public final class ItemDefinition {
 		value = 0;
 	}
 
-	/*
-	 * private void readValues(Stream stream) { while(true) { int opcode =
-	 * stream.readUnsignedByte(); if(opcode == 0) return; if(opcode == 1) modelId =
-	 * stream.readUnsignedWord(); else if(opcode == 2) name = stream.readString();
-	 * else if(opcode == 3) description = stream.readString(); else if(opcode == 4)
-	 * modelZoom = stream.readUnsignedWord(); else if(opcode == 5) modelRotation1 =
-	 * stream.readUnsignedWord(); else if(opcode == 6) modelRotation2 =
-	 * stream.readUnsignedWord(); else if(opcode == 7) { modelOffset1 =
-	 * stream.readUnsignedWord(); if(modelOffset1 > 32767) modelOffset1 -= 0x10000;
-	 * } else if(opcode == 8) { modelOffset2 = stream.readUnsignedWord();
-	 * if(modelOffset2 > 32767) modelOffset2 -= 0x10000; } else if(opcode == 11)
-	 * stackable = true; else if(opcode == 12) value = stream.readDWord(); else
-	 * if(opcode == 16) membersObject = true; else if(opcode == 23) { maleModel =
-	 * stream.readUnsignedWord(); aByte205 = stream.readSignedByte(); } else if
-	 * (opcode == 24) anInt188 = stream.readUnsignedWord(); else if (opcode == 25) {
-	 * femaleModel = stream.readUnsignedWord(); aByte154 = stream.readSignedByte();
-	 * } else if (opcode == 26) anInt164 = stream.readUnsignedWord(); else if(opcode
-	 * >= 30 && opcode < 35) { if(groundOptions == null) groundOptions = new
-	 * String[5]; groundOptions[opcode - 30] = stream.readString();
-	 * if(groundOptions[opcode - 30].equalsIgnoreCase("hidden"))
-	 * groundOptions[opcode - 30] = null; } else if(opcode >= 35 && opcode < 40) {
-	 * if(inventoryOptions == null) inventoryOptions = new String[5];
-	 * inventoryOptions[opcode - 35] = stream.readString(); } else if(opcode == 40)
-	 * { int size = stream.readUnsignedByte(); originalModelColors = new int[size];
-	 * modifiedModelColors = new int[size]; for(int index = 0; index < size;
-	 * index++) { originalModelColors[index] = stream.readUnsignedWord();
-	 * modifiedModelColors[index] = stream.readUnsignedWord(); } } else if(opcode ==
-	 * 41) { int size = stream.readUnsignedByte(); originalTextureColors = new
-	 * short[size]; modifiedTextureColors = new short[size]; for(int index = 0;
-	 * index < size; index++) { originalTextureColors[index] = (short)
-	 * stream.readUnsignedWord(); modifiedTextureColors[index] = (short)
-	 * stream.readUnsignedWord(); } } else if(opcode == 65) { searchableItem = true;
-	 * } else if(opcode == 78) anInt185 = stream.readUnsignedWord(); else if(opcode
-	 * == 79) anInt162 = stream.readUnsignedWord(); else if(opcode == 90) anInt175 =
-	 * stream.readUnsignedWord(); else if(opcode == 91) anInt197 =
-	 * stream.readUnsignedWord(); else if(opcode == 92) anInt166 =
-	 * stream.readUnsignedWord(); else if(opcode == 93) anInt173 =
-	 * stream.readUnsignedWord(); else if(opcode == 95) anInt204 =
-	 * stream.readUnsignedWord(); else if(opcode == 97) certID =
-	 * stream.readUnsignedWord(); else if(opcode == 98) certTemplateID =
-	 * stream.readUnsignedWord(); else if (opcode >= 100 && opcode < 110) { if
-	 * (stackIDs == null) { stackIDs = new int[10]; stackAmounts = new int[10]; }
-	 * stackIDs[opcode - 100] = stream.readUnsignedWord(); stackAmounts[opcode -
-	 * 100] = stream.readUnsignedWord(); } else if(opcode == 110) anInt167 =
-	 * stream.readUnsignedWord(); else if(opcode == 111) anInt192 =
-	 * stream.readUnsignedWord(); else if(opcode == 112) anInt191 =
-	 * stream.readUnsignedWord(); else if(opcode == 113) anInt196 =
-	 * stream.readSignedByte(); else if(opcode == 114) anInt184 =
-	 * stream.readSignedByte() * 5; else if(opcode == 115) team =
-	 * stream.readUnsignedByte(); else if (opcode == 139) opcode139 =
-	 * stream.readUnsignedWord(); else if (opcode == 140) opcode140 =
-	 * stream.readUnsignedWord(); else if (opcode == 148) opcode148 =
-	 * stream.readUnsignedWord(); else if (opcode == 149) opcode149 =
-	 * stream.readUnsignedWord(); else { System.out.println("Error loading item " +
-	 * id + ", opcode " + opcode); } } }
-	 */
 
 	private void readValues(Stream stream) {
 		while (true) {
@@ -1004,8 +948,11 @@ public final class ItemDefinition {
 
 	public static void dumpList() {
 		try {
-			FileWriter fw = new FileWriter(System.getProperty("user.home") + "/Desktop/item_data.json");
+			FileWriter fw = new FileWriter(System.getProperty("user.home") + "/Desktop/item_data_178.json");
 			for (int i = 0; i < totalItems; i++) {
+				if(i== 20548) {
+					i+=60;
+				}
 				ItemDefinition itemDefinition = ItemDefinition.forID(i);
 				fw.write("id: " + itemDefinition.id + " - " + itemDefinition.name + "\n");
 			}
