@@ -13017,9 +13017,10 @@ public class Client extends RSApplet {
 			for (int i = 0; i < redStones.length; i++)
 				redStones[i] = new Sprite("Gameframe/redstones/redstone" + i);
 
-			for (int i = 0; i < sideIcons.length; i++)
+			for (int i = 0; i < sideIcons.length; i++) 
 				sideIcons[i] = new Sprite("Gameframe/sideicons/sideicon" + i);
-
+			
+			
 			mapArea[0] = new Sprite("Gameframe/fixed/mapArea");
 			mapArea[1] = new Sprite("Gameframe/fixed/mapBorder");
 			mapArea[2] = new Sprite("Gameframe/resizable/mapArea");
@@ -13035,9 +13036,9 @@ public class Client extends RSApplet {
 			for (int i = 0; i < redStones.length; i++)
 				redStones[i] = new Sprite("Gameframe317/redstones/redstone" + i);
 
-			for (int i = 0; i < sideIcons.length; i++)
+			for (int i = 0; i < sideIcons.length; i++) 
 				sideIcons[i] = new Sprite("Gameframe317/sideicons/sideicon" + i);
-
+			
 			mapArea[0] = new Sprite("Gameframe/fixed/mapArea");
 			mapArea[1] = new Sprite("Gameframe317/fixed/mapBorder");
 			mapArea[2] = new Sprite("Gameframe317/resizable/mapArea");

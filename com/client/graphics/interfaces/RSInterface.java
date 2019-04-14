@@ -660,23 +660,6 @@ public class RSInterface {
 		configHoverButton(10404, "Select2", "Interfaces/OSRSQuestTab/SPRITE", 4, 5, 6, 6, false, new int[] { 10403, 10405, 10406 });
 		configHoverButton(10405, "Select3", "Interfaces/OSRSQuestTab/SPRITE", 7, 8, 9, 9, false, new int[] { 10403, 10404, 10406 });
 		configHoverButton(10406, "Select4", "Interfaces/OSRSQuestTab/SPRITE", 10, 11, 12, 12, false, new int[] { 10403, 10404, 10405 });
-		
-		/*
-		 * Blue Tab Text
-		 */
-		
-		/*
-		 * Red Tab
-		 */
-		
-		/*
-		 * Yellow Tab
-		 */
-		
-		/*
-		 * Purple Tab
-		 */
-		
 		tab.totalChildren(21);
 		tab.child(0, 10224, 0, 35); //pic
 		tab.child(1, 10222, 95, 240); //anguish
@@ -691,11 +674,16 @@ public class RSInterface {
 		int yPos = 37;
 		int tabcount = 8;
 		for(int i=10407; i < 13+10407; i++) {
-			addHoverText(i, "Apple", "View", tda, 0, 16711680, false, true, 150);
+			/*if(i==10410) {
+				addText(10410, "@or1@Player Points:", tda, 2, 16750899, false, true);
+			} else*/
+				addHoverText(i, "Apple", "View", tda, 0, 16711680, false, true, 150);
 			tab.child(tabcount, i, xPos, yPos);
 			tabcount++;
 			yPos += 15;
+			
 		}
+		
 	
 		
 		/*
@@ -1927,6 +1915,8 @@ public class RSInterface {
 
 		widget.scrollMax = 450;
 	}
+
+	
 	public static void bountyHunterWidget(TextDrawingArea[] tda) {
 		RSInterface widget = addInterface(28000);
 		addTransparentSprite(28001, 1, "Interfaces/BountyHunter/IMAGE", 20);
