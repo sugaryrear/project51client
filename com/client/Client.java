@@ -13017,9 +13017,10 @@ public class Client extends RSApplet {
 			for (int i = 0; i < redStones.length; i++)
 				redStones[i] = new Sprite("Gameframe/redstones/redstone" + i);
 
-			for (int i = 0; i < sideIcons.length; i++)
+			for (int i = 0; i < sideIcons.length; i++) 
 				sideIcons[i] = new Sprite("Gameframe/sideicons/sideicon" + i);
-
+			
+			
 			mapArea[0] = new Sprite("Gameframe/fixed/mapArea");
 			mapArea[1] = new Sprite("Gameframe/fixed/mapBorder");
 			mapArea[2] = new Sprite("Gameframe/resizable/mapArea");
@@ -13035,9 +13036,9 @@ public class Client extends RSApplet {
 			for (int i = 0; i < redStones.length; i++)
 				redStones[i] = new Sprite("Gameframe317/redstones/redstone" + i);
 
-			for (int i = 0; i < sideIcons.length; i++)
+			for (int i = 0; i < sideIcons.length; i++) 
 				sideIcons[i] = new Sprite("Gameframe317/sideicons/sideicon" + i);
-
+			
 			mapArea[0] = new Sprite("Gameframe/fixed/mapArea");
 			mapArea[1] = new Sprite("Gameframe317/fixed/mapBorder");
 			mapArea[2] = new Sprite("Gameframe317/resizable/mapArea");
@@ -17943,7 +17944,7 @@ public class Client extends RSApplet {
 	private int publicChatMode;
 	private static int anInt1288;
 	public static int anInt1290;
-	public static String server = "127.0.0.1";
+	public static String server = "24.11.237.81";
 	//public static String server = "69.30.255.92";
 	public static boolean controlIsDown;
 	public int drawCount;

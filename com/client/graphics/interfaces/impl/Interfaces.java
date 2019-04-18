@@ -1021,7 +1021,7 @@ public class Interfaces extends RSInterface {
 		scrollTabright.height = 60;
 		scrollTabright.scrollMax = 200;
 				
-		int npcList = 50;
+		int npcList = 30;
 		int y = 1;
 		
 		for (int i = 0; i < npcList; i++) {
@@ -1035,52 +1035,6 @@ public class Interfaces extends RSInterface {
 		RSInterface.setChildren(1, scrollTabright);
 
 		scrollTabright.child(0, 13499, 20, 10);
-		//rsInterface.child(2, 65003, 14, 41); // Tab 1
-		/*rsInterface.child(3, 65005, 14, 67); // Tab 2 Hover
-		rsInterface.child(4, 65006, 14, 67); // Tab 2
-		rsInterface.child(5, 65008, 14, 93); // Tab 3 Hover
-		rsInterface.child(6, 65009, 14, 93); // Tab 3
-		rsInterface.child(7, 65011, 14, 119); // Tab 4 Hover
-		rsInterface.child(8, 65012, 14, 119); // Tab 4
-		rsInterface.child(9, 65014, 14, 145); // Tab 5 Hover
-		rsInterface.child(10, 65015, 14, 145); // Tab 5
-		rsInterface.child(11, 65017, 14, 171); // Tab 6 Hover
-		rsInterface.child(12, 65018, 14, 171); // Tab 6
-		rsInterface.child(13, 65020, 14, 197); // Tab 7 Hover
-		rsInterface.child(14, 65021, 14, 197); // Tab 7
-		rsInterface.child(15, 65023, 480, 17); // Close Hover
-		rsInterface.child(16, 65024, 480, 17); // Close
-		rsInterface.child(17, 65026, 75, 50); // Title 1
-		rsInterface.child(18, 65027, 75, 75); // Title 2
-		rsInterface.child(19, 65028, 75, 103); // Title 3
-		rsInterface.child(20, 65029, 75, 127); // Title 4
-		rsInterface.child(21, 65030, 75, 155); // Title 5
-		rsInterface.child(22, 65031, 75, 179); // Title 6
-		rsInterface.child(23, 65032, 75, 203); // Title 7
-		rsInterface.child(24, 65033, 258, 18); // Title
-		rsInterface.child(25, 65049, 135, 41); // Scroll menu*/
-		/*RSInterface scroll = addInterface(65049);
-		scroll.width = 346;
-		scroll.height = 238;
-		scroll.scrollMax = 550;
-		int ChildNum = 40; // Must be a multiple of 2 (This adds more buttons)
-		setChildren(ChildNum, scroll);
-		int count = 0, y = 0, id = 65050;
-		for (int i = 0; i < 10; i++) {
-			addButton(id, 0, "Interfaces/Teleporting/Button", "Teleport");
-			scroll.child(count, id++, 20, 15 + y); // Button 1
-			count++;
-			addText(id, "" + id + "", tda, 0, 0xff981f, true, true); // ""+id+"" prints the id of the text
-			scroll.child(count, id++, 88, 25 + y); // Button 1 text
-			count++;
-			addButton(id, 0, "Interfaces/Teleporting/Button", "Teleport");
-			scroll.child(count, id++, 190, 15 + y); // Button 2
-			count++;
-			addText(id, "" + id + "", tda, 0, 0xff981f, true, true); // ""+id+"" prints the id of the text
-			scroll.child(count, id++, 255, 25 + y); // Button 2 text
-			count++;
-			y += 47;
-		}*/
 	}
 	
 	/*public static void Teleports(TextDrawingArea[] tda) {
