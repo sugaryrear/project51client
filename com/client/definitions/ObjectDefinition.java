@@ -12,6 +12,7 @@ import com.client.Model;
 import com.client.OnDemandFetcher;
 import com.client.Stream;
 import com.client.StreamLoader;
+import com.client.utilities.ReflectionUtil;
 
 public final class ObjectDefinition {
 
@@ -281,8 +282,14 @@ public final class ObjectDefinition {
 			break;
 
 		case 11601: // 11601
-			objectDef.originalTexture = new short[] { 2 };
-			objectDef.modifiedTexture = new short[] { 46 };
+			objectDef.originalTexture = new int[] { 2 };
+			objectDef.modifiedTexture = new int[] { 46 };
+			//It should be working, kinda weird that it's not
+			//
+			break;
+			
+		case 1276:
+			ReflectionUtil.printValues(objectDef);
 			break;
 		}
 		if (Client.debugModels) {
@@ -336,8 +343,8 @@ public final class ObjectDefinition {
 		description = null;
 		modifiedModelColors = null;
 		originalModelColors = null;
-		// originalTexture = null;
-		// modifiedTexture = null;
+		originalTexture = null;
+		modifiedTexture = null;
 		anInt744 = 1;
 		anInt761 = 1;
 		aBoolean767 = true;
@@ -560,8 +567,13 @@ public final class ObjectDefinition {
 
 		}
 		if (modifiedTexture != null) {
-			for (int k2 = 0; k2 < modifiedTexture.length; k2++)
-				model_3.replaceTexture(modifiedTexture[k2], originalTexture[k2]);
+			for (int k2 = 0; k2 < modifiedTexture.length; k2++) {
+				if(originalTexture[k2] < 100) {
+					model_3.overrideTexture( originalTexture[k2], modifiedTexture[k2]);
+				} else {
+					model_3.setTexture(originalTexture[k2], modifiedTexture[k2]);
+				}
+			}
 
 		}
 		if (flag)
@@ -719,11 +731,11 @@ public final class ObjectDefinition {
 				}
 			} else if (type == 41) {
 				int i1 = stream.readUnsignedByte();
-				originalTexture = new short[i1];
-				modifiedTexture = new short[i1];
+				originalTexture = new int[i1];
+				modifiedTexture = new int[i1];
 				for (int i2 = 0; i2 < i1; i2++) {
-					originalTexture[i2] = (short) stream.readUnsignedWord();
-					modifiedTexture[i2] = (short) stream.readUnsignedWord();
+					originalTexture[i2] = stream.readUnsignedWord();
+					modifiedTexture[i2] = stream.readUnsignedWord();
 				}
 			} else if (type == 60)
 				anInt746 = stream.readUnsignedWord();
@@ -815,8 +827,8 @@ public final class ObjectDefinition {
 		type = -1;
 	}
 
-	private short[] originalTexture;
-	private short[] modifiedTexture;
+	private int[] originalTexture;
+	private int[] modifiedTexture;
 	public boolean aBoolean736;
 	@SuppressWarnings("unused")
 	private byte aByte742;

@@ -17944,7 +17944,7 @@ public class Client extends RSApplet {
 	private int publicChatMode;
 	private static int anInt1288;
 	public static int anInt1290;
-	public static String server = "127.0.0.1";
+	public static String server = "24.11.237.81";
 	//public static String server = "69.30.255.92";
 	public static boolean controlIsDown;
 	public int drawCount;

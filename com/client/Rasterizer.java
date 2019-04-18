@@ -5,7 +5,7 @@ public final class Rasterizer extends DrawingArea {
     public static boolean saveDepth;
     public static float[] depthBuffer;
     private static int mipMapLevel;
-    public static int textureAmount = 60;
+    public static int textureAmount = 61;
     static boolean aBoolean1462;
     private static boolean aBoolean1463;
     public static boolean aBoolean1464 = true;
@@ -189,8 +189,10 @@ public final class Rasterizer extends DrawingArea {
             try {
                 textures[index] = new Background(streamLoader, String.valueOf(index), 0);
                 textures[index].method357();
+                textures[index].setTransparency(255, 0, 255);
                 textureCount++;
             } catch (Exception ex) {
+            	ex.printStackTrace();
             }
         }
     }

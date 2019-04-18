@@ -424,7 +424,7 @@ public class Sprite extends DrawingArea {
 		try {
 			// imageName = img; // its not used?
 			image = Toolkit.getDefaultToolkit().getImage(
-					location + img + ".png");
+					(location + img + ".png").toLowerCase());
 			ImageIcon sprite = new ImageIcon(image);
 			myWidth = sprite.getIconWidth();
 			myHeight = sprite.getIconHeight();

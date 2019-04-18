@@ -2229,6 +2229,15 @@ public class Model extends Renderable {
             }
         }
     }
+    
+    public void overrideTexture(int i, int j) {
+        for (int k = 0; k < numberOfTriangleFaces; k++) {
+        	int type = this.face_render_type[k] & 3;
+        	if(type >= 2 && face_color[k] == i) {
+                face_color[k] = j;
+            }
+        }
+    }
 
     public void method477() {
         for (int j = 0; j < numVertices; j++) {
@@ -3141,6 +3150,8 @@ public class Model extends Renderable {
         for (int i = 0; i < face_color.length; i++)
             if (fromColor == face_color[i])
                 foundAmt++;
+        if(foundAmt == 0)
+        	return;
         numberOfTexturesFaces = foundAmt;
         if (face_render_type == null)
             face_render_type = new int[foundAmt];
