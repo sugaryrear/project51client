@@ -69,7 +69,7 @@ public final class NpcDefinition {
 			entityDef.name = "Donator shop";
 			entityDef.actions = new String[] { "Talk-to", "Trade", null, null, null };
 		}
-
+	
 		if (i == 5314) {
 			entityDef.name = "Mystical Wizard";
 			entityDef.actions = new String[] { "Teleport", "Previous Location", null, null, null };
