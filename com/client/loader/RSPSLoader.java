@@ -18,7 +18,7 @@ public final class RSPSLoader {
 
 	public RSPSLoader() throws Exception {
 		classMap = new HashMap<>();
-		String ss = "./Mystic-PS.jar";
+		String ss = "./Anguish.jar";
 		final URL url = new File(ss).toURI().toURL();
 
 		classLoader = new URLClassLoader(new URL[] { url });

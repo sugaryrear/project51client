@@ -407,7 +407,7 @@ public final class ObjectDefinition {
 		cache = new ObjectDefinition[20];
 		for (int k = 0; k < 20; k++)
 			cache[k] = new ObjectDefinition();
-		dumpList();
+		//dumpList();
 	}
 
 	public boolean method577(int i) {

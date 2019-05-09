@@ -11,7 +11,7 @@ public class Configuration {
 	public static int playerAttackOptionPriority = 0;
 	public static int npcAttackOptionPriority = 2;
 
-	public static boolean debug = true;
+	public static boolean debug = false;
 	public static final boolean DUMP_SPRITES = false;
 
 	public static int xpSize = 0;
@@ -26,7 +26,7 @@ public class Configuration {
 	public static boolean enableFogRendering = false;
     public static boolean enableRainbowFog = false;
 	public static boolean bountyHunter = true;
-	public static boolean playerNames = false;
+	public static boolean playerNames = true;
 	public static int chatColor = 0;
     public static int fogColor = 0xDCDBDF;
 	public static long fogDelay = 500;
@@ -35,7 +35,7 @@ public class Configuration {
 	public static Boolean LIVE_SERVER = true;
 	public static final int PORT = 43594;
 
-	public static Boolean DUMP_DATA = true;
+	public static Boolean DUMP_DATA = false;
 	public static int dumpID = 149;
 	public static Boolean DUMP_OTHER = false;
 
@@ -50,8 +50,7 @@ public class Configuration {
 			repackIndexFour = false;
 
 	public static final String CACHE_LINK = "https://www.dropbox.com/s/pp11u938rcyt6qq/AnguishCache.zip?dl=1"; // Link for every client below client
-	// v1.12 - being deprecated after
-	// everyone updates
+
 	public static final String MEDIA_ARCHIVES_LINK = "https://www.dl.dropboxusercontent.com/sh/qpw6qpe1gqm8zq6/AABqDA9gScRH72FQBebyKm0Ba"; // Link for every
 																									// client below //
 	public static final String SPRITE_CACHE_URL = "https://www.dl.dropboxusercontent.com/sh/1km7safuq247s6l/AACFc43UzputgyZ_0SXUgDola"; // Link for every client below
@@ -78,7 +77,7 @@ public class Configuration {
 	public static int xpPosition;
 	public static boolean escapeCloseInterface = false;
 	public static boolean inventoryContextMenu = true;
-	public static int statMenuColor = 0xFF00FF;
+	public static int statMenuColor = 0x00FFFF;//0xFF00FF;
 	public static boolean alwaysLeftClickAttack;
 	public static boolean hideCombatOverlay;
 

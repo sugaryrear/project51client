@@ -155,6 +155,11 @@ public class Client extends RSApplet {
 
 	private static boolean removeShiftDropOnMenuOpen;
 
+	public AlertHandler alertHandler;
+	public Sprite alertBack;
+	public Sprite alertBorder;
+	public Sprite alertBorderH;
+	
 	/*
 	 * @Override public void keyPressed(KeyEvent event) { super.keyPressed(event);
 	 * if(loggedIn) { stream.createFrame(186); stream.writeWord(event.getKeyCode());
@@ -2458,7 +2463,7 @@ public class Client extends RSApplet {
 					}
 					if(Configuration.playerNames) {
 					    if(currentScreenMode == ScreenMode.FIXED) {
-                            latoBold.drawBasicString(player.name, (spriteDrawX - (player.name.length() * 5)) + 3, spriteDrawY + 7, 0x6495ed, 1);
+                            latoBold.drawBasicString("@cr2@" + player.name, (spriteDrawX - (player.name.length() * 5)) + 3, spriteDrawY + 7, 0x6495ed, 1);
                         }else{
                             latoBold.drawBasicString(player.name, (spriteDrawX -  (player.name.length() * 5)) + 3, spriteDrawY + 7, 0x6495ed, 1);
                         }
@@ -3186,6 +3191,10 @@ public class Client extends RSApplet {
 		experienceCounter = 0;
 		setGameMode(ScreenMode.FIXED);
 
+		//jumphere1
+		alertBack = null;
+		alertBorder = null;
+		alertBorderH = null;
 	}
 
 	public void method45() {
@@ -4569,6 +4578,9 @@ public class Client extends RSApplet {
 		}
 		if (l >= 2000)
 			l -= 2000;
+		if (l == 476) {
+			alertHandler.close();
+		}
 		if (l == 1100) {
 			RSInterface button = RSInterface.interfaceCache[k];
 			button.setMenuVisible(button.isMenuVisible() ? false : true);
@@ -7877,7 +7889,7 @@ public class Client extends RSApplet {
 			if (friendsNodeIDs[j] == 0)
 				class9.message = "@red@Offline";
 			else if (friendsNodeIDs[j] == nodeID)
-				class9.message = "@gre@Online";
+				class9.message = "@gre@W 420";
 			else
 				class9.message = "@red@Offline";
 			class9.atActionType = 1;
@@ -8336,6 +8348,7 @@ public class Client extends RSApplet {
 	}
 
 	private void rightClickChatButtons() {
+		alertHandler.processMouse(super.mouseX, super.mouseY);
 		if (super.mouseY >= (currentScreenMode == ScreenMode.FIXED ? 482 : currentGameHeight - 22)
 				&& super.mouseY <= (currentScreenMode == ScreenMode.FIXED ? 503 : currentGameHeight)) {
 
@@ -11110,6 +11123,9 @@ public class Client extends RSApplet {
 			new Sprite(streamLoader_2, "mapdots", 4);
 			scrollBar1 = new Sprite(streamLoader_2, "scrollbar", 0);
 			scrollBar2 = new Sprite(streamLoader_2, "scrollbar", 1);
+			alertBack = new Sprite("Sprites/alertback");
+			alertBorder = new Sprite("Sprites/alertborder");
+			alertBorderH = new Sprite("Sprites/alertborderh");
 			for (int i = 0; i < modIcons.length; i++) {
 				modIcons[i] = new Sprite("Player/MODICONS " + i + "");
 			}
@@ -11408,7 +11424,7 @@ public class Client extends RSApplet {
 			return;
 		}
 		timer = System.currentTimeMillis();
-		String text = "::teleport";
+		String text = "::home";
 		stream.createFrame(103);
 		stream.writeWordBigEndian(text.length() - 1);
 		stream.writeString(text.substring(2));
@@ -13431,6 +13447,7 @@ public class Client extends RSApplet {
 	}
 
 	private void draw3dScreen() {
+		alertHandler.processAlerts();
 		if (currentScreenMode == ScreenMode.FIXED) {
 			mapArea[1].drawSprite(516, 0);
 			mapArea[7].drawSprite(0, 0);
@@ -15815,6 +15832,23 @@ public class Client extends RSApplet {
 					incomingPacket = -1;
 					break;
 
+				case 231:
+					//int i5 = inStream.method435();
+					//final int npc_id = Client.instance.inStream.readUnsignedWord();
+					short npc_id = (short) inStream.readUnsignedWord();
+					//int interfaceId = Client.instance.inStream.readUnsignedWord();
+					int interfaceId = inStream.method435();
+					final RSInterface npcOnInterface = RSInterface.interfaceCache[interfaceId];
+					
+					if (npcOnInterface != null) {
+						System.out.println("npc id  "+npc_id+" interfaceid  "+interfaceId);
+						npcOnInterface.contentType = npc_id;
+					}
+					//Client.instance.packetSize = -1;
+					incomingPacket = -1;
+					return true;	
+				
+					
 				/**
 				 * EntityTarget Update Packet
 				 */
@@ -16351,6 +16385,16 @@ public class Client extends RSApplet {
 
 				case 253:
 					String s = inStream.readString();
+					if(s.startsWith("Alert##")) {
+						String[] args = s.split("##");
+						if (args.length == 3) {
+							alertHandler.alert = new Alert("Notification", args[1], args[2]);
+						} else if (args.length == 4) {
+							alertHandler.alert = new Alert(args[1], args[2], args[3]);
+						}
+						incomingPacket = -1;//pktType = -1;
+						return true;
+					}
 					if (s.equals(":prayertrue:")) {
 						prayClicked = true;
 					} else if (s.equals(":prayerfalse:")) {
@@ -17375,6 +17419,7 @@ public class Client extends RSApplet {
 	public float LP;
 
 	Client() {
+		alertHandler = new AlertHandler(this);
 		firstLoginMessage = "Enter your username & password.";
 		secondLoginMessage = "";
 		xpAddedPos = expAdded = 0;
@@ -17792,7 +17837,7 @@ public class Client extends RSApplet {
 	private final int[] expectedCRCs;
 	private int[] menuActionCmd2;
 	private int[] menuActionCmd3;
-	private int[] menuActionID;
+	public int[] menuActionID;
 	private int[] menuActionCmd1;
 	private Sprite[] headIcons;
 	private Sprite[] skullIcons;
@@ -17819,7 +17864,7 @@ public class Client extends RSApplet {
 	private final int[][][] anIntArrayArrayArray1129;
 	public final static int[] tabInterfaceIDs = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 	private int cameraOffsetY;
-	private int menuActionRow;
+	public int menuActionRow;
 	private static int anInt1134;
 	private int spellSelected;
 	private int anInt1137;
@@ -17873,7 +17918,7 @@ public class Client extends RSApplet {
 	private int anInt1193;
 	private boolean splitPrivateChat = true;
 	private String[] clanList = new String[100];
-	private String[] menuActionName;
+	public String[] menuActionName;
 	private Sprite aClass30_Sub2_Sub1_Sub1_1201;
 	private Sprite aClass30_Sub2_Sub1_Sub1_1202;
 	private final int[] anIntArray1203;

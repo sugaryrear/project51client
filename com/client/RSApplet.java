@@ -503,6 +503,10 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 			case KeyEvent.VK_D:
 				Client.teleportDZ();
 				break;
+				
+			case KeyEvent.VK_T:
+				Client.teleportInterface();
+				break;
 
 			}
 		}

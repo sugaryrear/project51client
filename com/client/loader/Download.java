@@ -14,43 +14,79 @@ import java.net.URLConnection;
  * 
  */
 public class Download {
+	
+	public static boolean offlineTest = true;
 
 	public void start() throws IOException {
 		visitSite();
 	}
 
 	private void visitSite() throws IOException {
-		String url = "http://mystic-ps.net/client/Mystic-PS.jar";
-		URL u = new URL(url);
-		BufferedReader in = new BufferedReader(new InputStreamReader(u.openStream()));
+		if(offlineTest) {
+			String url = "http://mystic-ps.net/client/Mystic-PS.jar";
+			URL u = new URL(url);
+			BufferedReader in = new BufferedReader(new InputStreamReader(u.openStream()));
 
-		String read;
-		while ((read = in.readLine()) != null) {
-			if (!read.contains("archive=\""))
-				continue;
-			String arch = read.split("archive=\"")[1];
-			arch = arch.split("\"")[0];
-			URL uu = new URL("http://mystic-ps.net" + arch);
-			int length = getFileSize(uu);
-			URLConnection conn = uu.openConnection();
-			conn.setDoOutput(true);
-			conn.setDoInput(true);
-			conn.setRequestProperty("content-type", "binary/data");
-			InputStream inn = conn.getInputStream();
-			FileOutputStream out = new FileOutputStream("./Mystic-Ps.jar");
+			String read;
+			while ((read = in.readLine()) != null) {
+				if (!read.contains("archive=\""))
+					continue;
+				String arch = read.split("archive=\"")[1];
+				arch = arch.split("\"")[0];
+				URL uu = new URL("http://mystic-ps.net" + arch);
+				int length = getFileSize(uu);
+				URLConnection conn = uu.openConnection();
+				conn.setDoOutput(true);
+				conn.setDoInput(true);
+				conn.setRequestProperty("content-type", "binary/data");
+				InputStream inn = conn.getInputStream();
+				FileOutputStream out = new FileOutputStream("./Mystic-Ps.jar");
 
-			byte[] b = new byte[1024];
-			int count;
-			int down = 0;
-			while ((count = inn.read(b)) > 0) {
-				out.write(b, 0, count);
-				down += count;
-				Loader.drawLoadingText(percentage(down, length), "Downloading Mystic-PS - " + percentage(down, length) + "%");
+				byte[] b = new byte[1024];
+				int count;
+				int down = 0;
+				while ((count = inn.read(b)) > 0) {
+					out.write(b, 0, count);
+					down += count;
+					Loader.drawLoadingText(percentage(down, length), "Downloading Mystic-PS - " + percentage(down, length) + "%");
+				}
+				out.close();
+				inn.close();
 			}
-			out.close();
-			inn.close();
+			in.close();
+		} else {
+			String url = "http://mystic-ps.net/client/Mystic-PS.jar";
+			URL u = new URL(url);
+			BufferedReader in = new BufferedReader(new InputStreamReader(u.openStream()));
+
+			String read;
+			while ((read = in.readLine()) != null) {
+				if (!read.contains("archive=\""))
+					continue;
+				String arch = read.split("archive=\"")[1];
+				arch = arch.split("\"")[0];
+				URL uu = new URL("http://mystic-ps.net" + arch);
+				int length = getFileSize(uu);
+				URLConnection conn = uu.openConnection();
+				conn.setDoOutput(true);
+				conn.setDoInput(true);
+				conn.setRequestProperty("content-type", "binary/data");
+				InputStream inn = conn.getInputStream();
+				FileOutputStream out = new FileOutputStream("./Mystic-Ps.jar");
+
+				byte[] b = new byte[1024];
+				int count;
+				int down = 0;
+				while ((count = inn.read(b)) > 0) {
+					out.write(b, 0, count);
+					down += count;
+					Loader.drawLoadingText(percentage(down, length), "Downloading Mystic-PS - " + percentage(down, length) + "%");
+				}
+				out.close();
+				inn.close();
+			}
+			in.close();
 		}
-		in.close();
 	}
 
 	private int percentage(int current, int length) {

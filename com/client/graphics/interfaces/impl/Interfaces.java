@@ -233,6 +233,7 @@ public class Interfaces extends RSInterface {
 
 	    a(63129, 373, 202, 19, localC1);
 	  }*/
+	
 	public static void mysteryBox(TextDrawingArea[] tda) {
 		RSInterface iface = addInterface(47000);
 		/* Base interface */
@@ -966,13 +967,17 @@ public class Interfaces extends RSInterface {
 		addText(65028, "Teleport", tda, 2, 0xffff00, true, true);
 		addToItemGroup(65098,/*0,*/ 8, 8, 5, 5, false, null, null, null, null, null, null);
 
+		 //Adds the NPC Onto the interface.
+		//RSInterface.modelViewer(13500, 1, 23889, 750);
+		RSInterface.drawNpcOnInterface(65099, 100, 100);
+		
 		//interfaceCache[65099 + i].TYPE_MODEL = 5;
 		/*
 		 * interfaceCache[34010 + i].inv[0] = 14485;
 			interfaceCache[34010 + i].invStackSizes[0] = 1;
 		 */
 	
-		setChildren(25, rsInterface);
+		setChildren(26, rsInterface);
 		rsInterface.child(0, 65001, 7, 10); // Background
 		rsInterface.child(1, 65002, 215, 68); // "preview"
 		rsInterface.child(2, 65003, 405, 68); //"description"
@@ -1010,6 +1015,7 @@ public class Interfaces extends RSInterface {
 		rsInterface.child(22, 65027, 430, 150);
 		rsInterface.child(23, 65028, 220, 212);
 		rsInterface.child(24, 65098, 150, 265);
+		rsInterface.child(25, 65099, 160, 95);
 		
 		//Scoll bar size, witdh and scrolling size.
 		scrollTableft.width = 101;

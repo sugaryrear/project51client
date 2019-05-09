@@ -2155,6 +2155,48 @@ public class RSInterface {
 
 	public static void wellOfGoodWill(TextDrawingArea[] tda) {
 		RSInterface wogw = addInterface(38000);
+		addSprite(38001, 0, "Interfaces/WellOfGoodWill/IMAGE");
+		addText(38002, "Well Of Goodwill", tda, 2, 0xFF981F, true, true);
+		addText(38003, "Double Experience Points", tda, 2, 0xFF981F, false, true);
+		addText(38004, "Bonus Minigame Points", tda, 2, 0xFF981F, false, true);
+		addText(38005, "Droprate Increase (x2)", tda, 2, 0xFF981F, false, true);
+		addClickableSprites(38006, "Toggle", "Interfaces/WellOfGoodWill/IMAGE", 5, 5, 6);
+		addClickableSprites(38007, "Toggle", "Interfaces/WellOfGoodWill/IMAGE", 5, 5, 6);
+		addClickableSprites(38008, "Toggle", "Interfaces/WellOfGoodWill/IMAGE", 5, 5, 6);
+		configHoverButton(38009, "Donate Coins", "Interfaces/WellOfGoodWill/IMAGE", 3, 4, 4, 4, false, new int[] { 38009});
+		configHoverButton(38010, "Close Window", "Interfaces/WellOfGoodWill/IMAGE", 1, 2, 2, 2, false, new int[] { 38010});
+		addText(38011, "Add Gold", tda, 2, 0xFF981F, false, true);
+		addText(38012, "Double PK Points", tda, 2, 0xFF981F, false, true);
+		addClickableSprites(38013, "Toggle", "Interfaces/WellOfGoodWill/IMAGE", 5, 5, 6);
+		addSprite(38014, 8, "Interfaces/WellOfGoodWill/IMAGE");
+		addText(38015, "Goal1", tda, 2, 0xcc6d00, false, true);
+		addText(38016, "Goal2", tda, 2, 0xcc6d00, false, true);
+		addText(38017, "Goal3", tda, 2, 0xcc6d00, false, true);
+		addText(38018, "Goal4", tda, 2, 0xcc6d00, false, true);
+		//addInputField(38019, 30, 0xFF981F, "Amount of coins", 134, 20, false, true, "[0-9]");
+		
+		setChildren(18, wogw);
+		setBounds(38001, 5, 8, 0, wogw);
+		setBounds(38002, 270, 25, 1, wogw);
+		setBounds(38003, 185, 80, 2, wogw);
+		setBounds(38004, 185, 110, 3, wogw);
+		setBounds(38005, 185, 140, 4, wogw);
+		setBounds(38006, 360, 80, 5, wogw);
+		setBounds(38007, 360, 110, 6, wogw);
+		setBounds(38008, 360, 140, 7, wogw);
+		setBounds(38009, 255, 205, 9, wogw);
+		setBounds(38010, 470, 25, 8, wogw);
+		setBounds(38011, 261, 214, 10, wogw);
+		setBounds(38012, 185, 170, 11, wogw);
+		setBounds(38013, 360, 170, 12, wogw);
+		setBounds(38014, 42, 64, 13, wogw);
+		setBounds(38015, 385, 80, 14, wogw);
+		setBounds(38016, 385, 110, 15, wogw);
+		setBounds(38017, 385, 140, 16, wogw);
+		setBounds(38018, 385, 170, 17, wogw);
+		//setBounds(38019, 215, 198, 18, wogw);
+		
+		/*RSInterface wogw = addInterface(38000);
 		addSprite(38001, 0, "Interfaces/Wogw/IMAGE");
 		addText(38002, "Well Of Goodwill", tda, 2, 0xFF981F, true, true);
 		addText(38003, "Experience (x2)", tda, 2, 0xFF981F, true, true);
@@ -2217,7 +2259,7 @@ public class RSInterface {
 		setBounds(38034, 140, 272, 3, last);
 		setBounds(38035, 140, 284, 4, last);
 		setBounds(38036, 140, 296, 5, last);
-		setBounds(38037, 140, 308, 6, last);
+		setBounds(38037, 140, 308, 6, last);*/
 	}
 
 	public static void safeBox(TextDrawingArea[] wid) {
@@ -5032,6 +5074,30 @@ public class RSInterface {
 		rsi.type = 8;
 		rsi.hoverText = text;
 	}
+	
+	public static void drawNpcOnInterface(int childId, int npcId, int zoom) {
+		//System.out.print("We are loading an NPC HERE \n");
+		final RSInterface rsInterface = interfaceCache[childId] = new RSInterface();
+		rsInterface.id = childId;
+		rsInterface.parentID = childId;
+		rsInterface.type = 6;
+		rsInterface.atActionType = 3291;
+		//rsInterface.actionType = 3291;
+		// rsInterface.contentType = 3291;
+		rsInterface.contentType = npcId;
+		//rsInterface.contentId = npcId;
+		rsInterface.width = 136;
+		rsInterface.height = 168;
+		rsInterface.opacity = 0;
+		rsInterface.isMouseoverTriggered = false;
+		rsInterface.modelZoom = zoom;
+		rsInterface.modelRotation1 = 150;
+		rsInterface.modelRotation2 = 0;
+		//rsInterface.modelRotationY = 150;
+		//rsInterface.modelRotationX = 0;
+		rsInterface.anInt257 = rsInterface.anInt258 = NpcDefinition.forID(npcId).walkAnim;
+													//EntityDefinition.forId(npcId).walkAnim;
+	}
 
 	public static void addButton(int id, int sid, String spriteName, String tooltip) {
 		RSInterface tab = interfaceCache[id] = new RSInterface();
@@ -5136,6 +5202,23 @@ public class RSInterface {
 		tab.height = height;
 		tab.tooltip = text;
 	}
+	
+	public static void addHoverButton2(int i, String imageName, int j, int k, int width, int height, String text,
+			int contentType, int hoverOver, int aT) {// hoverable button
+		RSInterface tab = addTabInterface(i);
+		tab.id = i;
+		tab.parentID = i;
+		tab.type = 5;
+		tab.atActionType = aT;
+		tab.contentType = contentType;
+		tab.aByte254 = 0;
+		tab.mOverInterToTrigger = hoverOver;
+		tab.sprite1 = imageLoader(j, imageName);
+		tab.sprite2 = imageLoader(k, imageName);
+		tab.width = width;
+		tab.height = height;
+		tab.tooltip = text;
+	}
 
 	public static void addHoveredButton(int i, String imageName, int j, int w, int h, int IMAGEID) {// hoverable button
 		RSInterface tab = addTabInterface(i);
@@ -5153,6 +5236,7 @@ public class RSInterface {
 		tab.totalChildren(1);
 		tab.child(0, IMAGEID, 0, 0);
 	}
+	
 
 	public static void addHoverImage(int i, int j, int k, String name) {
 		RSInterface tab = addTabInterface(i);
