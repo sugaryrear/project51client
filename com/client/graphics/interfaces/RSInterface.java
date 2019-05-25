@@ -592,61 +592,109 @@ public class RSInterface {
 			scroll.scrollMax = 1325;
 		}
 	}
+	
+	public static void manual(TextDrawingArea[] tda) {
+		RSInterface tab = addInterface(60000);
+		addSprite(60001, 0, "Interfaces/GuideBook/SPRITE");
+		addSprite(60002, 1, "Interfaces/GuideBook/SPRITE");
+		addSprite(60003, 2, "Interfaces/GuideBook/SPRITE");
+		addText(60004, "Guide Book", tda, 3, 0x9b5e0f, false, true); // 3 is fancy font, 2 is easier to read
+		
+		configHoverButton(60005, "Close", "Interfaces/GuideBook/SPRITE", 1, 2, 2, 2, false, new int[] { 60005 });
+		
+		//addText(60005, Client.latoBold.drawBasicString("aaa", 0, 0), tda, 3, 16750899, false, true); //("aaa"), tda, 3, 16750899, false, true);
+		//Client.latoBold.drawCenteredString(target.currentHealth + " / " + target.maxHealth, xPos + (width / 2) - 2, yPos + 33, 16777215, 0x000000);
+		tab.totalChildren(4);
+		
+		tab.child(0, 60001, 14, 19);
+		tab.child(1, 60005, 443, 50);
+		tab.child(2, 60100, 122, 90);
+		tab.child(3, 60004, 224, 60);
+		
+		RSInterface scrollsection = addTabInterface(60100);
+        scrollsection.height = 166; //196
+        scrollsection.width = 320;
+        scrollsection.scrollMax = 440;
+        scrollsection.newScroller = false;       
+        scrollsection.totalChildren(42);
+		
+        int id = 60101;
+        int yPOS = 0;
+        for(int x=0; x < 42; x++) {
+        	//addHoverText(i, "Apple", "View", tda, 0, 16711680, false, true, 150);
+        	addClickableTextCustomColor(id, "CLICK HERE", "Select", tda, 1, 16711680, 16750899, false, true, 200);
+        	//addText(id, "TEST 123456789 abcdefghijklmnop", tda, 1, 16750899, false, true);
+        	scrollsection.child(x, id, 105, yPOS);
+        	id++;
+        	yPOS += 12;
+        }
+        
+	}
+
     public static void infoTab(TextDrawingArea[] tda) {
         RSInterface tab = addTabInterface(47500);
-        addText(47501, "@or1@Info Tab", tda, 2, 16750899, false, true);
-        addHoverText(47502, "@or1@Call for help", "Call help",tda, 2, 16750899, true, true,100);
-        addSprite(47503, 0, "Interfaces/infoTab/SPRITE");
+        addText(47501, "@or1@Teleport Tab", tda, 2, 16750899, false, true);
+        addSprite(47502, 3, "Interfaces/infoTab/SPRITE");
+        addSprite(47503, 2, "Interfaces/infoTab/SPRITE");
         addSprite(47504, 1, "Interfaces/infoTab/SPRITE");
-        addText(47505, "@cr10@", tda, 2, 16750899, false, true);
-        tab.totalChildren(7);
-        tab.child(0, 47501, 20, 7);
-        tab.child(1, 47502, 38, 240);
-        tab.child(2, 47503, 0, 35);
-        tab.child(3, 47504, 0, 230);
 
-        tab.child(4, 47503, 0, 32);
-        tab.child(5, 47506, 2, 34);
-        tab.child(6, 47505, 3, 10);
-        RSInterface infoList = addTabInterface(47506);
-        infoList.height = 196;
-        infoList.width = 172;
-        infoList.scrollMax = 250;
-        infoList.newScroller = false;
+        configHoverButton(47505, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47505 });
+        configHoverButton(47506, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47506 });
+        configHoverButton(47507, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47507 });
+        configHoverButton(47508, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47508 });
+        configHoverButton(47509, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47509 });
+        configHoverButton(47510, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47510 });
+       
+        addText(47511, "@or1@Monsters", tda, 1, 16750899, false, true);
+        addText(47512, "@or1@Minigames", tda, 1, 16750899, false, true);
+        addText(47513, "@or1@Skilling", tda, 1, 16750899, false, true);
+        addText(47514, "@or1@Bosses", tda, 1, 16750899, false, true);
+        addText(47515, "@or1@Wilderness", tda, 1, 16750899, false, true);
+        addText(47516, "@or1@Cities", tda, 1, 16750899, false, true);
+        
+        tab.totalChildren(19);
+        tab.child(0, 47501, 55, 7);
+        tab.child(1, 47503, 0, 117);
+        tab.child(2, 47504, 0, 252);
+        tab.child(3, 47504, 0, 114);
+        tab.child(4, 47606, 0, 116);
+        tab.child(5, 47505, 9, 27);
+        tab.child(6, 47506, 9, 56);
+        tab.child(7, 47507, 9, 85);
+        tab.child(8, 47508, 99, 27);
+        tab.child(9, 47509, 99, 56);
+        tab.child(10, 47510, 99, 85);
+        tab.child(11, 47502, 31, 5);
+        tab.child(12, 47502, 140, 5);
+        tab.child(13, 47511, 22, 32);
+        tab.child(14, 47512, 20, 61);
+        tab.child(15, 47513, 30, 90);
+        tab.child(16, 47514, 119, 32);
+        tab.child(17, 47515, 108, 61);
+        tab.child(18, 47516, 125, 90);
 
-
-        infoList.totalChildren(58);
-
-        addText(47507, "@or1@Useful Stuff", tda, 2, 16750899, false, true);
-        addHoverText(47508, "@or1@View Achievements", "View Achievements", tda, 0, 1022259, false, true, 150);
-        addHoverText(47509, "@or1@View Npc Drops", "View  Npc Drops", tda, 0, 1022259, false, true, 150);
-        addHoverText(47510, "@or1@View Npc KillCount", "View Npc KillCount", tda, 0, 1022259, false, true, 150);
-        addHoverText(47511, "@or1@View Titles", "View Titles", tda, 0, 1022259, false, true, 150);
-        addHoverText(47512, "", "View Details", tda, 0, 1022259, false, true, 150);
-        addText(47513, "@or1@Quick Links", tda, 2, 16750899, false, true);
-
-        infoList.totalChildren(58);
-        infoList.child(0, 47507, 1, 3);
-        infoList.child(1, 47508, 1, 25);
-        infoList.child(2, 47509, 1, 41);
-        infoList.child(3, 47510, 1, 57);
-        infoList.child(4, 47511, 1, 73);
-        infoList.child(5, 47512, 1, 89);
-        infoList.child(6, 47513, 1, 105);
-
-        int Ypos = 123;
-        int frameID = 7;
-        for (int iD = 47514; iD <= 47564; iD++) {
-            addHoverText(iD, "", "View", tda,
-                    0, 16711680, false, true, 150);
-            infoList.child(frameID, iD, 1, Ypos);
-            frameID++;
-            Ypos += 13;
-            Ypos++;
+        RSInterface scrollsection = addTabInterface(47606);
+        scrollsection.height = 136; //196
+        scrollsection.width = 174;
+        scrollsection.scrollMax = 440;
+        scrollsection.newScroller = false;       
+        scrollsection.totalChildren(42);
+   
+        int Ypos = 0;
+        int frameID = 0;
+        for(int iD = 47607; iD <= 47627; iD++) {
+        	configHoverButton(iD, "Teleport", "Interfaces/infoTab/SPRITE", 6, 7, 7, 7, false, new int[] { iD });
+        	scrollsection.child(frameID, iD, 0, Ypos);
+        	frameID++;
+        	Ypos += 22;
         }
-
-
-
+        Ypos = 4;
+        for(int iD = 47628; iD <= 47648; iD++) {
+        	addText(iD, "@or1@Teleport name", tda, 1, /*16750899*/1022259, false, true);
+        	scrollsection.child(frameID, iD, 5, Ypos);
+        	frameID++;
+        	Ypos += 22;
+        }
     }
 	public static void questTab(TextDrawingArea[] tda) {
 		RSInterface tab = addTabInterface(10220);
@@ -656,10 +704,10 @@ public class RSInterface {
 		addText(10222, "@or1@Anguish", tda, 2, 16750899, true, true);
 		addSprite(10224, 0, "Interfaces/infoTab/SPRITE");
 		addSprite(10225, 1, "Interfaces/infoTab/SPRITE");
-		configHoverButton(10403, "Select1", "Interfaces/OSRSQuestTab/SPRITE", 1, 2, 3, 3, false, new int[] { 10404, 10405, 10406 });
-		configHoverButton(10404, "Select2", "Interfaces/OSRSQuestTab/SPRITE", 4, 5, 6, 6, false, new int[] { 10403, 10405, 10406 });
-		configHoverButton(10405, "Select3", "Interfaces/OSRSQuestTab/SPRITE", 7, 8, 9, 9, false, new int[] { 10403, 10404, 10406 });
-		configHoverButton(10406, "Select4", "Interfaces/OSRSQuestTab/SPRITE", 10, 11, 12, 12, false, new int[] { 10403, 10404, 10405 });
+		configHoverButton(10403, "Select", "Interfaces/OSRSQuestTab/SPRITE", 1, 2, 3, 3, false, new int[] { 10404, 10405, 10406 });
+		configHoverButton(10404, "Select", "Interfaces/OSRSQuestTab/SPRITE", 4, 5, 6, 6, false, new int[] { 10403, 10405, 10406 });
+		configHoverButton(10405, "Select", "Interfaces/OSRSQuestTab/SPRITE", 7, 8, 9, 9, false, new int[] { 10403, 10404, 10406 });
+		configHoverButton(10406, "Select", "Interfaces/OSRSQuestTab/SPRITE", 10, 11, 12, 12, false, new int[] { 10403, 10404, 10405 });
 		tab.totalChildren(21);
 		tab.child(0, 10224, 0, 35); //pic
 		tab.child(1, 10222, 95, 240); //anguish
@@ -5604,6 +5652,30 @@ public class RSInterface {
 		tab.textColor = color;
 		tab.secondaryColor = 0;
 		tab.hoverTextColor = 0xffffff;
+		tab.anInt239 = 0;
+		tab.tooltip = tooltip;
+	}
+	
+	public static void addClickableTextCustomColor(int id, String text, String tooltip, TextDrawingArea tda[], int idx, int color, int hovercolor,
+			boolean center, boolean shadow, int width) {
+		RSInterface tab = addTabInterface(id);
+		tab.parentID = id;
+		tab.id = id;
+		tab.type = 4;
+		tab.atActionType = 1;
+		tab.width = width;
+		tab.height = 11;
+		tab.contentType = 0;
+		tab.opacity = 0;
+		tab.mOverInterToTrigger = -1;
+		tab.centerText = center;
+		tab.textShadow = shadow;
+		tab.textDrawingAreas = tda[idx];
+		tab.message = text;
+		tab.hoverText = text;
+		tab.textColor = color;
+		tab.secondaryColor = 0;
+		tab.hoverTextColor = hovercolor;
 		tab.anInt239 = 0;
 		tab.tooltip = tooltip;
 	}

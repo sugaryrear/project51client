@@ -699,6 +699,8 @@ public class RSFont extends DrawingArea {
 		text = text.replaceAll("@cr20@", "<img=20>");
 		text = text.replaceAll("@cr21@", "<img=21>");
 		text = text.replaceAll("@cr22@", "<img=22>");
+		text = text.replaceAll("@cr23@", "<img=23>");
+		text = text.replaceAll("@cr24@", "<img=24>");
 		return text;
 	}
 

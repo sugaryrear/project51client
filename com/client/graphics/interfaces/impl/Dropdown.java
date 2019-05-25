@@ -161,7 +161,7 @@ public enum Dropdown {
                     Configuration.enableFogRendering = true;
                     Configuration.enableRainbowFog= true;
                     Client.instance.pushMessage("Please do ::fogdelay to add a timer to the fog!", 0,"");
-					Client.instance.pushMessage("@red@ Warning this could give you seizures! Use at an extreme caution! Mystic-PS not responsible! LoL", 0,"");
+					Client.instance.pushMessage("@red@ Warning this could give you seizures! Use at an extreme caution! Anguish not responsible! LoL", 0,"");
                 return;
 
 			}

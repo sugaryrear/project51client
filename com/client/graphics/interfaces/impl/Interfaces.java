@@ -85,6 +85,7 @@ public class Interfaces extends RSInterface {
 		addStaffSpecialWidget();
 		skillTabWithHovers(defaultTextDrawingAreas);
 		normals(defaultTextDrawingAreas);
+		manual(defaultTextDrawingAreas);
 	}
 	
 	/* public static void TeleInterface(TextDrawingArea[] tda) {

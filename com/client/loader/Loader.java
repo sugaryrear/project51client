@@ -51,6 +51,7 @@ public class Loader {
 			BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 			cacheVersion = Double.parseDouble(br.readLine());
 			br.close();
+			System.out.print("Read from URL: VERSION_URL: " + cacheVersion);
 		} catch (Exception localException) {
 			localException.printStackTrace();
 			System.out.println("We're getting an error!");
@@ -89,6 +90,7 @@ public class Loader {
 			drawLoadingText(0, "Checking for updates - 0%");
 			try {
 	            double newest = getNewestVersion();
+	            System.out.print("NEWEST: " + newest + " currvers: " + getNewestVersion());
 	            if (newest > getCurrentVersion()) {
 	            		for (int i = 0; i < 4; i++) {
 	            			fetchCacheSub(i);
