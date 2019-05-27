@@ -304,6 +304,20 @@ public enum Dropdown {
 		public void selectOption(int selected, RSInterface r) {
 			Configuration.npcAttackOptionPriority = selected;
 		}
+	},
+	
+	PLAYERNAMES() {
+		@Override
+		public void selectOption(int selected, RSInterface r) {
+			switch(selected) {
+				case 0:
+					Configuration.playerNames = true;
+					return;
+				case 1:
+					Configuration.playerNames = false;
+					return;
+			}
+		}
 	}
 	;
 

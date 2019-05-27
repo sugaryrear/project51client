@@ -642,18 +642,19 @@ public class Interfaces extends RSInterface {
 		scroll.width = 366;
 		scroll.height = 238;
 		scroll.scrollMax = 550;
-		scroll.totalChildren(22);
+		scroll.totalChildren(24);
 		addText(39004, "Old Gameframe", tda, 2, 0xFFA500, false, true);
 		addText(39005, "Game Timers", tda, 2, 0xFFA500, false, true);
 		addText(39006, "Anti-aliasing", tda, 2, 0xFFA500, false, true);
 		addText(39007, "Ground item names", tda, 2, 0xFFA500, false, true);
-		addText(39008, "Fog", tda, 2, 0xFFA500, false, false);
+		addText(39008, "Fog", tda, 2, 0xFFA500, false, true);
 		addText(39009, "Smooth shading", tda, 2, 0xFFA500, false, true);
 		addText(39010, "Tile blending", tda, 2, 0xFFA500, false, true);
         addText(39019, "Inventory Menu", tda, 2, 0xFFA500, false, true);
 		addText(39023, "Bounty Hunter", tda, 2, 0xFFA500, false, true);
 		addText(39024, "Entity Target", tda, 2, 0xFFA500, false, true);
 		addText(39028, "Chat effect", tda, 2, 0xFFA500, false, true);
+		addText(39029, "Player Names", tda, 2, 0xFFA500, false, true);
 		dropdownMenu(39011, 166,1, new String[]{"On", "Off"}, Dropdown.OLD_GAMEFRAME, tda, 1);
 		dropdownMenu(39012, 166,0, new String[]{"On", "Off"}, Dropdown.GAME_TIMERS, tda, 1);
 		dropdownMenu(39013, 166,1, new String[]{"On", "Off"}, Dropdown.ANTI_ALIASING, tda, 1);
@@ -665,7 +666,9 @@ public class Interfaces extends RSInterface {
 		dropdownMenu(39025, 166,0, new String[]{"On", "Off"}, Dropdown.BOUNTY_HUNTER, tda, 1);
 		dropdownMenu(39026, 166,0, new String[]{"On", "Off"}, Dropdown.TARGET_INTERFACE, tda, 1);
 		dropdownMenu(39027, 166,0, new String[]{"Yellow(Default)", "Red","Green","Cyan","Purple","White","Flash 1","Flash 2", "Flash 3","Glow 1", "Glow 2","Glow 3"}, Dropdown.CHAT_EFFECT, tda, 1);
-
+		dropdownMenu(39030, 166,0, new String[]{"On", "Off"}, Dropdown.PLAYERNAMES, tda, 1);
+		
+		
 		setBounds(39004,3,0,0,scroll);
 		setBounds(39005,3,25,1,scroll);
 		setBounds(39006,3,50,2,scroll);
@@ -688,6 +691,8 @@ public class Interfaces extends RSInterface {
 		setBounds(39025,199,200,9,scroll);
 		setBounds(39026,199,225,8,scroll);
 		setBounds(39027,199,250,7,scroll);
+		setBounds(39029,3,275,22,scroll);
+		setBounds(39030,199,275,23,scroll);
 	}
 
 
