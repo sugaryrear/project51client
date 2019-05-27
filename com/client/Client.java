@@ -2462,10 +2462,18 @@ public class Client extends RSApplet {
 							headIconsHint[player.hintIcon].drawSprite(spriteDrawX - 12, spriteDrawY - l);
 					}
 					if(Configuration.playerNames) {
+						String crown = "";
+						//System.out.print("RIGHTS: " + player.getRights());
+						if(player.getRights() == 1)
+							crown = "@cr1@";
+						if(player.getRights() == 2)
+							crown = "@cr2@";
+						if(player.getRights() == 3)
+							crown = "@cr2@";
 					    if(currentScreenMode == ScreenMode.FIXED) {
-                            latoBold.drawBasicString("@cr2@" + player.name, (spriteDrawX - (player.name.length() * 5)) + 3, spriteDrawY + 7, 0x6495ed, 1);
+                            latoBold.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 5)) + 3, spriteDrawY + 7, 0x6495ed, 1);
                         }else{
-                            latoBold.drawBasicString(player.name, (spriteDrawX -  (player.name.length() * 5)) + 3, spriteDrawY + 7, 0x6495ed, 1);
+                            latoBold.drawBasicString(crown + player.name, (spriteDrawX -  (player.name.length() * 5)) + 3, spriteDrawY + 7, 0x6495ed, 1);
                         }
                     }
 					} else {
