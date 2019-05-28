@@ -6375,6 +6375,13 @@ public class Client extends RSApplet {
 		mapIcon6 = null;
 		mapIcon5 = null;
 		mapIcon9 = null;
+		mapIcon16 = null; 
+		mapIcon39 = null; 
+		mapIcon66 = null; 
+		mapIcon56 = null;
+		mapIcon57 = null;
+		mapIcon76 = null;
+		mapIcon77 = null;
 		onDemandFetcher = null;
 		aStream_834 = null;
 		loginScreenGraphicsBuffer = null;
@@ -11043,7 +11050,15 @@ public class Client extends RSApplet {
 			mapIcon8 = new Sprite(streamLoader_2, "mapfunction", 51);
 			mapIcon6 = new Sprite(streamLoader_2, "mapfunction", 74);
 			mapIcon5 = new Sprite(streamLoader_2, "mapfunction", 5);
-			mapIcon9 = new Sprite(streamLoader_2, "mapfunction", 56);
+			mapIcon9 = new Sprite(streamLoader_2, "mapfunction", 9);
+			mapIcon16 = new Sprite(streamLoader_2, "mapfunction", 16);
+			mapIcon39 = new Sprite(streamLoader_2, "mapfunction", 39);
+			mapIcon66 = new Sprite(streamLoader_2, "mapfunction", 66);
+			mapIcon56 = new Sprite(streamLoader_2, "mapfunction", 56); 
+			mapIcon57 = new Sprite(streamLoader_2, "mapfunction", 57);
+			mapIcon76 = new Sprite(streamLoader_2, "mapfunction", 76);
+			mapIcon77 = new Sprite(streamLoader_2, "mapfunction", 77);
+			
 			multiOverlay = new Sprite(streamLoader_2, "overlay_multiway", 0);
 
 			eventIcon = new Sprite(streamLoader_2, "mapfunction", 72);
@@ -14186,7 +14201,7 @@ public class Client extends RSApplet {
 			int k = (anIntArray1072[j5] * 4 + 2) - myPlayer.x / 32;
 			int i3 = (anIntArray1073[j5] * 4 + 2) - myPlayer.y / 32;
 			markMinimap(mapIconSprite[j5], k, i3);
-			markMinimap(mapIcon9, ((3090 - baseX) * 4 + 2) - myPlayer.x / 32,
+			markMinimap(mapIcon56, ((3090 - baseX) * 4 + 2) - myPlayer.x / 32,
 					((3484 - baseY) * 4 + 2) - myPlayer.y / 32); //arrow
 			markMinimap(mapIcon6, ((3114 - baseX) * 4 + 2) - myPlayer.x / 32,
 					((3484 - baseY) * 4 + 2) - myPlayer.y / 32); //green quest
@@ -14199,6 +14214,25 @@ public class Client extends RSApplet {
 			markMinimap(mapIcon8, ((2972 - baseX) * 4 + 2) - myPlayer.x / 32,
 					((2782 - baseY) * 4 + 2) - myPlayer.y / 32); //bank
 		}
+		//mapIcon16, mapIcon39, mapIcon66, mapIcon56, mapIcon57, mapIcon76
+		//New home minimap icons:
+		markMinimap(mapIcon5, ((2919 - baseX) * 4 + 2) - myPlayer.x / 32,
+				((2718 - baseY) * 4 + 2) - myPlayer.y / 32); //bank
+		markMinimap(mapIcon39, ((2900 - baseX) * 4 + 2) - myPlayer.x / 32,
+				((2722 - baseY) * 4 + 2) - myPlayer.y / 32); //wellofgoodwill
+		markMinimap(mapIcon16, ((2908 - baseX) * 4 + 2) - myPlayer.x / 32,
+				((2730 - baseY) * 4 + 2) - myPlayer.y / 32); //shops1
+		markMinimap(mapIcon76, ((2895 - baseX) * 4 + 2) - myPlayer.x / 32,
+				((2731 - baseY) * 4 + 2) - myPlayer.y / 32); //shops2
+		markMinimap(mapIcon56, ((2908 - baseX) * 4 + 2) - myPlayer.x / 32,
+				((2718 - baseY) * 4 + 2) - myPlayer.y / 32); //teleport portal
+		markMinimap(mapIcon77, ((2912 - baseX) * 4 + 2) - myPlayer.x / 32,
+				((2723 - baseY) * 4 + 2) - myPlayer.y / 32); //hp nurse
+		markMinimap(mapIcon57, ((2912 - baseX) * 4 + 2) - myPlayer.x / 32,
+				((2710 - baseY) * 4 + 2) - myPlayer.y / 32); //mac
+		markMinimap(mapIcon66, ((2907 - baseX) * 4 + 2) - myPlayer.x / 32,
+				((2701 - baseY) * 4 + 2) - myPlayer.y / 32); //longbuilding
+		
 		if (Configuration.HALLOWEEN) {
 			switch (plane) {
 				case 0:
@@ -14533,7 +14567,7 @@ public class Client extends RSApplet {
 		return i < 25 || i > 49 ? 0xff0000 : 0xFFB400;
 	}
 
-	private Sprite mapIcon9, mapIcon7, mapIcon8, mapIcon6, mapIcon5;
+	private Sprite mapIcon9, mapIcon7, mapIcon8, mapIcon6, mapIcon5, mapIcon16, mapIcon39, mapIcon66, mapIcon56, mapIcon57, mapIcon76, mapIcon77;
 
 	public int getOrbFill(int statusInt) {
 		if (statusInt <= Integer.MAX_VALUE && statusInt >= 97)
