@@ -690,7 +690,8 @@ public class RSInterface {
         }
         Ypos = 4;
         for(int iD = 47628; iD <= 47648; iD++) {
-        	addText(iD, "@or1@Teleport name", tda, 1, /*16750899*/1022259, false, true);
+        	//System.out.print(iD + ", ");
+        	addText(iD, "@or1@Teleport name" + iD, tda, 1, /*16750899*/1022259, false, true);
         	scrollsection.child(frameID, iD, 5, Ypos);
         	frameID++;
         	Ypos += 22;
