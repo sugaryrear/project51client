@@ -2464,6 +2464,7 @@ public class Client extends RSApplet {
 					if(Configuration.playerNames) {
 						String crown = "";
 						int crownbonus = 0;
+						//int color = 0x64ED95; //0x6495ed light blu //7705FF deep blu //FF9900 orange
 						//System.out.print("RIGHTS: " + player.getRights());
 						if(player.getRights() == 1) {
 							crownbonus = -15;
@@ -2478,9 +2479,9 @@ public class Client extends RSApplet {
 							crownbonus = -15;
 						}
 					    if(currentScreenMode == ScreenMode.FIXED) {
-                            latoBold.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, 0x6495ed, 1);
+					    	newBoldFont.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, 0x6495ed, 1);
                         }else{
-                            latoBold.drawBasicString(crown + player.name, (spriteDrawX -  (player.name.length() * 4)+ crownbonus) + 3, spriteDrawY + 7, 0x6495ed, 1);
+                        	newBoldFont.drawBasicString(crown + player.name, (spriteDrawX -  (player.name.length() * 4)+ crownbonus) + 3, spriteDrawY + 7, 0x6495ed, 1);
                         }
                     }
 					} else {
