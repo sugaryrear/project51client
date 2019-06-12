@@ -17465,7 +17465,6 @@ public class Client extends RSApplet {
 	}
 
 	private Sprite[] chatButtons;
-	public String server1;
 	public float LP;
 
 	Client() {
@@ -17485,7 +17484,6 @@ public class Client extends RSApplet {
 		clanChatMode = 0;
 		channelButtonHoverPosition = -1;
 		channelButtonClickPosition = 0;
-		server1 = Configuration.LIVE_SERVER ? "174.66.25.163" : "127.0.0.1";
 		anIntArrayArray825 = new int[104][104];
 		friendsNodeIDs = new int[200];
 		groundArray = new NodeList[4][104][104];
@@ -18039,8 +18037,7 @@ public class Client extends RSApplet {
 	private int publicChatMode;
 	private static int anInt1288;
 	public static int anInt1290;
-	public static String server = "24.11.237.81";
-	//public static String server = "69.30.255.92";
+	public static String server = Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1";
 	public static boolean controlIsDown;
 	public int drawCount;
 	public int fullscreenInterfaceID;
