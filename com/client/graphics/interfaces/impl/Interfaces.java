@@ -63,6 +63,7 @@ public class Interfaces extends RSInterface {
 		addModerateWidget(defaultTextDrawingAreas);
 		addAntibotWidget(defaultTextDrawingAreas);
 		ironmanWidget(defaultTextDrawingAreas);
+		gameMode(defaultTextDrawingAreas);
 		addGodwarsWidget(defaultTextDrawingAreas);
 		barrowsKillcount(defaultTextDrawingAreas);
 		lootingBag(defaultTextDrawingAreas);
@@ -1957,6 +1958,88 @@ public class Interfaces extends RSInterface {
 		setBounds(42302, 15, 28, 0, widget);
 	}
 
+	public static void gameMode(TextDrawingArea[] tda) {
+		RSInterface gm = addInterface(33800);
+		
+		addSprite(33801, 1, "Interfaces/Gamemode/SPRITE");
+		addText(33802, "Select Your Playing Style", tda, 2, 0xFF981F, false, true);
+		addText(33803, "Description", tda, 1, 0xFF981F, false, true);
+		addText(33804, "Starting items", tda, 1, 0xFF981F, false, true);
+		addText(33805, "Modes:", tda, 1, 0xFF981F, false, true);
+		
+		//The clickable buttons
+		configHoverButton(33806, "Select", "Interfaces/Gamemode/SPRITE", 2, 3, 4, 4, false, new int[] { 33807, 33808 });
+		configHoverButton(33807, "Select", "Interfaces/Gamemode/SPRITE", 2, 3, 4, 4, false, new int[] { 33806, 33808 });
+		configHoverButton(33808, "Select", "Interfaces/Gamemode/SPRITE", 2, 3, 4, 4, false, new int[] { 33806, 33807 });
+		configHoverButton(33809, "Confirm", "Interfaces/Gamemode/SPRITE", 6, 7, 7, 7, false, new int[] {  });
+		
+		//Ironman armor sprite
+		addSprite(33810, 8, "Interfaces/Gamemode/SPRITE");
+		
+		//gamemode text options
+		addText(33811, "Normal", tda, 1, 0xFFFFFF, false, true);
+		addText(33812, "Ironman", tda, 1, 0xFFFFFF, false, true);
+		addText(33813, "Ultimate Ironman", tda, 1, 0xFFFFFF, false, true);
+		addText(33814, "Confirm", tda, 2, 0xFF981F, false, true);
+		
+		//description text
+		addText(33815, "description line one", tda, 1, 0xA36214, false, true);
+		addText(33816, "description line two", tda, 1, 0xA36214, false, true);
+		addText(33817, "description line three", tda, 1, 0xA36214, false, true);
+		
+		
+		//itemOnInterface(int item, int amount, int frame, int slot) {
+		setChildren(21, gm);
+		setBounds(33801, 13, 13, 0, gm);
+		setBounds(33802, 180, 24, 1, gm);
+		setBounds(33803, 34, 55, 2, gm);
+		setBounds(33804, 34, 114, 3, gm);
+		setBounds(33805, 410, 50, 4, gm);
+		setBounds(33806, 360, 65, 5, gm);
+		setBounds(33807, 360, 90, 6, gm);
+		setBounds(33808, 360, 115, 7, gm);
+		//setBounds(33809, 390, 138, 8, gm);
+		//setBounds(33810, 345, 172, 9, gm);
+		setBounds(33809, 390, 286, 8, gm);
+		setBounds(33810, 350, 135, 9, gm);
+		setBounds(33811, 385, 65, 10, gm);
+		setBounds(33812, 385, 90, 11, gm);
+		setBounds(33813, 385, 115, 12, gm);
+		setBounds(33814, 399, 294, 13, gm);
+		
+		setBounds(33815, 34, 70, 14, gm);
+		setBounds(33816, 34, 83, 15, gm);
+		setBounds(33817, 34, 96, 16, gm);
+		
+		//starter items
+		addToItemGroup(33818, 30, 1, 13, 10, false, null, null, null);
+		addToItemGroup(33819, 30, 1, 13, 10, false, null, null, null);
+		addToItemGroup(33820, 30, 1, 13, 10, false, null, null, null);
+		addToItemGroup(33821, 30, 1, 13, 10, false, null, null, null);
+		setBounds(33818, 34, 138, 17, gm);
+		setBounds(33819, 34, 178, 18, gm);
+		setBounds(33820, 34, 218, 19, gm);
+		setBounds(33821, 34, 258, 20, gm);
+		
+		/*int iD = 33818;
+		int child = 17;
+		int xPos = 34;
+		int yPos = 138;
+		for(int x=0; x < 1; x++) {
+			addToItemGroup(iD, 30, 1, 13, 10, false, null, null, null);
+			setBounds(iD, xPos, yPos, child, gm);
+			xPos = xPos + 40;
+			iD++;
+			child++;
+			if(x==6 || x==13 || x==20) {
+				xPos = 0;
+				yPos = yPos+10;
+			}
+			
+		}*/
+	}
+	
+	
 	public static void ironmanWidget(TextDrawingArea[] tda) {
 		RSInterface widget = addInterface(42400);
 		addSprite(42401, 1, "Interfaces/Ironman/IMAGE");
