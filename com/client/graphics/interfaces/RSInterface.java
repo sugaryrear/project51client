@@ -630,6 +630,48 @@ public class RSInterface {
         }
         
 	}
+	
+	public static void manualInfo(TextDrawingArea[] tda) {
+		RSInterface tab = addInterface(60500);
+		addSprite(60501, 0, "Interfaces/GuideBook/SPRITE");
+		addSprite(60502, 1, "Interfaces/GuideBook/SPRITE");
+		addSprite(60503, 2, "Interfaces/GuideBook/SPRITE");
+		addText(60504, "Guide Book", tda, 3, 0x9b5e0f, false, true); // 3 is fancy font, 2 is easier to read
+		
+		configHoverButton(60505, "Close", "Interfaces/GuideBook/SPRITE", 1, 2, 2, 2, false, new int[] { 60005 });
+		
+		addClickableTextCustomColor(60506, "Go Back a Page", "Select", tda, 1, 16711680, 16750899, false, true, 200);
+		
+		//addText(60005, Client.latoBold.drawBasicString("aaa", 0, 0), tda, 3, 16750899, false, true); //("aaa"), tda, 3, 16750899, false, true);
+		//Client.latoBold.drawCenteredString(target.currentHealth + " / " + target.maxHealth, xPos + (width / 2) - 2, yPos + 33, 16777215, 0x000000);
+		tab.totalChildren(5);
+		
+		tab.child(0, 60501, 14, 19);
+		tab.child(1, 60505, 443, 50);
+		tab.child(2, 60600, 122, 90);
+		tab.child(3, 60504, 224, 60);
+		tab.child(4, 60506, 62, 50);
+		
+		RSInterface scrollsection = addTabInterface(60600);
+        scrollsection.height = 166; //196
+        scrollsection.width = 320;
+        scrollsection.scrollMax = 440;
+        scrollsection.newScroller = false;       
+        scrollsection.totalChildren(42);
+		
+        int id = 60601;
+        int yPOS = 0;
+        for(int x=0; x < 42; x++) {
+        	//addHoverText(i, "Apple", "View", tda, 0, 16711680, false, true, 150);
+        	//addClickableTextCustomColor(id, "CLICK HERE", "Select", tda, 1, 16711680, 16750899, false, true, 200);
+        	
+        	addText(id, "TEST 123456789 abcdefghijklmnop", tda, 1, 16750899, false, true);
+        	scrollsection.child(x, id, 0, yPOS);
+        	id++;
+        	yPOS += 12;
+        }
+        
+	}
 
     public static void infoTab(TextDrawingArea[] tda) {
         RSInterface tab = addTabInterface(47500);

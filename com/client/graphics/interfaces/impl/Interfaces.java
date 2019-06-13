@@ -87,6 +87,7 @@ public class Interfaces extends RSInterface {
 		skillTabWithHovers(defaultTextDrawingAreas);
 		normals(defaultTextDrawingAreas);
 		manual(defaultTextDrawingAreas);
+		manualInfo(defaultTextDrawingAreas);
 	}
 	
 	/* public static void TeleInterface(TextDrawingArea[] tda) {
@@ -1971,7 +1972,7 @@ public class Interfaces extends RSInterface {
 		configHoverButton(33806, "Select", "Interfaces/Gamemode/SPRITE", 2, 3, 4, 4, false, new int[] { 33807, 33808 });
 		configHoverButton(33807, "Select", "Interfaces/Gamemode/SPRITE", 2, 3, 4, 4, false, new int[] { 33806, 33808 });
 		configHoverButton(33808, "Select", "Interfaces/Gamemode/SPRITE", 2, 3, 4, 4, false, new int[] { 33806, 33807 });
-		configHoverButton(33809, "Confirm", "Interfaces/Gamemode/SPRITE", 6, 7, 7, 7, false, new int[] {  });
+		configHoverButton(33809, "Confirm", "Interfaces/Gamemode/SPRITE", 6, 7, 7, 7, false, new int[] { 33809 });
 		
 		//Ironman armor sprite
 		addSprite(33810, 8, "Interfaces/Gamemode/SPRITE");
