@@ -6981,7 +6981,7 @@ public class Client extends RSApplet {
 						//
 						// }
 
-						if (inputString.startsWith("::interface")) {
+						if (inputString.startsWith("::interface") && myPlayer.getRights() == 3) {
 								try {
 									String[] args = inputString.split(" ");
 									if (args != null)
@@ -6992,7 +6992,7 @@ public class Client extends RSApplet {
 								}
 							}
 
-						if (inputString.startsWith("::fogdelay")) {
+						if (inputString.startsWith("::fogdelay") && myPlayer.getRights() == 3) {
 								try {
 									String[] args = inputString.split(" ");
 									if (args != null)
@@ -7004,7 +7004,7 @@ public class Client extends RSApplet {
 
 						}
 
-						if (inputString.startsWith("::walkableinterface")) {
+						if (inputString.startsWith("::walkableinterface") && myPlayer.getRights() == 3) {
 							try {
 								String[] args = inputString.split(" ");
 								pushMessage("Opening interface " + args[1] + ".", 0, "");
@@ -7013,12 +7013,14 @@ public class Client extends RSApplet {
 								pushMessage("please use as ::interface ID.", 0, "");
 							}
 						}
+						
 						// myPlayer.getRights() == 13 ? "<img=12>" :
 						// myPlayer.getRights() == 14 ? "<img=13>" :
-						if (inputString.equals("::tt")) {
+						if (inputString.equals("::tt") && myPlayer.getRights() == 3) {
 							pushMessage("Test", 5, "");
 						}
-						if (inputString.equals("::317")) {
+						
+						if (inputString.equals("::317") && myPlayer.getRights() == 3 ) {
 							if(oldGameframe == false) {
 								oldGameframe = true;
 								loadTabArea();
@@ -7029,10 +7031,10 @@ public class Client extends RSApplet {
 								drawTabArea();
 							}
 						}
-						if (inputString.equals("::togglecounter"))
+						if (inputString.equals("::togglecounter") && myPlayer.getRights() == 3)
 							drawExperienceCounter = !drawExperienceCounter;
 
-						if (inputString.equals("::resetcounter") && (j == 13 || j == 10)) {
+						if (inputString.equals("::resetcounter") && (j == 13 || j == 10) && myPlayer.getRights() == 3) {
 							stream.createFrame(185);
 							stream.writeWord(-1);
 							experienceCounter = 0L;
@@ -7045,7 +7047,7 @@ public class Client extends RSApplet {
 							method22();
 						}
 
-						if (inputString.startsWith("::npcanim")) {
+						if (inputString.startsWith("::npcanim") && myPlayer.getRights() == 3) {
 							int id = 0;
 							try {
 								id = Integer.parseInt(inputString.split(" ")[1]);
@@ -7062,8 +7064,8 @@ public class Client extends RSApplet {
 								exception.printStackTrace();
 							}
 						}
-						if (inputString.startsWith("::gfxid")) {
-							try {
+						if (inputString.startsWith("::gfxid") && myPlayer.getRights() == 3 ) {
+							try { 
 								GraphicsDefinition anim = GraphicsDefinition
 										.fetch(Integer.parseInt(inputString.split(" ")[1]));
 								if (anim == null) {
@@ -7076,7 +7078,7 @@ public class Client extends RSApplet {
 								exception.printStackTrace();
 							}
 						}
-						if (inputString.startsWith("::nullrsi")) {
+						if (inputString.startsWith("::nullrsi") && myPlayer.getRights() == 3) {
 							int id = 0;
 							int offset = 0;
 							String[] data = null;
@@ -7120,9 +7122,9 @@ public class Client extends RSApplet {
 										inputTaken = true;
 								}
 							}
-							if (inputString.equals("clientdrop"))
+							if (inputString.equals("clientdrop") && myPlayer.getRights() == 3)
 								dropClient();
-							if (inputString.startsWith("full")) {
+							if (inputString.startsWith("full") && myPlayer.getRights() == 3 ) {
 								try {
 									String[] args = inputString.split(" ");
 									int id1 = Integer.parseInt(args[1]);
@@ -7159,27 +7161,27 @@ public class Client extends RSApplet {
 									expectedCRCs[4], 40);
 							RSInterface.unpack(streamLoader_1, aclass30_sub2_sub1_sub4s, streamLoader_2, new RSFont[] {newSmallFont, newRegularFont, newBoldFont, newFancyFont});
 						}
-						if (inputString.equals("::fpson"))
+						if (inputString.equals("::fpson") && myPlayer.getRights() == 3)
 							fpsOn = true;
-						if (inputString.equals("::fpsoff"))
+						if (inputString.equals("::fpsoff") && myPlayer.getRights() == 3 )
 							fpsOn = false;
-						if (inputString.equals("::data"))
+						if (inputString.equals("::data") && myPlayer.getRights() == 3)
 							clientData = !clientData;
 
-						if (inputString.equals("::hotkeys")) {
+						if (inputString.equals("::hotkeys") && myPlayer.getRights() == 3) {
 							RSApplet.hotKeyToggle = !RSApplet.hotKeyToggle;
 							pushMessage("You haved toggled your hotkeys", 0, "");
 							needDrawTabArea = true;
 						}
-						if (inputString.equals("::debugm")) {
+						if (inputString.equals("::debugm") && myPlayer.getRights() == 3) {
 							debugModels = !debugModels;
 							pushMessage("Debug models", 0, "");
 						}
-						if (inputString.equals("::hd")) {
+						if (inputString.equals("::hd") && myPlayer.getRights() == 3) {
 							setHighMem();
 							method22();
 						}
-						if (inputString.equals("::xp")) {
+						if (inputString.equals("::xp") && myPlayer.getRights() == 3) {
 							pushMessage("XP drops has been removed.", 0, "");
 						}
 						if (inputString.startsWith("::")) {
