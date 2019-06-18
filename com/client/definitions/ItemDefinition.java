@@ -88,6 +88,12 @@ public final class ItemDefinition {
 
 		switch (itemId) {
 		
+		case 6802:
+			itemDef.name = "Donator Scroll";
+			itemDef.description = "Used as currency in the donator shop.";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			break;
+		
 		case 11179:
 			itemDef.name = "Raid Points";
 			itemDef.description = "Gather these from doing raids.";

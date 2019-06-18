@@ -67,7 +67,7 @@ public final class NpcDefinition {
 		}
 		if (i==4625){
 			entityDef.name = "Donator shop";
-			entityDef.actions = new String[] { "Talk-to", "Trade", null, null, null };
+			entityDef.actions = new String[] { "Talk-to", null, "Trade", null, null };
 		}
 	
 		if (i == 5314) {

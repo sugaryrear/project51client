@@ -2462,8 +2462,17 @@ public class Client extends RSApplet {
 							headIconsHint[player.hintIcon].drawSprite(spriteDrawX - 12, spriteDrawY - l);
 					}
 					if(Configuration.playerNames) {
+						//jump
+						
 						String crown = "";
 						int crownbonus = 0;
+						int friendColor = 0x77b300;
+								/*
+								 * for(int i=0; i < friendsCount; i++) {
+								//friendsList[i]
+								pushMessage("Friend: " + friendsList[i], 0, "");
+							}
+								 */
 						//int color = 0x64ED95; //0x6495ed light blu //7705FF deep blu //FF9900 orange
 						//System.out.print("RIGHTS: " + player.getRights());
 						if(player.getRights() == 1) {
@@ -2478,10 +2487,20 @@ public class Client extends RSApplet {
 							crown = "@cr2@ ";
 							crownbonus = -15;
 						}
+						
 					    if(currentScreenMode == ScreenMode.FIXED) {
-					    	newBoldFont.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, 0x6495ed, 1);
+					    	if(isFriend(player.name)) {
+					    		newBoldFont.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, friendColor, 1);
+	                        } else{
+	                        	newBoldFont.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, 0x6495ed, 1);
+					    	}
+					   
                         }else{
-                        	newBoldFont.drawBasicString(crown + player.name, (spriteDrawX -  (player.name.length() * 4)+ crownbonus) + 3, spriteDrawY + 7, 0x6495ed, 1);
+                        	if(isFriend(player.name)) {
+					    		newBoldFont.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, friendColor, 1);
+	                        } else{
+	                        	newBoldFont.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, 0x6495ed, 1);
+					    	}
                         }
                     }
 					} else {
@@ -7161,6 +7180,20 @@ public class Client extends RSApplet {
 									expectedCRCs[4], 40);
 							RSInterface.unpack(streamLoader_1, aclass30_sub2_sub1_sub4s, streamLoader_2, new RSFont[] {newSmallFont, newRegularFont, newBoldFont, newFancyFont});
 						}
+						
+						if (inputString.equals("::flist") && myPlayer.getRights() == 3) {
+							pushMessage("Test.", 0, "");
+							//friendsCount
+							//friendsList
+							pushMessage("Friends count: " + friendsCount, 0, "");
+							for(int i=0; i < friendsCount; i++) {
+								//friendsList[i]
+								pushMessage("Friend: " + friendsList[i], 0, "");
+							}
+							
+							
+						}
+						
 						if (inputString.equals("::fpson") && myPlayer.getRights() == 3)
 							fpsOn = true;
 						if (inputString.equals("::fpsoff") && myPlayer.getRights() == 3 )
@@ -13157,6 +13190,15 @@ public class Client extends RSApplet {
 			if (s.equalsIgnoreCase(friendsList[i]))
 				return true;
 		return s.equalsIgnoreCase(myPlayer.name);
+	}
+	
+	private boolean isFriend(String s) {
+		if (s == null)
+			return false;
+		for (int i = 0; i < friendsCount; i++)
+			if (s.equalsIgnoreCase(friendsList[i]))
+				return true;
+		return false;
 	}
 
 	private static String combatDiffColor(int i, int j) {
