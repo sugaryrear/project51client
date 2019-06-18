@@ -86,7 +86,7 @@ public final class ObjectDefinition {
 			objectDef.name = "Compost Bin";
 			break;
 			case 172:
-				objectDef.name = "Ckey chest";
+				objectDef.name = "Crystal chest";
 			break;
 			case 12309:
 				objectDef.actions = new String[5];

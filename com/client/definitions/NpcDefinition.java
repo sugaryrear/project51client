@@ -35,7 +35,7 @@ public final class NpcDefinition {
 
 
 		if (i == 506) {
-			entityDef.name = "Iron man shop keeper";
+			entityDef.name = "Iron Man Store";
 			entityDef.description = "A shop specifically for iron men.";
 		}if(i==3218 || i ==3217){
 			entityDef.actions = new String[] { "Talk-to", null, null, null, null };
@@ -88,6 +88,17 @@ public final class NpcDefinition {
 		}
 		if(i==7146){
 	entityDef.anInt75 = 2;
+		}
+		
+		
+		switch (i) {//this turns into cases/breaks
+		
+		case 3257:
+			entityDef.name = "Master Farmer";
+			entityDef.actions = new String[] { "Talk-to", "Trade", "Pickpocket", null, null };
+			break;
+		
+		
 		}
 		return entityDef;
 	}
