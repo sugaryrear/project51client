@@ -97,6 +97,16 @@ public final class NpcDefinition {
 			entityDef.name = "Master Farmer";
 			entityDef.actions = new String[] { "Talk-to", "Trade", "Pickpocket", null, null };
 			break;
+			
+		case 822:
+			//TODO
+				entityDef.anInt58 = 1;
+				entityDef.anInt83 = 1;
+				entityDef.anInt55 = 1;
+				entityDef.anInt57 = 1;
+				entityDef.anInt59 = 1;
+				//entityDef.anInt55 = 1;	
+			break;
 		
 		
 		}

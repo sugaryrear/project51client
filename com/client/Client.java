@@ -10450,8 +10450,6 @@ public class Client extends RSApplet {
 
 		addObject(28900, 1547, 3921, 1, 10, 0);
 		addObject(172, 1619, 3659, 3, 10, 0); // ckey
-		addObject(409, 1647, 3669, 3, 10, 0); // altar
-		addObject(6552, 1647, 3676, 3, 10, 0); // anchients
 		addObject(10321, 1663, 3635, 3, 10, 0); // molehole
 		addObject(3828, 1845, 3810, 3, 10, 0); // kqtunnel
 		addObject(882, 1422, 3586, 3, 10, 0); // gw
@@ -10459,7 +10457,6 @@ public class Client extends RSApplet {
 		addObject(1738, 1661, 3529, 1, 10, 0); // Tavelery
 		// addObject(4151, 3089, 3494, 1, 10, 0); //barrows
 		addObject(20877, 1572, 3657, 1, 10, 0); // brimhaven
-		addObject(29735, 1650, 3662, 2, 10, 0); //Slayer
 		addObject(29735, 3077, 3484, 2, 10, 0); //Slayer
 		// Edgehome6-24-17
 		// addObject(29345, 3084, 3487, 3, 10, 0); //Training Portal
@@ -10482,10 +10479,6 @@ public class Client extends RSApplet {
 		addObject(4154, 1476, 3688, 1, 10, 0); // lizards
 		addObject(4154, 1454, 3693, 1, 10, 0); // lizards
 		// addObject(4155, 3089, 3496, 1, 10, 0); //zulrah
-		addObject(8356, 1626, 3680, 3, 10, 0); // spirittreekourend
-		addObject(8356, 1268, 3561, 0, 10, 0); // spirittreeMountQ
-		addObject(8356, 1315, 3619, 0, 10, 0); // spirittreeXeric
-		addObject(8356, 1477, 3555, 0, 10, 0); // spirittreeHeros
 		addObject(11835, 1213, 3539, 1, 10, 0); // tzhaar
 		addObject(678, 1605, 3707, 3, 10, 0); // CorpPortal
 		addObject(2544, 1672, 3557, 1, 10, 0); // Dagentrence
@@ -10718,8 +10711,6 @@ public class Client extends RSApplet {
 		addObject(-1, 3101, 3509, 0, 0, 0); //
 		addObject(-1, 3101, 3510, 0, 0, 0); //
 
-		addObject(24101, 1647, 3675, 1, 10, 0); // Bank
-		addObject(24101, 1647, 3671, 1, 10, 0); // Bank
 
 		addObject(24101, 1580, 3430, 0, 10, 0); // Bank
 
@@ -17858,7 +17849,7 @@ public class Client extends RSApplet {
 	private int publicChatMode;
 	private static int anInt1288;
 	public static int anInt1290;
-	public static String server = Configuration.LIVE_SERVER ? "127.0.0.1" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1";
+	public static String server = Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1";
 	public static boolean controlIsDown;
 	public int drawCount;
 	public int fullscreenInterfaceID;
