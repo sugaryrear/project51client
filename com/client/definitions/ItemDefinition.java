@@ -273,6 +273,10 @@ public final class ItemDefinition {
 		case 19668:
 			itemDef.name = "Portable Bank";
 			break;
+		
+		case 13226:
+			itemDef.name = "Herb sack";
+			break;
 			
 		case 11739:
 			itemDef.name = "Hourly Box";
