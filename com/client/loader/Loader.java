@@ -71,6 +71,7 @@ public class Loader {
 		}
 	}
 	
+
 	public static void main(String[] args) {
         System.setProperty("http.agent", "Chrome");
 		try {
@@ -273,5 +274,6 @@ public class Loader {
     }
 
     public static String clientURL;
+    //public static final String CLIENT_URL = "https://www.dropbox.com/s/9r0z9h7ymtfp25p/clientunobf.jar?dl=1";
     public static double cacheVersion;
 }

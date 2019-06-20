@@ -30,9 +30,9 @@ public class Configuration {
 	public static int chatColor = 0;
     public static int fogColor = 0xDCDBDF;
 	public static long fogDelay = 500;
-	public static final int CLIENT_VERSION = 4;
+	public static final int CLIENT_VERSION = 5;
 	public static final String CLIENT_TITLE = "Anguish";
-	public static Boolean LIVE_SERVER = false;
+	public static Boolean LIVE_SERVER = true;
 	public static final int PORT = 43594;
 
 	public static Boolean DUMP_DATA = false;
