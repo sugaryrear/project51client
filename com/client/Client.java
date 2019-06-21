@@ -77,6 +77,7 @@ import com.client.features.gametimers.GameTimerHandler;
 import com.client.features.settings.AccountData;
 import com.client.features.settings.AccountManager;
 import com.client.features.settings.InformationFile;
+import com.client.graphics.BlackFadingScreen;
 import com.client.graphics.FadingScreen;
 import com.client.graphics.interfaces.RSInterface;
 import com.client.graphics.interfaces.impl.DropdownMenu;
@@ -3717,7 +3718,7 @@ public class Client extends RSApplet {
 		}
 		return 99;
 	}
-
+	
 	public static void main(String args[]) {
 		try {
 			nodeID = 1;
@@ -13295,6 +13296,11 @@ public class Client extends RSApplet {
 			mapArea[1].drawSprite(516, 0);
 			mapArea[7].drawSprite(0, 0);
 		}
+		
+		if(fadingScreen != null) {
+			fadingScreen.draw();
+		}
+		
 		if (snowVisible && Configuration.CHRISTMAS && Client.currentScreenMode == ScreenMode.FIXED) {
 			method119(tickDelta, 11877);
 			drawInterface(0, 0, RSInterface.interfaceCache[11877], 0);
@@ -15814,14 +15820,16 @@ public class Client extends RSApplet {
 							class30_sub1.anInt1294 = 0;
 					incomingPacket = -1;
 					return true;
-
+	
+					
 				case 9:
 					String text = inStream.readString();
 					byte state = inStream.readSignedByte();
 					byte seconds = inStream.readSignedByte();
 					int drawingWidth = Client.currentScreenMode == ScreenMode.FIXED ? 519 : Client.currentGameWidth;
 					int drawingHeight = Client.currentScreenMode == ScreenMode.FIXED ? 338 : Client.currentGameHeight;
-
+					fadingScreen = new BlackFadingScreen(newBoldFont, text, state, seconds, 0, 0, drawingWidth, drawingHeight, 100);
+	                
 					incomingPacket = -1;
 					return true;
 
