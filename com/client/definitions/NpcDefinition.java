@@ -65,6 +65,17 @@ public final class NpcDefinition {
 		if (i==3257){
 			entityDef.actions = new String[] { "Trade", null, null, null, null };
 		}
+		if (i==2580){
+			entityDef.actions = new String[] { "Talk-to", "Abyss", null, null, null };
+		}
+		if (i==1056){
+			entityDef.name = "Herblore Shop";
+			entityDef.actions = new String[] { "Trade", null, null, null, null };
+		}
+		if (i==1815){
+			entityDef.name = "Fishing Supplies";
+			entityDef.actions = new String[] { "Trade", null, null, null, null };
+		}
 		if (i==4625){
 			entityDef.name = "Donator shop";
 			entityDef.actions = new String[] { "Talk-to", null, "Trade", null, null };
