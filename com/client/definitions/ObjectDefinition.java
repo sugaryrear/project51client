@@ -42,6 +42,7 @@ public final class ObjectDefinition {
 			objectDef.actions = new String[] { "Choose", null, null, null, null };
 		}
 		switch (i) {
+		
 		 //DeadlyChest
         case 27288:
             objectDef.name = "@red@Deadly Chest";
