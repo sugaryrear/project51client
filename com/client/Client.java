@@ -17857,7 +17857,7 @@ public class Client extends RSApplet {
 	private int publicChatMode;
 	private static int anInt1288;
 	public static int anInt1290;
-	public static String server = Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1";
+	public static String server = Configuration.LIVE_SERVER ? "127.0.0.1" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1";
 	public static boolean controlIsDown;
 	public int drawCount;
 	public int fullscreenInterfaceID;

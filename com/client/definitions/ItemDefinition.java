@@ -234,10 +234,13 @@ public final class ItemDefinition {
             itemDef.inventoryOptions = new String[] { "Open", null, "Check Charges", null, "Drop" };
             itemDef.description = "Bank your items here, for a price!";
             break;
-            
+        case 12792:
+			itemDef.name = "Graceful Recolor";
+			itemDef.description = "Use on your Graceful to recolor it!";
+			break;			
 		case 3495:
 			itemDef.name = "Bank Charge";
-			itemDef.inventoryOptions = new String[] { "Use", null, null, null, "Drop" };
+			itemDef.inventoryOptions = new String[] { "Extract", "Use", null, null, "Drop" };
 			itemDef.description = "Gives you one charge for your bank.";
 			break;
 		case 13136:
