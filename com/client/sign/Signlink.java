@@ -34,7 +34,7 @@ public final class Signlink implements Runnable {
 	}
 	
 	static {
-System.out.print("apple\n");
+//System.out.print("apple\n");
 		File file = new File(System.getProperty("user.home") + "/" + Configuration.CACHE_NAME + "/");
 		if (!file.exists()) {
 			file.mkdir();
