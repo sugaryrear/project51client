@@ -41,6 +41,9 @@ public final class ObjectDefinition {
 		if (i >= 26281 && i <= 26290) {
 			objectDef.actions = new String[] { "Choose", null, null, null, null };
 		}
+		if(i >= 25000) {
+			objectDef.aBoolean769 = false;
+		}
 		switch (i) {
 		
 		 //DeadlyChest
