@@ -2115,7 +2115,7 @@ public class Interfaces extends RSInterface {
 		addHoverButton(41007, "", 0, 85, 20, "Learn", 0, 41008, 1);
 		addHoverButton(41009, "", 0, 85, 20, "Assignment", 0, 41010, 1);
 		addText(41011, "Slayer Points: ", tda, 3, 0xFF981F);
-		addTextButton(41012, "Slayer Experience						   (50)", "Buy Slayer Experience", 0xFF981F, false,
+		addTextButton(41012, "Slayer Experience						   (30)", "Buy Slayer Experience", 0xFF981F, false,
 				true, tda, 1, 400);
 		addTextButton(41013, "Slayer's Respite							  (25)", "Buy Slayer's Respite", 0xFF981F,
 				false, true, tda, 1, 401);

@@ -10459,15 +10459,7 @@ public class Client extends RSApplet {
 		// addObject(4151, 3089, 3494, 1, 10, 0); //barrows
 		addObject(20877, 1572, 3657, 1, 10, 0); // brimhaven
 		addObject(29735, 3077, 3484, 2, 10, 0); //Slayer
-		// Edgehome6-24-17
-		// addObject(29345, 3084, 3487, 3, 10, 0); //Training Portal
-		// addObject(29346, 3084, 3490, 3, 10, 0); //Wilderness Portal
-		// addObject(29347, 3084, 3493, 3, 10, 0); //Boss Portal
-		// addObject(29349, 3084, 3496, 3, 10, 0); //Minigame
-		// Altars
-		// addObject(6552, 3091, 3513, 2, 10, 0); //anchients
-		// RFD
-		// addObject(4873, 1629, 3691, 0, 10, 0); //wilderness lever
+	
 		addObject(26709, 1280, 3551, 1, 10, 0); // stronghold slayer
 		addObject(2123, 1257, 3501, 3, 10, 0); // rellekka slayer
 		// addObject(11803, 1650, 3619, 0, 10, 0); //icedung
@@ -10475,8 +10467,6 @@ public class Client extends RSApplet {
 		addObject(2268, 3009, 9553, 0, 10, 0); // icedungexit
 		addObject(29734, 1349, 3591, 0, 10, 0); // demonicentrance
 		addObject(2823, 1792, 3708, 0, 10, 0); // mith entrance
-		addObject(4152, 1547, 3570, 1, 10, 0); // corpent
-		addObject(4153, 1547, 3567, 1, 10, 0); // corpext
 		addObject(4154, 1476, 3688, 1, 10, 0); // lizards
 		addObject(4154, 1454, 3693, 1, 10, 0); // lizards
 		// addObject(4155, 3089, 3496, 1, 10, 0); //zulrah
@@ -10490,9 +10480,11 @@ public class Client extends RSApplet {
 		addObject(14503, 1469, 3704, 2, 10, 0); // wildysign
 		addObject(14503, 1468, 3704, 2, 10, 0); // wildysign
 		// 2=s,1=e
+		//home altar
+		addObject(409, 2904, 2703, 2, 10, 0);
 		// RFD
-		addObject(12309, 1616, 3662, 1, 10, 0); // chest
-		addObject(12355, 1617, 3662, 0, 10, 0); // portal
+		addObject(12309, 2901, 2697, 2, 10, 0); // chest
+		addObject(12355, 2902, 2697, 0, 10, 0); // portal
 		// Resource area
 		addObject(9030, 3190, 3929, 1, 10, 0);
 		addObject(9030, 3191, 3930, 1, 10, 0);
@@ -10588,11 +10580,6 @@ public class Client extends RSApplet {
 
 		// Skilling area
 		objectFill(-1, 2983, 3381, 2987, 3390, 10, 0, 0);
-		// Obelisks
-		addObject(2153, 3014, 3389, 0, 10, 0);
-		addObject(2152, 3013, 3389, 0, 10, 0);
-		addObject(2151, 3011, 3389, 0, 10, 0);
-		addObject(2150, 3008, 3388, 0, 10, 0);
 
 		addObject(-1, 3026, 3376, 0, 10, 0);
 		addObject(-1, 3029, 3376, 1, 10, 0);
@@ -10612,26 +10599,8 @@ public class Client extends RSApplet {
 		addObject(2741, 3013, 3369, 2, 22, 0);
 		addObject(24009, 3030, 3375, 2, 10, 0);
 		addObject(24101, 3029, 3379, 1, 10, 0);
-		addObject(7484, 1709, 3475, 1, 10, 0); // Copper
-		addObject(7484, 1710, 3475, 1, 10, 0); // Copper
-		addObject(7485, 1712, 3476, 1, 10, 0); // Tin
-		addObject(7485, 1713, 3476, 1, 10, 0); // Tin
-		addObject(7488, 1714, 3476, 1, 10, 0); // Iron
-		addObject(7488, 1715, 3476, 1, 10, 0); // Iron
-		addObject(7488, 1716, 3476, 1, 10, 0); // Iron
-		addObject(7489, 1717, 3476, 1, 10, 0); // Coal
-		addObject(7489, 1718, 3476, 1, 10, 0); // Coal
-		addObject(7489, 1768, 3717, 1, 10, 0); // Coal
-		addObject(7489, 1768, 3716, 1, 10, 0); // Coal
-		addObject(7491, 1719, 3476, 1, 10, 0); // Gold
-		addObject(7491, 1720, 3476, 1, 10, 0); // Gold
-		addObject(7491, 1721, 3476, 1, 10, 0); // Gold
-		addObject(9030, 1502, 3413, 1, 10, 0); // Gem
-		addObject(9030, 1503, 3413, 1, 10, 0); // Gem
-		addObject(9030, 1502, 3414, 1, 10, 0); // Gem
-		addObject(7492, 1722, 3476, 1, 10, 0); // Mithril
-		addObject(7492, 1723, 3475, 1, 10, 0); // Mithril
-		addObject(7492, 1724, 3474, 1, 10, 0); // Mithril
+		addObject(9030, 1500, 3416, 1, 10, 0); // Gem
+		addObject(9030, 1501, 3414, 1, 10, 0); // Gem
 		addObject(7492, 2943, 3285, 0, 10, 0); // Mithril Craft
 		addObject(7492, 2943, 3284, 0, 10, 0); // Mithril Craft
 		addObject(7492, 2943, 3286, 0, 10, 0); // Mithril Craft

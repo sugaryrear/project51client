@@ -53,6 +53,10 @@ public final class ObjectDefinition {
         //EndDeadlyChest
             
         //home portal
+        case 22819:
+        	objectDef.actions = new String[] { "Bank", null, null, null, null };
+			objectDef.name = "Bank Booth";
+			break;
         case 4387:
         	objectDef.actions = new String[] { "Enter", null, null, null, null };
 			objectDef.name = "Teleport Hub";
@@ -61,7 +65,22 @@ public final class ObjectDefinition {
         	objectDef.actions = new String[] { "Add Items", null, null, null, null };
 			objectDef.name = "Well of Goodwill";
 			break;
-			
+        case 31618:
+        	objectDef.name = "Max Guild Portal";
+        	objectDef.actions = new String[] { "Enter", null, null, null, null };
+				break;
+        case 31621:
+        	objectDef.name = "Myth's Guild";
+        	objectDef.actions = new String[] { "Enter", null, null, null, null };
+				break;
+        case 31861:
+        	objectDef.name = "Occult Altar";
+        	objectDef.actions = new String[] { "Venerate", "Study", null, null, null };
+				break;
+        case 13003:
+        	objectDef.name = "Crystal Chest";
+        	objectDef.actions = new String[] { "Open", null, null, null, null };
+				break;
 		case 8207:
 			objectDef.actions = new String[] { "Care-To", null, null, null, null };
 			objectDef.name = "Herb Patch";
@@ -94,12 +113,10 @@ public final class ObjectDefinition {
 			break;
 			case 12309:
 				objectDef.actions = new String[5];
-				objectDef.actions[0] = "Bank";
-				objectDef.actions[1] = "Buy gloves";
+				objectDef.actions[0] = "Look-In";
 				objectDef.actions[2] = null;
 				objectDef.name = "Chest";
 				break;
-		case 22819:
 		case 24101:
 			objectDef.actions[2] = "Trading Post";
 			break;
