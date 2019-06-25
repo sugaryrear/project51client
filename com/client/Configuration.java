@@ -49,7 +49,7 @@ public class Configuration {
 	public static boolean repackIndexOne = false, repackIndexTwo = false, repackIndexThree = false,
 			repackIndexFour = false;
 
-	public static final String CACHE_LINK = "https://www.dropbox.com/s/ssvynsvpvu622rm/AnguishCache.rar?dl=0"; // Link for every client below client
+	public static final String CACHE_LINK = "https://www.dropbox.com/s/ykartjqw0ttj1qz/AnguishCache.zip?dl=1"; // Link for every client below client
 
 	public static final String MEDIA_ARCHIVES_LINK = "https://www.dl.dropboxusercontent.com/sh/qpw6qpe1gqm8zq6/AABqDA9gScRH72FQBebyKm0Ba"; // Link for every
 																									// client below //
