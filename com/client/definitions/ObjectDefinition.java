@@ -589,7 +589,8 @@ public final class ObjectDefinition {
 		}
 		if (modifiedTexture != null) {
 			for (int k2 = 0; k2 < modifiedTexture.length; k2++) {
-				if(originalTexture[k2] < 100) {
+				if(originalTexture[k2] < 0) {
+					//this was set to < 100 --- But setting it to never call fixed walls.
 					model_3.overrideTexture( originalTexture[k2], modifiedTexture[k2]);
 				} else {
 					model_3.setTexture(originalTexture[k2], modifiedTexture[k2]);
