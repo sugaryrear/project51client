@@ -587,17 +587,23 @@ public final class ObjectDefinition {
 				model_3.method476(modifiedModelColors[k2], originalModelColors[k2]);
 
 		}
+		
 		if (modifiedTexture != null) {
+			for (int k2 = 0; k2 < modifiedTexture.length; k2++)
+				model_3.replaceTexture(modifiedTexture[k2], originalTexture[k2]);
+
+		}
+		/*if (modifiedTexture != null) {
 			for (int k2 = 0; k2 < modifiedTexture.length; k2++) {
-				if(originalTexture[k2] < 0) {
+				if(originalTexture[k2] < 1 && originalTexture == null) {
 					//this was set to < 100 --- But setting it to never call fixed walls.
 					model_3.overrideTexture( originalTexture[k2], modifiedTexture[k2]);
 				} else {
 					model_3.setTexture(originalTexture[k2], modifiedTexture[k2]);
 				}
-			}
+			}*/
 
-		}
+		//}
 		if (flag)
 			model_3.method478(thickness, width, height);
 		if (flag2)

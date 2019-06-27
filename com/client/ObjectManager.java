@@ -503,7 +503,7 @@ final class ObjectManager {
 
 		}
 	}
-
+//jump
 	private void renderObject(int y, WorldController worldController, CollisionMap class11, int type, int z, int x,
 			int id, int j1) {
 		if (lowMem && (tileFlags[0][x][y] & 2) == 0) {
@@ -514,12 +514,45 @@ final class ObjectManager {
 		}
 		if (z < maximumPlane)
 			maximumPlane = z;
-		int k1 = tileHeights[z][x][y];
+		ObjectDefinition definition = ObjectDefinition.forID(id);
+		int size1;
+		int size2;
+		if(j1 == 1 || j1 == 3) {
+			size1 = definition.anInt761;//objectSizeY
+			size2 = definition.anInt744;//objectSizeX
+		} else {
+			size1 = definition.anInt744;
+			size2 = definition.anInt761;
+		}
+		int modX;
+		int modX1;
+		if (104 >= (size1 + x)) {
+			modX1 = x + (size1 + 1 >> 1);
+			modX = x + (size1 >> 1);
+		} else {
+			modX = x;
+			modX1 = x + 1;
+		}
+		int modY;
+		int modY1;
+		if (104>= (size2 + y)) {
+			modY1 = y + (size2 + 1 >> 1);
+			modY = (size2 >> 1) + y;
+		} else {
+			modY = y;
+			modY1 = 1 + y;
+		}
+		int k1 = tileHeights[z][modX][modY];
+		int l1 = tileHeights[z][modX1][modY];
+		int i2 = tileHeights[z][modX1][modY1];
+		int j2 = tileHeights[z][modX][modY1];
+		int k2 = k1 + l1 + i2 + j2 >> 2;
+		/*int k1 = tileHeights[z][x][y];
 		int l1 = tileHeights[z][x + 1][y];
 		int i2 = tileHeights[z][x + 1][y + 1];
 		int j2 = tileHeights[z][x][y + 1];
-		int k2 = k1 + l1 + i2 + j2 >> 2;
-		ObjectDefinition definition = ObjectDefinition.forID(id);
+		int k2 = k1 + l1 + i2 + j2 >> 2;*/
+		//ObjectDefinition definition = ObjectDefinition.forID(id);
 		int key = x + (y << 7) + (id << 14) + 0x40000000;
 		if (!definition.hasActions)
 			key += 0x80000000;
