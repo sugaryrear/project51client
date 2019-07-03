@@ -8190,7 +8190,7 @@ public class Client extends RSApplet {
 		int i = 0;
 		if (anInt1104 != 0)
 			i = 1;
-		int xPosition = 0;
+		int xPosition = 5;
 		int yPosition = 0;
 		for (int j = 0; j < 100; j++) {
 			if (chatMessages[j] != null) {
@@ -8209,7 +8209,7 @@ public class Client extends RSApplet {
 				if ((k == 3 || k == 7)
 						&& (k == 7 || privateChatMode == 0 || privateChatMode == 1 && isFriendOrSelf(s))) {
 					yPosition = (currentScreenMode == ScreenMode.FIXED ? 330 : currentGameHeight - 173) - i * 13;
-					xPosition = 0;
+					xPosition = 5;
 					font.drawBasicString("From", xPosition, yPosition, 65535, 0);
 					xPosition += font.getTextWidth("From ");
 					if (byte1 > 0) {
@@ -8227,14 +8227,14 @@ public class Client extends RSApplet {
 				}
 				if (k == 5 && privateChatMode < 2) {
 					yPosition = (currentScreenMode == ScreenMode.FIXED ? 330 : currentGameHeight - 173) - i * 13;
-					xPosition = 0;
+					xPosition = 5;
 					font.drawBasicString(chatMessages[j], xPosition, yPosition, 65535, 0);
 					if (++i >= 5)
 						return;
 				}
 				if (k == 6 && privateChatMode < 2) {
 					yPosition = (currentScreenMode == ScreenMode.FIXED ? 330 : currentGameHeight - 173) - i * 13;
-					xPosition = 0;
+					xPosition = 5;
 					font.drawBasicString("To " + s + ": " + chatMessages[j], xPosition, yPosition, 65535, 0);
 					if (++i >= 5)
 						return;
