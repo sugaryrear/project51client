@@ -4571,6 +4571,10 @@ public class Client extends RSApplet {
 		int i1 = menuActionCmd1[i];
 		System.out.println("k: " + k);
 		switch (k) {
+		/*case 53000:
+			pushMessage("aaa.", 0, "");
+			break;*/
+			
 			case 42522:
 				if (currentScreenMode != ScreenMode.FIXED) {
 					setConfigButton(i, true);

@@ -537,7 +537,7 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 			Keybinding.isBound(KeyEvent.VK_F12);
 		}
 		
-		if (hotKeyToggle == true) {
+		/*if (hotKeyToggle == true) {
 			if (i == KeyEvent.VK_F1) {
 				Client.setTab(3);
 			} else if (i == KeyEvent.VK_F2) {
@@ -589,7 +589,7 @@ public class RSApplet extends Applet implements Runnable, MouseListener, MouseMo
 			} else if (i == KeyEvent.VK_F12) {
 				Client.setTab(11);
 			}
-		}
+		}*/
 		if (keyevent.isControlDown()) {
 			Client.controlIsDown = true;
 		}
