@@ -161,6 +161,7 @@ public class Client extends RSApplet {
 	public Sprite alertBorder;
 	public Sprite alertBorderH;
 	
+	protected JFrame frame;
 	/*
 	 * @Override public void keyPressed(KeyEvent event) { super.keyPressed(event);
 	 * if(loggedIn) { stream.createFrame(186); stream.writeWord(event.getKeyCode());
@@ -7205,7 +7206,7 @@ public class Client extends RSApplet {
 							fpsOn = false;
 						if (inputString.equals("::data") && myPlayer.getRights() == 3)
 							clientData = !clientData;
-
+						
 						if (inputString.equals("::hotkeys") && myPlayer.getRights() == 3) {
 							RSApplet.hotKeyToggle = !RSApplet.hotKeyToggle;
 							pushMessage("You haved toggled your hotkeys", 0, "");
@@ -11059,6 +11060,7 @@ public class Client extends RSApplet {
 			informationFile.read();
 			if (informationFile.isUsernameRemembered()) {
 				myUsername = informationFile.getStoredUsername();
+				myUsername = myUsername.substring(0, 1).toUpperCase() + myUsername.substring(1);
 			}
 			if (informationFile.isPasswordRemembered()) {
 				myPassword = informationFile.getStoredPassword();
