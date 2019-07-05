@@ -12051,7 +12051,7 @@ public class Client extends RSApplet {
 									if (class9_1.id >= 32212 && class9_1.id <= 32212 + 11) {
 										if (class9_1.inv[i3] > 0) {
 											if (class9_1.sprite2 != null) {
-												class9_1.sprite2.drawSprite(k5 + k6 - 2, j6 + j7 - 2);
+												class9_1.sprite2.drawSprite1(k5 + k6 - 2, j6 + j7 - 2);
 											}
 										}
 									}
@@ -12063,11 +12063,12 @@ public class Client extends RSApplet {
 												k6 = 0;
 											if (j7 < 5 && j7 > -5)
 												j7 = 0;
-											if (anInt989 < 12) {
+											//TEST THIS - For faster switches - Originally was < 12 ... putting < 1 might make it faster.
+											if (anInt989 < 1) {
 												k6 = 0;
 												j7 = 0;
 											}
-											itemSprite.drawSprite(k5 + k6, j6 + j7);
+											itemSprite.drawSprite1(k5 + k6, j6 + j7);
 											if (j6 + j7 < DrawingArea.topY && rsInterface.scrollPosition > 0) {
 												int i10 = (tickDelta * (DrawingArea.topY - j6 - j7)) / 3;
 												if (i10 > tickDelta * 10)
@@ -12092,7 +12093,7 @@ public class Client extends RSApplet {
 											}
 										} else if (atInventoryInterfaceType != 0 && atInventoryIndex == i3
 												&& atInventoryInterface == class9_1.id)
-											itemSprite.drawSprite(k5, j6);
+											itemSprite.drawSprite1(k5, j6);
 										else
 										// itemSprite.drawSprite(k5, j6);
 										/**
