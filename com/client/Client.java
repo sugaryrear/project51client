@@ -161,6 +161,7 @@ public class Client extends RSApplet {
 	public Sprite alertBorder;
 	public Sprite alertBorderH;
 	
+	protected JFrame frame;
 	/*
 	 * @Override public void keyPressed(KeyEvent event) { super.keyPressed(event);
 	 * if(loggedIn) { stream.createFrame(186); stream.writeWord(event.getKeyCode());
@@ -4571,6 +4572,10 @@ public class Client extends RSApplet {
 		int i1 = menuActionCmd1[i];
 		System.out.println("k: " + k);
 		switch (k) {
+		/*case 53000:
+			pushMessage("aaa.", 0, "");
+			break;*/
+			
 			case 42522:
 				if (currentScreenMode != ScreenMode.FIXED) {
 					setConfigButton(i, true);
@@ -7201,7 +7206,7 @@ public class Client extends RSApplet {
 							fpsOn = false;
 						if (inputString.equals("::data") && myPlayer.getRights() == 3)
 							clientData = !clientData;
-
+						
 						if (inputString.equals("::hotkeys") && myPlayer.getRights() == 3) {
 							RSApplet.hotKeyToggle = !RSApplet.hotKeyToggle;
 							pushMessage("You haved toggled your hotkeys", 0, "");
@@ -8186,7 +8191,7 @@ public class Client extends RSApplet {
 		int i = 0;
 		if (anInt1104 != 0)
 			i = 1;
-		int xPosition = 0;
+		int xPosition = 5;
 		int yPosition = 0;
 		for (int j = 0; j < 100; j++) {
 			if (chatMessages[j] != null) {
@@ -8205,7 +8210,7 @@ public class Client extends RSApplet {
 				if ((k == 3 || k == 7)
 						&& (k == 7 || privateChatMode == 0 || privateChatMode == 1 && isFriendOrSelf(s))) {
 					yPosition = (currentScreenMode == ScreenMode.FIXED ? 330 : currentGameHeight - 173) - i * 13;
-					xPosition = 0;
+					xPosition = 5;
 					font.drawBasicString("From", xPosition, yPosition, 65535, 0);
 					xPosition += font.getTextWidth("From ");
 					if (byte1 > 0) {
@@ -8223,14 +8228,14 @@ public class Client extends RSApplet {
 				}
 				if (k == 5 && privateChatMode < 2) {
 					yPosition = (currentScreenMode == ScreenMode.FIXED ? 330 : currentGameHeight - 173) - i * 13;
-					xPosition = 0;
+					xPosition = 5;
 					font.drawBasicString(chatMessages[j], xPosition, yPosition, 65535, 0);
 					if (++i >= 5)
 						return;
 				}
 				if (k == 6 && privateChatMode < 2) {
 					yPosition = (currentScreenMode == ScreenMode.FIXED ? 330 : currentGameHeight - 173) - i * 13;
-					xPosition = 0;
+					xPosition = 5;
 					font.drawBasicString("To " + s + ": " + chatMessages[j], xPosition, yPosition, 65535, 0);
 					if (++i >= 5)
 						return;
@@ -11055,6 +11060,7 @@ public class Client extends RSApplet {
 			informationFile.read();
 			if (informationFile.isUsernameRemembered()) {
 				myUsername = informationFile.getStoredUsername();
+				myUsername = myUsername.substring(0, 1).toUpperCase() + myUsername.substring(1);
 			}
 			if (informationFile.isPasswordRemembered()) {
 				myPassword = informationFile.getStoredPassword();
@@ -12045,7 +12051,7 @@ public class Client extends RSApplet {
 									if (class9_1.id >= 32212 && class9_1.id <= 32212 + 11) {
 										if (class9_1.inv[i3] > 0) {
 											if (class9_1.sprite2 != null) {
-												class9_1.sprite2.drawSprite(k5 + k6 - 2, j6 + j7 - 2);
+												class9_1.sprite2.drawSprite1(k5 + k6 - 2, j6 + j7 - 2);
 											}
 										}
 									}
@@ -12057,11 +12063,12 @@ public class Client extends RSApplet {
 												k6 = 0;
 											if (j7 < 5 && j7 > -5)
 												j7 = 0;
-											if (anInt989 < 12) {
+											//TEST THIS - For faster switches - Originally was < 12 ... putting < 1 might make it faster.
+											if (anInt989 < 1) {
 												k6 = 0;
 												j7 = 0;
 											}
-											itemSprite.drawSprite(k5 + k6, j6 + j7);
+											itemSprite.drawSprite1(k5 + k6, j6 + j7);
 											if (j6 + j7 < DrawingArea.topY && rsInterface.scrollPosition > 0) {
 												int i10 = (tickDelta * (DrawingArea.topY - j6 - j7)) / 3;
 												if (i10 > tickDelta * 10)
@@ -12086,7 +12093,7 @@ public class Client extends RSApplet {
 											}
 										} else if (atInventoryInterfaceType != 0 && atInventoryIndex == i3
 												&& atInventoryInterface == class9_1.id)
-											itemSprite.drawSprite(k5, j6);
+											itemSprite.drawSprite1(k5, j6);
 										else
 										// itemSprite.drawSprite(k5, j6);
 										/**

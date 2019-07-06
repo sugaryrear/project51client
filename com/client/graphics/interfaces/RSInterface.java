@@ -2452,7 +2452,7 @@ public class RSInterface {
 						700);
 			else
 				addConfigButton(58031 + i, 5292, 4, 2, "BankTab/TAB", 48, 38,
-						new String[] { "Price Check", "Collapse", "View" }, 1, 700 + i);
+						new String[] { "Price Check", "Collapse", "View" }, 1, 1111 + i);
 			addToItemGroup(58040 + i, 1, 1, 0, 0, false, "", "", "");
 		}
 

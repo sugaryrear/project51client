@@ -814,6 +814,47 @@ public class Sprite extends DrawingArea {
 			method349(DrawingArea.pixels, myPixels, i1, l, k1, j1, l1, i2);
 		}
 	}
+	
+	public void drawSprite1(int i, int j) {
+		int k = 128;// was parameter
+		i += anInt1442;
+		j += anInt1443;
+		xPosition = i;
+		yPosition = j;
+		int i1 = i + j * DrawingArea.width;
+		int j1 = 0;
+		int k1 = myHeight;
+		int l1 = myWidth;
+		int i2 = DrawingArea.width - l1;
+		int j2 = 0;
+		if (j < DrawingArea.topY) {
+			int k2 = DrawingArea.topY - j;
+			k1 -= k2;
+			j = DrawingArea.topY;
+			j1 += k2 * l1;
+			i1 += k2 * DrawingArea.width;
+		}
+		if (j + k1 > DrawingArea.bottomY)
+			k1 -= (j + k1) - DrawingArea.bottomY;
+		if (i < DrawingArea.topX) {
+			int l2 = DrawingArea.topX - i;
+			l1 -= l2;
+			i = DrawingArea.topX;
+			j1 += l2;
+			i1 += l2;
+			j2 += l2;
+			i2 += l2;
+		}
+		if (i + l1 > DrawingArea.bottomX) {
+			int i3 = (i + l1) - DrawingArea.bottomX;
+			l1 -= i3;
+			j2 += i3;
+			i2 += i3;
+		}
+		if (!(l1 <= 0 || k1 <= 0)) {
+			method351(j1, l1, DrawingArea.pixels, myPixels, j2, k1, i2, k, i1);
+		}
+	}
 
 	public void drawSprite2(int i, int k, int color) {
 		autoUpdate();

@@ -8,16 +8,31 @@ import java.awt.event.WindowListener;
 
 import javax.swing.*;
 
+import com.client.features.settings.InformationFile;
+
 public class ClientWindow extends Client implements ActionListener, WindowListener {
 
 	private static final long serialVersionUID = -6978617783576386732L;
 
+	private InformationFile informationFile = new InformationFile();
+	
+	String userNameFrameTitle;
+	
 	public void initUI() {
 		try {
+			informationFile.read();
+			String playerName = informationFile.getStoredUsername();
+			//System.out.print("Name:" + playerName.substring(0, 1).toUpperCase() + playerName.substring(1)  + ": \n");
+			if(!playerName.equalsIgnoreCase("")) {
+				userNameFrameTitle = " - [" + playerName.substring(0, 1).toUpperCase() + playerName.substring(1) + "]";
+			} else {
+				userNameFrameTitle = "";
+			}
+				
 			icon = new ImageIcon(new URL("https://i.stack.imgur.com/KSnus.gif")).getImage();
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 			JPopupMenu.setDefaultLightWeightPopupEnabled(false);
-			frame = new JFrame(Configuration.CLIENT_TITLE);
+			frame = new JFrame(Configuration.CLIENT_TITLE + userNameFrameTitle);
 			frame.setLayout(new BorderLayout());
 			setFocusTraversalKeysEnabled(false);
 			frame.setResizable(false);
@@ -35,6 +50,10 @@ public class ClientWindow extends Client implements ActionListener, WindowListen
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	private String getClientUserName() {
+		return Client.myPlayer.name;
 	}
 
 	public ClientWindow(String args[]) {
