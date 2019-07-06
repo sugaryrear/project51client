@@ -65,6 +65,12 @@ public final class NpcDefinition {
 		if (i==3257){
 			entityDef.actions = new String[] { "Trade", null, null, null, null };
 		}
+		if (i==17){
+			entityDef.actions = new String[] { "Pollnivneach", null, null, null, null };
+		}
+		if (i==3936){
+			entityDef.actions = new String[] { "Neitiznot", "Jatizso", null, null, null };
+		}
 		if (i==2580){
 			entityDef.actions = new String[] { "Talk-to", "Abyss", null, null, null };
 		}

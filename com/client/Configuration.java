@@ -26,7 +26,7 @@ public class Configuration {
 	public static boolean enableFogRendering = false;
     public static boolean enableRainbowFog = false;
 	public static boolean bountyHunter = true;
-	public static boolean playerNames = true;
+	public static boolean playerNames = false;
 	public static int chatColor = 0;
     public static int fogColor = 0xDCDBDF;
 	public static long fogDelay = 500;
@@ -47,7 +47,7 @@ public class Configuration {
 	public static final String CACHE_NAME = "AnguishCache";
 
 	public static boolean repackIndexOne = false, repackIndexTwo = false, repackIndexThree = false,
-			repackIndexFour = false;
+			repackIndexFour = true;
 
 	public static final String CACHE_LINK = "https://www.dropbox.com/s/ykartjqw0ttj1qz/AnguishCache.zip?dl=1"; // Link for every client below client
 

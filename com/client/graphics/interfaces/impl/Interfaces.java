@@ -814,7 +814,7 @@ public class Interfaces extends RSInterface {
 
 			 //Category Text
 			 RSInterface.addText(13412, "Bosses", tda, 0, 0xFF9900, true, true);
-			 RSInterface.addText(13413, "Monsters", tda, 0, 0xFF9900, true, true);
+			 RSInterface.addText(13413, "Dungeons", tda, 0, 0xFF9900, true, true);
 			 RSInterface.addText(13414, "Wilderness", tda, 0, 0xFF9900, true, true);
 			 RSInterface.addText(13415, "Skilling", tda, 0, 0xFF9900, true, true);
 			 RSInterface.addText(13416, "Minigames", tda, 0, 0xFF9900, true, true);

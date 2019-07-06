@@ -687,7 +687,7 @@ public class RSInterface {
         configHoverButton(47509, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47509 });
         configHoverButton(47510, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47510 });
        
-        addText(47511, "@or1@Monsters", tda, 1, 16750899, false, true);
+        addText(47511, "@or1@Dungeons", tda, 1, 16750899, false, true);
         addText(47512, "@or1@Minigames", tda, 1, 16750899, false, true);
         addText(47513, "@or1@Skilling", tda, 1, 16750899, false, true);
         addText(47514, "@or1@Bosses", tda, 1, 16750899, false, true);
@@ -2811,7 +2811,7 @@ public class RSInterface {
 		addHoveredButton(42265, "/Interfaces/Teleportation/SPRITE", 0, 157, 40, 42266);
 		addHoverButton(42267, "/Interfaces/Teleportation/SPRITE", -1, 157, 45, "Select", -1, 42268, 1);
 		addHoveredButton(42268, "/Interfaces/Teleportation/SPRITE", 0, 157, 40, 42269);
-		addText(44305, "Monsters", tda, 2, 0xFF981F, true, true);
+		addText(44305, "Dungeons", tda, 2, 0xFF981F, true, true);
 		addText(44306, "Minigames", tda, 2, 0xFF981F, true, true);
 		addText(44307, "Wilderness", tda, 2, 0xFF981F, true, true);
 		addText(44308, "Bosses", tda, 2, 0xFF981F, true, true);
