@@ -88,8 +88,7 @@ public class Interfaces extends RSInterface {
 		normals(defaultTextDrawingAreas);
 		manual(defaultTextDrawingAreas);
 		manualInfo(defaultTextDrawingAreas);
-		//remove this shit later
-		lottery(defaultTextDrawingAreas);
+		//lottery(defaultTextDrawingAreas);
 	}
 	
 
