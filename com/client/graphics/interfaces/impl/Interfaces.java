@@ -88,8 +88,11 @@ public class Interfaces extends RSInterface {
 		normals(defaultTextDrawingAreas);
 		manual(defaultTextDrawingAreas);
 		manualInfo(defaultTextDrawingAreas);
+		//remove this shit later
+		lottery(defaultTextDrawingAreas);
 	}
 	
+
 	/* public static void TeleInterface(TextDrawingArea[] tda) {
 		//RSInterface rsInterface = addInterface(65000);
 	    RSInterface rsInterface = addInterface(63000);

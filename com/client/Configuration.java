@@ -47,7 +47,7 @@ public class Configuration {
 	public static final String CACHE_NAME = "AnguishCache";
 
 	public static boolean repackIndexOne = false, repackIndexTwo = false, repackIndexThree = false,
-			repackIndexFour = true;
+			repackIndexFour = false;
 
 	public static final String CACHE_LINK = "https://www.dropbox.com/s/ykartjqw0ttj1qz/AnguishCache.zip?dl=1"; // Link for every client below client
 

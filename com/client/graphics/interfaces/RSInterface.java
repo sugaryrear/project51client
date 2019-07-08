@@ -739,6 +739,119 @@ public class RSInterface {
         	Ypos += 22;
         }
     }
+    
+    public static void lottery(TextDrawingArea[] tda) {
+    	RSInterface tab = addInterface(45000);
+    	
+    	addSprite(45001, 0, "Interfaces/Lottery/SPRITE");
+    	configHoverButton(45002, "Select", "Interfaces/Lottery/SPRITE", 1, 2, 2, 2, false, new int[] { 45002, 45003, 45004, 45005, 45006, 45007 });
+    	configHoverButton(45003, "Select", "Interfaces/Lottery/SPRITE", 1, 2, 2, 2, false, new int[] { 45002, 45003, 45004, 45005, 45006, 45007 });
+    	configHoverButton(45004, "Select", "Interfaces/Lottery/SPRITE", 1, 2, 2, 2, false, new int[] { 45002, 45003, 45004, 45005, 45006, 45007 });
+    	configHoverButton(45005, "Select", "Interfaces/Lottery/SPRITE", 1, 2, 2, 2, false, new int[] { 45002, 45003, 45004, 45005, 45006, 45007 });
+    	configHoverButton(45006, "Select", "Interfaces/Lottery/SPRITE", 1, 2, 2, 2, false, new int[] { 45002, 45003, 45004, 45005, 45006, 45007 });
+    	configHoverButton(45007, "Select", "Interfaces/Lottery/SPRITE", 1, 2, 2, 2, false, new int[] { 45002, 45003, 45004, 45005, 45006, 45007 });
+    	
+    	configHoverButton(45008, "Select", "Interfaces/Lottery/SPRITE", 3, 4, 4, 4, false, new int[] { 45008, 45009, 45010 });
+    	configHoverButton(45009, "Select", "Interfaces/Lottery/SPRITE", 5, 6, 6, 6, false, new int[] { 45008, 45009, 45010 });
+    	configHoverButton(45010, "Select", "Interfaces/Lottery/SPRITE", 7, 8, 8, 8, false, new int[] { 45008, 45009, 45010 });
+    	
+    	addText(45011, "@red@Lottery Draw", tda, 2, 16750899, false, true);
+		addText(45012, "@yel@Feeling Lucky?", tda, 2, 16750899, false, true);
+		addText(45013, "@yel@Select 6 Lucky Number! Good Luck!", tda, 2, 16750899, false, true);
+		addText(45014, "@yel@Deposit 25M", tda, 2, 16750899, false, true);
+		addText(45015, "@yel@To Enter", tda, 2, 16750899, false, true);
+		
+		addText(45080, "X", tda, 2, 16750899, false, true);
+		addText(45081, "X", tda, 2, 16750899, false, true);
+		addText(45082, "X", tda, 2, 16750899, false, true);
+		addText(45083, "X", tda, 2, 16750899, false, true);
+		addText(45084, "X", tda, 2, 16750899, false, true);
+		addText(45085, "X", tda, 2, 16750899, false, true);
+
+		addToItemGroup(45086, 30, 1, 13, 10, false, null, null, null);
+		
+    	tab.totalChildren(86);
+    	tab.child(0, 45001, 9, 12);
+    	tab.child(1, 45002, 127, 212);
+    	tab.child(2, 45003, 161, 212);
+    	tab.child(3, 45004, 195, 212);
+    	tab.child(4, 45005, 127, 246);
+    	tab.child(5, 45006, 161, 246);
+    	tab.child(6, 45007, 195, 246);
+    	tab.child(7, 45008, 135, 289);
+    	tab.child(8, 45009, 276, 289);
+    	tab.child(9, 45010, 369, 289);
+    	tab.child(10, 45011, 209, 22);
+    	tab.child(11, 45012, 207, 52);
+    	tab.child(12, 45013, 150, 188);
+    	tab.child(13, 45014, 405, 228);
+    	tab.child(14, 45015, 421, 245);
+    	
+    	int iD = 45016;
+    	int childCount = 15;
+    	int xPos = 40;
+    	int yPos = 78;
+    	int number = 1;
+    	for(int x=0; x < 64; x++) {
+    		System.out.print("DEBUG: " + number + " " + iD + " " + childCount + " \n");
+    		if(x==16 || x == 32 || x == 48) {
+    			xPos = 40;
+    			yPos = yPos + 29;
+    		}
+    		addClickableText(iD, ""+number, "Select", tda, 0, 0xff0000, false, true, 30);
+    		tab.child(childCount, iD, xPos, yPos);
+    		if(number >= 9) {
+    			if(number < 13)
+    				if(number == 12) {
+    					xPos = xPos + 29;
+    				}
+    				else 
+    					xPos = xPos + 27;
+    			else if(number <= 17) {
+    				if(number == 13) {
+    					xPos = xPos + 30;
+    				}
+    				else if(number == 15)
+    					xPos = xPos + 29;
+    			
+    				else 
+    					xPos = xPos + 27;
+    				}
+    			else if(number == 22 || number == 38 || number == 54) {
+    				xPos = xPos + 30;
+    			}
+    			else if(number == 26 || number == 42 || number == 58) {
+    				xPos = xPos + 30;
+    			}
+    			else if(number == 30 || number == 46 || number == 62) {
+    				xPos = xPos + 30;
+    			}
+    			/*else if(number <= 19)
+    				xPos = xPos + 30;
+    			else if(number <= 22)
+    				xPos = xPos + 31;
+    			else if(number <= 64)
+    				xPos = xPos + 27;*/
+    			else 
+        			xPos = xPos + 28;
+    		} else {
+    			xPos = xPos + 29;
+    		}
+    		
+    		childCount++;
+    		iD++;
+    		number++;
+    	}
+ 
+    	tab.child(79, 45080, 138, 220);
+    	tab.child(80, 45081, 172, 220);
+    	tab.child(81, 45082, 206, 220);
+    	tab.child(82, 45083, 138, 254);
+    	tab.child(83, 45084, 172, 254);
+    	tab.child(84, 45085, 206, 254);
+    	tab.child(85, 45086, 347, 229);
+    }
+    
 	public static void questTab(TextDrawingArea[] tda) {
 		RSInterface tab = addTabInterface(10220);
 		
