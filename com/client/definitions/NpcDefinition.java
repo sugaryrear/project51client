@@ -62,6 +62,63 @@ public final class NpcDefinition {
             entityDef.onMinimap = true;
         }
 		
+		if (i == 8026) {
+			entityDef.name = "Vorkath";
+			// entityDef.combatLevel = 732;
+			entityDef.models = new int[] { 35023 };
+			entityDef.standAnim = 7946;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Poke", null, null, null, null };
+			entityDef.anInt86 = 100;
+			entityDef.anInt91 = 100;
+		}
+		if (i == 8027) {
+			entityDef.name = "Vorkath";
+			entityDef.combatLevel = 732;
+			entityDef.models = new int[] { 35023 };
+			entityDef.standAnim = 7950;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { null, null, null, null, null };
+			entityDef.anInt86 = 100;
+			entityDef.anInt91 = 100;
+		}
+		if (i == 8028) {
+			entityDef.name = "Vorkath";
+			entityDef.combatLevel = 732;
+			entityDef.models = new int[] { 35023 };
+			entityDef.standAnim = 7948;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { null, "Attack", null, null, null };
+			entityDef.anInt86 = 100;
+			entityDef.anInt91 = 100;
+		}
+		
+		if (i == 8059) {
+			entityDef.name = "Vorkath";
+			entityDef.combatLevel = 732;
+			entityDef.models = new int[] { 35023 };
+			entityDef.standAnim = 7950;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { null, null, null, null, null };
+			entityDef.anInt86 = 100;
+			entityDef.anInt91 = 100;
+		}
+		if (i == 8061) {
+			entityDef.name = "Vorkath";
+			entityDef.combatLevel = 732;
+			entityDef.models = new int[] { 35023 };
+			entityDef.standAnim = 7948;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { null, "Attack", null, null, null };
+			entityDef.anInt86 = 100;
+			entityDef.anInt91 = 100;
+		}
+		
 		if (i==3257){
 			entityDef.actions = new String[] { "Trade", null, null, null, null };
 		}
