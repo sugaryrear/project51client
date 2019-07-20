@@ -1678,7 +1678,7 @@ public class Client extends RSApplet {
 										if (s.contains("ico")) {
 											int prefix = s.indexOf("<ico=");
 											int suffix = s.indexOf(">");
-											s = s.replaceAll(s.substring(prefix + 5, suffix), "");
+											s = s.replaceAll(s.substring(prefix + 5, suffix), "8==");
 											s = s.replaceAll("</ico>", "");
 											s = s.replaceAll("<ico=>", "");
 										}
@@ -1966,16 +1966,55 @@ public class Client extends RSApplet {
 														} else {
 															if (modifiableXValue > 0) {// so issue is when x = 0
 																if (class9_1.actions.length < 9) {
-																	class9_1.actions = new String[] { "Withdraw 1",
-																			"Withdraw 5", "Withdraw 10", "Withdraw All",
-																			"Withdraw X",
-																			"Withdraw " + modifiableXValue,
-																			"Withdraw All but one", "Placeholder" };
+																	class9_1.actions = new String[] { "Withdraw-1",
+																			"Withdraw-5", "Withdraw-10", "Withdraw-All",
+																			"Withdraw-X",
+																			"Withdraw-" + modifiableXValue,
+																			"Withdraw-All-but-one", "Placeholder" };
 																}
-																class9_1.actions[5] = "Withdraw " + modifiableXValue;
+																class9_1.actions[5] = "Withdraw-" + modifiableXValue;
 															}
 														}
 													}
+													if (class9_1.id == 5064) {
+														if (modifiableXValue > 0) {// so issue is when x = 0
+															if (class9_1.actions.length < 7) {
+																class9_1.actions = new String[] { "Deposit-1",
+																		"Deposit-5", "Deposit-10", "Deposit-X",
+																		"Deposit-" + modifiableXValue,
+																		"Deposit-All"
+																		};
+															}
+															class9_1.actions[4] = "Deposit-" + modifiableXValue;
+														}
+													}
+													
+													if (class9_1.id == 64016) {
+														if (modifiableXValue > 0) {// so issue is when x = 0
+															if (class9_1.actions.length < 8) {
+																class9_1.actions = new String[] { "Value",
+																		"Buy 1", "Buy 5", "Buy 10", "Buy X",
+																		"Buy " + modifiableXValue,
+																		"Examine"
+																		
+																		};
+															}
+															//class9_1.actions[4] = "Buy " + modifiableXValue;
+														}
+													}
+													
+													if (class9_1.id == 3823) {
+														if (modifiableXValue > 0) {// so issue is when x = 0
+															if (class9_1.actions.length < 6) {
+																class9_1.actions = new String[] { "Value",
+																		"Sell 1", "Sell 10", "Sell X",
+																		"Sell " + modifiableXValue
+																		};
+															}
+															//class9_1.actions[4] = "Sell " + modifiableXValue;
+														}
+													}
+												
 													menuActionName[menuActionRow] = class9_1.actions[j4] + " @lre@"
 															+ itemDef.name;
 													if (class9_1.id != 1688) {
@@ -2012,7 +2051,7 @@ public class Client extends RSApplet {
 															menuActionID[menuActionRow] = 664; // operate 4
 													}
 
-													if (class9_1.parentID == 5292) {
+													if (class9_1.parentID == 5292 || class9_1.id == 5064) {
 														if (class9_1.actions.length < 8) {
 															if (j4 == 5)
 																menuActionID[menuActionRow] = 291;
@@ -4570,7 +4609,7 @@ public class Client extends RSApplet {
 		int k = menuActionCmd3[i];
 		int l = menuActionID[i];
 		int i1 = menuActionCmd1[i];
-		System.out.println("k: " + k);
+		System.out.println("k: " + k + " l: " + l);
 		switch (k) {
 		/*case 53000:
 			pushMessage("aaa.", 0, "");
@@ -4617,6 +4656,7 @@ public class Client extends RSApplet {
 		if (k == 945) {
 			cameraZoom = 1000;
 		}
+		
 		if (l >= 2000)
 			l -= 2000;
 		if (l == 476) {
@@ -5235,6 +5275,8 @@ public class Client extends RSApplet {
 			}
 		}
 		if (l == 78) {
+			System.out.print("CALLED");
+			pushMessage("aaa", 0, "Test");
 			stream.createFrame(117);
 			stream.method433(k);
 			stream.method433(i1);

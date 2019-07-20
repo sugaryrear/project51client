@@ -2074,7 +2074,7 @@ public class RSInterface {
 		scroll.scrollMax = 800;
 
 		// Item container
-		addToItemGroup(64016, 10, 15, 14, 14, true, "Value", "Buy 1", "Buy 5", "Buy 10", "Buy X", null);
+		addToItemGroup(64016, 10, 15, 14, 14, true, "Value", "Buy 1", "Buy 5", "Buy 10", "Buy X", "Examine");
 		setBounds(64016, 8, 8, 0, scroll);
 
 		// Bounty hunter widget
