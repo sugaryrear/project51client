@@ -1980,12 +1980,13 @@ public class Client extends RSApplet {
 														if (modifiableXValue > 0) {// so issue is when x = 0
 															if (class9_1.actions.length < 7) {
 																class9_1.actions = new String[] { "Deposit-1",
-																		"Deposit-5", "Deposit-10", "Deposit-X",
+																		"Deposit-5", "Deposit-10", "Deposit-All",
+																		"Deposit-X",
 																		"Deposit-" + modifiableXValue,
-																		"Deposit-All"
+																		
 																		};
 															}
-															class9_1.actions[4] = "Deposit-" + modifiableXValue;
+															//class9_1.actions[4] = "Deposit-" + modifiableXValue;
 														}
 													}
 													
@@ -1994,8 +1995,7 @@ public class Client extends RSApplet {
 															if (class9_1.actions.length < 8) {
 																class9_1.actions = new String[] { "Value",
 																		"Buy 1", "Buy 5", "Buy 10", "Buy X",
-																		"Buy " + modifiableXValue,
-																		"Examine"
+																		"Buy " + modifiableXValue
 																		
 																		};
 															}
@@ -2005,13 +2005,13 @@ public class Client extends RSApplet {
 													
 													if (class9_1.id == 3823) {
 														if (modifiableXValue > 0) {// so issue is when x = 0
-															if (class9_1.actions.length < 6) {
+															if (class9_1.actions.length < 8) {
 																class9_1.actions = new String[] { "Value",
-																		"Sell 1", "Sell 10", "Sell X",
+																		"Sell 1", "Sell 5", "Sell 10", "Sell X",
 																		"Sell " + modifiableXValue
 																		};
 															}
-															//class9_1.actions[4] = "Sell " + modifiableXValue;
+															//class9_1.actions[5] = "Sell " + modifiableXValue;
 														}
 													}
 												
@@ -2028,6 +2028,10 @@ public class Client extends RSApplet {
 															menuActionID[menuActionRow] = 431;
 														if (j4 == 4)
 															menuActionID[menuActionRow] = 53;// can u pull up commands?
+														if(j4 == 5)
+															menuActionID[menuActionRow] = 54;
+														/*if(j4 == 6)
+															menuActionID[menuActionRow] = 55;*/
 														if (j4 == 7)
 															menuActionID[menuActionRow] = 1337;// placeholders
 													} else {
@@ -2051,7 +2055,7 @@ public class Client extends RSApplet {
 															menuActionID[menuActionRow] = 664; // operate 4
 													}
 
-													if (class9_1.parentID == 5292 || class9_1.id == 5064) {
+													if (class9_1.parentID == 5292 || class9_1.id == 5064 || class9_1.id == 3823) {
 														if (class9_1.actions.length < 8) {
 															if (j4 == 5)
 																menuActionID[menuActionRow] = 291;
@@ -4609,11 +4613,8 @@ public class Client extends RSApplet {
 		int k = menuActionCmd3[i];
 		int l = menuActionID[i];
 		int i1 = menuActionCmd1[i];
-		System.out.println("k: " + k + " l: " + l);
+		System.out.println("k: " + k + " l: " + l + " j: " + j + " i1: " + i1);
 		switch (k) {
-		/*case 53000:
-			pushMessage("aaa.", 0, "");
-			break;*/
 			
 			case 42522:
 				if (currentScreenMode != ScreenMode.FIXED) {
@@ -4764,7 +4765,35 @@ public class Client extends RSApplet {
 			stream.method432(i1);
 			stream.writeDWord(modifiableXValue);
 		}
-		if (l == 291) {
+		if (l == 291) { //issue with bank vs selling...
+			//pushMessage("int: " + openInterfaceID, 0, "int: " + openInterfaceID);
+			if(openInterfaceID == 5292) {
+				//pushMessage("int: " + openInterfaceID, 0, "int: " + openInterfaceID);
+				stream.createFrame(140);
+				stream.method433(k);
+				stream.method433(i1);
+				stream.method431(j);
+				atInventoryLoopCycle = 0;
+				atInventoryInterface = k;
+				atInventoryIndex = j;
+				atInventoryInterfaceType = 2;
+				if (RSInterface.interfaceCache[k].parentID == openInterfaceID)
+					atInventoryInterfaceType = 1;
+				if (RSInterface.interfaceCache[k].parentID == backDialogID)
+					atInventoryInterfaceType = 3;
+			}
+			else {
+				stream.createFrame(141);
+				stream.method432(j);
+				stream.writeWord(k);
+				stream.method432(i1);
+				stream.writeDWord(modifiableXValue);
+			}
+			
+			
+		}
+		
+		/*if(l == 55) {
 			stream.createFrame(140);
 			stream.method433(k);
 			stream.method433(i1);
@@ -4777,7 +4806,8 @@ public class Client extends RSApplet {
 				atInventoryInterfaceType = 1;
 			if (RSInterface.interfaceCache[k].parentID == backDialogID)
 				atInventoryInterfaceType = 3;
-		}
+		}*/
+		
 		if (l == 582) {
 			NPC npc = npcArray[i1];
 			if (npc != null) {
@@ -5147,6 +5177,31 @@ public class Client extends RSApplet {
 			if (RSInterface.interfaceCache[k].parentID == backDialogID)
 				atInventoryInterfaceType = 3;
 		}
+		
+		if(l == 54) {		
+			stream.createFrame(141);
+			//
+			//stream.method431(j);
+			//stream.method432(k);
+			//stream.method431(i1);
+			
+			//
+			
+			stream.method432(j);
+			stream.writeWord(k);
+			stream.method432(i1);
+			stream.writeDWord(modifiableXValue);
+		}
+		
+		/*
+		 * if (l == 300) {
+			stream.createFrame(141);
+			stream.method432(j);
+			stream.writeWord(k);
+			stream.method432(i1);
+			stream.writeDWord(modifiableXValue);
+		}
+		 */
 		if (l == 539) {
 			stream.createFrame(16);
 			stream.method432(i1);
@@ -5275,8 +5330,6 @@ public class Client extends RSApplet {
 			}
 		}
 		if (l == 78) {
-			System.out.print("CALLED");
-			pushMessage("aaa", 0, "Test");
 			stream.createFrame(117);
 			stream.method433(k);
 			stream.method433(i1);
