@@ -34,7 +34,7 @@ public class Configuration {
 	public static Boolean LIVE_SERVER = true;
 	public static final int PORT = 43594;
 
-	public static final String CLIENT_TITLE =  Configuration.LIVE_SERVER ? "Anguish" : "Anguish - Localworld";
+	public static final String CLIENT_TITLE =  Configuration.LIVE_SERVER ? "YourServerName" : "YourServerName";
 	public static Boolean DUMP_DATA = false;
 	public static int dumpID = 149;
 	public static Boolean DUMP_OTHER = false;
@@ -44,14 +44,14 @@ public class Configuration {
 	 * Sounds/Music Index 4 = Maps You can only do up to 300 files at a time
 	 */
 
-	public static final String CACHE_NAME = "AnguishCache";
+	public static final String CACHE_NAME = "project51";
 
 	public static boolean repackIndexOne = false, repackIndexTwo = false, repackIndexThree = false,
 			repackIndexFour = false;
 
-	public static final String CACHE_LINK = "https://www.dropbox.com/s/ykartjqw0ttj1qz/AnguishCache.zip?dl=1"; // Link for every client below client
 
-	public static final String MEDIA_ARCHIVES_LINK = "https://www.dl.dropboxusercontent.com/sh/qpw6qpe1gqm8zq6/AABqDA9gScRH72FQBebyKm0Ba"; // Link for every
+		public static final String CACHE_LINK = "https://www.dropbox.com/s/6sx9dktbvna6qv1/Project51%20Cache.zip?dl=1";
+		public static final String MEDIA_ARCHIVES_LINK = "https://www.dl.dropboxusercontent.com/sh/qpw6qpe1gqm8zq6/AABqDA9gScRH72FQBebyKm0Ba"; // Link for every
 																									// client below //
 	public static final String SPRITE_CACHE_URL = "https://www.dl.dropboxusercontent.com/sh/1km7safuq247s6l/AACFc43UzputgyZ_0SXUgDola"; // Link for every client below
 																						// client v1.12 - being
@@ -80,5 +80,8 @@ public class Configuration {
 	public static int statMenuColor = 0x00FFFF;//0xFF00FF;
 	public static boolean alwaysLeftClickAttack;
 	public static boolean hideCombatOverlay;
+	
+	public static boolean hidePetOptions = true;
+
 
 }

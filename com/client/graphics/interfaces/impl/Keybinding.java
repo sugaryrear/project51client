@@ -23,17 +23,17 @@ public class Keybinding {
 
 
 	public static int KEYBINDINGS[] = {
-			KeyEvent.VK_F1,
-			KeyEvent.VK_F2,
-			KeyEvent.VK_F3,
-			KeyEvent.VK_ESCAPE,
-			KeyEvent.VK_F4,
 			KeyEvent.VK_F5,
 			KeyEvent.VK_F6,
 			KeyEvent.VK_F7,
+			KeyEvent.VK_F1,
+			KeyEvent.VK_F2,
+			KeyEvent.VK_F3,
+			KeyEvent.VK_F4,
+			KeyEvent.VK_F12,
 			KeyEvent.VK_F8,
 			KeyEvent.VK_F9,
-			-1,
+			KeyEvent.VK_ESCAPE,
 			KeyEvent.VK_F10,
 			KeyEvent.VK_F11,
 			KeyEvent.VK_F12,
@@ -42,20 +42,20 @@ public class Keybinding {
 
 	public static void restoreDefault() {
 		KEYBINDINGS = new int[]{
-				KeyEvent.VK_F1,
-				KeyEvent.VK_F2,
-				KeyEvent.VK_F3,
-				KeyEvent.VK_ESCAPE,
-				KeyEvent.VK_F4,
 				KeyEvent.VK_F5,
 				KeyEvent.VK_F6,
 				KeyEvent.VK_F7,
+				KeyEvent.VK_F1,
+				KeyEvent.VK_F2,
+				KeyEvent.VK_F3,
+				KeyEvent.VK_F4,
+				KeyEvent.VK_F12,
 				KeyEvent.VK_F8,
 				KeyEvent.VK_F9,
-				-1,
+				KeyEvent.VK_ESCAPE,
 				KeyEvent.VK_F10,
 				KeyEvent.VK_F11,
-				KeyEvent.VK_F12,	
+				KeyEvent.VK_F12,
 		};
 		Configuration.escapeCloseInterface = false;
 	}

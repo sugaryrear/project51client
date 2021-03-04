@@ -45,13 +45,46 @@ public final class ObjectDefinition {
 			objectDef.aBoolean769 = false;
 		}
 		switch (i) {
-		
+		case 27289:
+			objectDef.anIntArray773 = new int[] { 2559 };
+			objectDef.actions = new String[] { "Take", null, null, null, null };
+			objectDef.name = "Knife";
+			break;
+			//karuulm dungeon objects
+        case 10805:
+			objectDef.name = "Stairs";
+			objectDef.anIntArray773 = new int[] { 36419 };
+        	objectDef.actions = new String[] { "Climb", null, null, null, null };
+			break;
+        case 10806:
+			objectDef.name = "Stairs";
+			objectDef.anIntArray773 = new int[] { 36400 };
+        	objectDef.actions = new String[] { "Climb", null, null, null, null };
+			break;
+        case 10500:
+			objectDef.name = "Rocks";
+			objectDef.anIntArray773 = new int[] { 36410 };
+        	objectDef.actions = new String[] { "Climb", null, null, null, null };
+			break;
 		 //DeadlyChest
         case 27288:
             objectDef.name = "@red@Deadly Chest";
             break;
         //EndDeadlyChest
-            
+        case 30013:
+        	objectDef.actions = new String[] { "Cut", null, null, null, null };
+			break;
+		case 8720:
+			objectDef.actions = new String[] { "Open", null, null, null, null };
+			objectDef.name = "Vote shop";
+			break;
+		case 15985:
+			objectDef.actions = new String[] { "Open", null, null, null, null };
+			objectDef.name = "Trading Post";
+			break;
+		case 26761:
+			objectDef.name = "Wilderness Lever";
+			break;
         //home portal
         case 22819:
         	objectDef.actions = new String[] { "Bank", null, null, null, null };
@@ -62,7 +95,7 @@ public final class ObjectDefinition {
 			objectDef.name = "Teleport Hub";
 			break;
         case 4004:
-        	objectDef.actions = new String[] { "Add Items", null, null, null, null };
+        	objectDef.actions = new String[] { "Donate to", null, null, null, null };
 			objectDef.name = "Well of Goodwill";
 			break;
         case 31618:
@@ -85,9 +118,6 @@ public final class ObjectDefinition {
 			objectDef.actions = new String[] { "Care-To", null, null, null, null };
 			objectDef.name = "Herb Patch";
 			break;
-			case 8720:
-				objectDef.name = "Vote shop";
-				break;
 		case 8210:
 			objectDef.actions = new String[] { "Rake", null, null, null, null };
 			objectDef.name = "Herb Patch";
@@ -310,7 +340,7 @@ public final class ObjectDefinition {
 			break;
 			
 		case 1276:
-			ReflectionUtil.printValues(objectDef);
+		//	ReflectionUtil.printValues(objectDef);
 			break;
 		}
 		if (Client.debugModels) {
@@ -345,7 +375,7 @@ public final class ObjectDefinition {
 			fw.write("]");
 			fw.close();
 		} catch (Exception e) {
-			System.out.println(e);
+			//System.out.println(e);
 		}
 	}
 

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Arrays;
 
 import com.client.DrawingArea;
 import com.client.MRUNodes;
@@ -30,7 +31,7 @@ public final class ItemDefinition {
 		//final Stream stream = new Stream(FileOperations.readFile(Signlink.getCacheDirectory() + "/data/obj.idx"));
 
 		totalItems = stream.readUnsignedWord();
-		streamIndices = new int[totalItems + 1000];
+		streamIndices = new int[totalItems + 10000];
 		int i = 2;
 		for (int j = 0; j < totalItems; j++) {
 			streamIndices[j] = i;
@@ -87,19 +88,888 @@ public final class ItemDefinition {
 		ItemDefinition itemDef = forID(itemId);
 
 		switch (itemId) {
-		
+		// Blood money
+		case 30230:
+			ItemDefinition coins = forID(995);
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.stackAmounts = coins.stackAmounts;
+			 itemDef.stackAmounts = new int[] { 2, 3, 50, 100, 500000, 1000000, 2500000,
+			 10000000, 100000000, 0 };//amount the model will change at
+			 itemDef.stackIDs = new int[] { 30231, 30232, 30233, 30234, 30235, 30236, 30237,
+			 30238, 30239, 0 };//new item id to grab the model from
+			itemDef.modelId = coins.modelId;
+			itemDef.modelOffset1 = coins.modelOffset1;
+			itemDef.modelOffset2 = coins.modelOffset2;
+			itemDef.modelRotation1 = coins.modelRotation1;
+			itemDef.modelRotation2 = coins.modelRotation2;
+			itemDef.modelZoom = coins.modelZoom;
+		break;
+		case 30231:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2485;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+		break;
+		case 30232:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2486;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+		break;
+		case 30233:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2487;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+		break;
+		case 30234:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2488;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+		break;
+		case 30235:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2667;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+		break;
+		case 30236:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2825;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+		case 30237:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2423;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+		break;
+		case 30238:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2710;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+		break;
+		case 30239:
+			itemDef.name = "Donator Coins";
+			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 8128; //original color
+			itemDef.originalModelColors[0] = 48930; 
+			itemDef.modelId = 2775;
+			itemDef.modelOffset1 = 3;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelRotation1 = 184;
+			itemDef.modelRotation2 = 2012;
+			itemDef.modelZoom = 710;
+			break;
+		case 30307:
+			itemDef.name = "@cya@Blue Santa hat";
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = "Wear";
+			itemDef.originalModelColors = new int[] { 43848 };
+			itemDef.modifiedModelColors  = new int[] { 933 };
+			itemDef.modelId = 2537;//Item Look
+			itemDef.modelZoom = 540;
+			itemDef.modelRotation1 = 72;
+			itemDef.modelRotation2 = 136;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelOffset1 = 1;
+			itemDef.maleModel = 189;
+			itemDef.femaleModel = 366;
+			itemDef.description = "A Blue Santa hat, the most expensive item in the game";
+			break;	
+		case 30308:
+			itemDef.name = "@mag@Purple Santa hat";
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = "Wear";
+			itemDef.modifiedModelColors = new int[1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 933;
+			itemDef.originalModelColors[0] = 2934671; 
+			itemDef.modelId = 2537;//Item Look
+			itemDef.modelZoom = 540;
+			itemDef.modelRotation1 = 72;
+			itemDef.modelRotation2 = 136;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelOffset1 = 1;
+			itemDef.maleModel = 189;
+			itemDef.femaleModel = 366;
+			itemDef.description = "A Purple Santa hat, the most expensive item in the game";
+			break;
+		case 30290:
+			itemDef.name = "Purple h'ween mask";
+			itemDef.inventoryOptions = new String[5]; 
+			itemDef.inventoryOptions[1] = "Wear"; 
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 926; //original color
+			itemDef.originalModelColors[0] = 2934671; 
+			itemDef.modelId = 2438;
+			itemDef.modelZoom = 730;
+			itemDef.modelRotation1 = 516;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = -10;
+			itemDef.maleModel = 3188;
+			itemDef.femaleModel = 3192;
+			itemDef.description = "An Purple H'ween Mask";
+			break;
+		case 30291:
+			itemDef.name = "Pink h'ween mask";
+			itemDef.inventoryOptions = new String[5]; 
+			itemDef.inventoryOptions[1] = "Wear"; 
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 926; //original color
+			itemDef.originalModelColors[0] = 55626; 
+			itemDef.modelId = 2438;
+			itemDef.modelZoom = 730;
+			itemDef.modelRotation1 = 516;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = -10;
+			itemDef.maleModel = 3188;
+			itemDef.femaleModel = 3192;
+			itemDef.description = "A Pink H'ween Mask";
+			break;
+		case 30292:
+			itemDef.name = "Lime h'ween mask";
+			itemDef.inventoryOptions = new String[5]; 
+			itemDef.inventoryOptions[1] = "Wear"; 
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 926; //original color
+			itemDef.originalModelColors[0] = 23345; 
+			itemDef.modelId = 2438;
+			itemDef.modelZoom = 730;
+			itemDef.modelRotation1 = 516;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = -10;
+			itemDef.maleModel = 3188;
+			itemDef.femaleModel = 3192;
+			itemDef.description = "A Lime Green H'ween Mask";
+			break;
+		case 30293:
+			itemDef.name = "Orange h'ween mask";
+			itemDef.inventoryOptions = new String[5]; 
+			itemDef.inventoryOptions[1] = "Wear"; 
+			itemDef.modifiedModelColors = new int [1];
+			itemDef.originalModelColors = new int[1];
+			itemDef.modifiedModelColors[0] = 926; //original color
+			itemDef.originalModelColors[0] = 4911; 
+			itemDef.modelId = 2438;
+			itemDef.modelZoom = 730;
+			itemDef.modelRotation1 = 516;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = -10;
+			itemDef.maleModel = 3188;
+			itemDef.femaleModel = 3192;
+			itemDef.description = "An Orange H'Ween Mask";
+			break;
+		case 30196:
+			itemDef.name = "Pet night beast";
+			itemDef.description = "none.";
+			itemDef.modelId = 32933;
+			itemDef.modelZoom = 7000;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 270;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+		case 30197:
+			itemDef.name = "Pet greater abyssal demon";
+			itemDef.description = "none.";
+			itemDef.modelId = 32921;
+			itemDef.modelZoom = 5000;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 270;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30198:
+			itemDef.name = "Pet crushing hand";
+			itemDef.description = "none.";
+			itemDef.modelId = 32922;
+			itemDef.modelZoom = 4500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30199:
+			itemDef.name = "Pet chasm crawler";
+			itemDef.description = "none.";
+			itemDef.modelId = 32918;
+			itemDef.modelZoom = 2500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30200:
+			itemDef.name = "Pet screaming banshee";
+			itemDef.description = "none.";
+			itemDef.modelId = 32823;
+			itemDef.modelZoom = 5500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30201:
+			itemDef.name = "Pet twisted banshee";
+			itemDef.description = "none.";
+			itemDef.modelId = 32847;
+			itemDef.modelZoom = 5500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30202:
+			itemDef.name = "Pet giant rockslug";
+			itemDef.description = "none.";
+			itemDef.modelId = 32919;
+			itemDef.modelZoom = 4500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30203:
+			itemDef.name = "Pet cockathrice";
+			itemDef.description = "none.";
+			itemDef.modelId = 32920;
+			itemDef.modelZoom = 4500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30204:
+			itemDef.name = "Pet flaming pyrelord";
+			itemDef.description = "none.";
+			itemDef.modelId = 32923;
+			itemDef.modelZoom = 4500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30205:
+			itemDef.name = "Pet monstrous basilisk";
+			itemDef.description = "none.";
+			itemDef.modelId = 32924;
+			itemDef.modelZoom = 4500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30206:
+			itemDef.name = "Pet malevolent mage";
+			itemDef.description = "none.";
+			itemDef.modelId = 32929;
+			itemDef.modelZoom = 2500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30207:
+			itemDef.name = "Pet insatiable bloodveld";
+			itemDef.description = "none.";
+			itemDef.modelId = 32926;
+			itemDef.modelZoom = 5000;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30208:
+			itemDef.name = "Pet insatiable mutated bloodveld";
+			itemDef.description = "none.";
+			itemDef.modelId = 32925;
+			itemDef.modelZoom = 5000;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30209:
+			itemDef.name = "Pet vitreous jelly";
+			itemDef.description = "none.";
+			itemDef.modelId = 32852;
+			itemDef.modelZoom = 4500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30210:
+			itemDef.name = "Pet vitreous warped jelly";
+			itemDef.description = "none.";
+			itemDef.modelId = 32917;
+			itemDef.modelZoom = 6000;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30211:
+			itemDef.name = "Pet cave abomination";
+			itemDef.description = "none.";
+			itemDef.modelId = 32935;
+			itemDef.modelZoom = 5500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30212:
+			itemDef.name = "Pet abhorrent spectre";
+			itemDef.description = "none.";
+			itemDef.modelId = 32930;
+			itemDef.modelZoom = 6500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30213:
+			itemDef.name = "pet repugnant spectre";
+			itemDef.description = "none.";
+			itemDef.modelId = 32931;
+			itemDef.modelZoom = 6500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30214:
+			itemDef.name = "Pet choke devil";
+			itemDef.description = "none.";
+			itemDef.modelId = 32927;
+			itemDef.modelZoom = 6000;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30215:
+			itemDef.name = "Pet king kurask";
+			itemDef.description = "none.";
+			itemDef.modelId = 32934;
+			itemDef.modelZoom = 8000;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30217:
+			itemDef.name = "Pet nuclear smoke devil";
+			itemDef.description = "none.";
+			itemDef.modelId = 32928;
+			itemDef.modelZoom = 5500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30218:
+			itemDef.name = "Pet marble gargoyle";
+			itemDef.description = "none.";
+			itemDef.modelId = 34251;
+			itemDef.modelZoom = 8000;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+
+		case 30219:
+			itemDef.name = "Pet nechryarch";
+			itemDef.description = "none.";
+			itemDef.modelId = 32932;
+			itemDef.modelZoom = 6500;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 0;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = null;
+			itemDef.inventoryOptions[2] = null;
+			// itemDef.aByte205 = 3;
+			break;
+		/**
+		 * Start of Max Capes
+		 */
+			case 13282:
+			case 13329:
+			case 13331:
+			case 13333:
+			case 13335:
+			case 13337:
+			case 13342:
+			case 20760:
+			//case 21284:
+			case 21285:
+			case 21776:
+			case 21780:
+			case 21784:
+			case 21898:
+				itemDef.inventoryOptions[2] = "Perks";
+				itemDef.inventoryOptions[3] = "Features";
+				break;
+				/**
+				 * End of Max capes
+				 */
+			case 12020:
+				itemDef.inventoryOptions = new String[5];
+				itemDef.inventoryOptions[0] = "Fill";
+				itemDef.inventoryOptions[2] = "Check";
+				itemDef.inventoryOptions[3] = "Empty";
+				itemDef.inventoryOptions[4] = "Drop";
+				//itemDef.inventoryOptions = new String[] { "Fill", null, "Check", null, "Empty", null, "Destroy", null };
+				itemDef.modifiedModelColors = new int [4];
+				itemDef.originalModelColors = new int[4];
+				itemDef.modifiedModelColors[0] = 6430; //original color
+				itemDef.originalModelColors[0] = -32700;
+				itemDef.modifiedModelColors[1] = 7467; //original color
+				itemDef.originalModelColors[1] = -32591;
+				itemDef.modifiedModelColors[2] = 6798; //original color
+				itemDef.originalModelColors[2] = -32597;
+				itemDef.modifiedModelColors[3] = 7223; //original color
+				itemDef.originalModelColors[3] = -14637;
+				itemDef.modelZoom = 1095;
+				itemDef.modelRotation1 = 189;
+				itemDef.modelRotation2 = 337;
+				itemDef.modelOffset1 = 3;
+				itemDef.modelOffset2 = 0;
+				break;
+			case 12019:
+				itemDef.modifiedModelColors = new int [4];
+				itemDef.originalModelColors = new int[4];
+				itemDef.modifiedModelColors[0] = 6430; //original color
+				itemDef.originalModelColors[0] = 37;
+				itemDef.modifiedModelColors[1] = 7467; //original color
+				itemDef.originalModelColors[1] = 28;
+				itemDef.modifiedModelColors[2] = 6798; //original color
+				itemDef.originalModelColors[2] = 16;
+				itemDef.modifiedModelColors[3] = 7223; //original color
+				itemDef.originalModelColors[3] = 6445;
+				itemDef.modelZoom = 779;
+				itemDef.modelRotation1 = 54;
+				itemDef.modelRotation2 = 269;
+				itemDef.modelOffset1 = 3;
+				itemDef.modelOffset2 = 0;
+				break;
+			case 5509:
+				itemDef.modelZoom = 520;
+				itemDef.modelRotation1 = 216;
+				itemDef.modelRotation2 = 108;
+				//itemDef.modelOffset1 = 0;
+				//itemDef.modelOffset2 = 0;
+				itemDef.modelId = 7510;
+				itemDef.name = "Small Pouch";
+				break;
+			case 5510:
+				itemDef.modelZoom = 650;
+				itemDef.modelRotation1 = 188;
+				itemDef.modelRotation2 = 64;
+				itemDef.modelOffset1 = 0;
+				itemDef.modelOffset2 = 0;
+				itemDef.modelId = 7507;
+				itemDef.name = "Medium Pouch";
+				break;
+			case 5511:
+				itemDef.modelZoom = 650;
+				itemDef.modelRotation1 = 188;
+				itemDef.modelRotation2 = 64;
+				itemDef.modelOffset1 = 0;
+				itemDef.modelOffset2 = 0;
+				itemDef.modelId = 7507;
+				itemDef.name = "Medium Pouch";
+				break;
+			case 5512:
+				itemDef.modelZoom = 650;
+				itemDef.modelRotation1 = 132;
+				itemDef.modelRotation2 = 96;
+				itemDef.modelOffset1 = 0;
+				itemDef.modelOffset2 = 2;
+				itemDef.modelId = 7509;
+				itemDef.name = "Large Pouch";
+				break;
+			case 5514:
+				itemDef.modelZoom = 760;
+				itemDef.modelRotation1 = 128;
+				itemDef.modelRotation2 = 1872;
+			//	itemDef.modelOffset1 = 0;
+				//itemDef.modelOffset2 = 2;
+				itemDef.modelId = 7508;
+				itemDef.name = "Giant Pouch";
+				break;
+			case 5515:
+				itemDef.modelZoom = 760;
+				itemDef.modelRotation1 = 128;
+				itemDef.modelRotation2 = 1872;
+			//	itemDef.modelOffset1 = 0;
+				//itemDef.modelOffset2 = 2;
+				itemDef.modelId = 7508;
+				itemDef.name = "Giant Pouch";
+				break;
 		case 6802:
 			itemDef.name = "Donator Scroll";
 			itemDef.description = "Used as currency in the donator shop.";
 			itemDef.inventoryOptions = new String[] { null, null, null, null, "Drop" };
 			break;
-		
+		case 1815:
+			itemDef.modelZoom = 3030;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 84;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelId = 6668;
+			itemDef.name = "Ahrim Jr";
+			itemDef.description = "A Barrows pet!";
+			break;
+		case 1816:
+			itemDef.modelZoom = 3030;
+			itemDef.modelRotation1 = 0;
+			itemDef.modelRotation2 = 84;
+			itemDef.modelOffset1 = 0;
+			itemDef.modelOffset2 = 0;
+			itemDef.modelId = 6675;
+			itemDef.name = "Karil Jr";
+			itemDef.description = "A Barrows pet!";
+			break;
+		case 1820:
+			itemDef.modelZoom = 1030;
+			itemDef.modelRotation1 = 96;
+			itemDef.modelRotation2 = 128;
+			itemDef.modelOffset1 = 5;
+			itemDef.modelOffset2 = 95;
+			itemDef.modelId = 6652;
+			itemDef.name = "Dharok Jr";
+			itemDef.description = "A Barrows pet!";
+			break;
+		case 1817:
+			itemDef.modelZoom = 1530;
+			itemDef.modelRotation1 = 96;
+			itemDef.modelRotation2 = 128;
+			itemDef.modelOffset1 = 5;
+			itemDef.modelOffset2 = 75;
+			itemDef.modelId = 6678;
+			itemDef.name = "Verac Jr";
+			itemDef.description = "A Barrows pet!";
+			break;
+		case 1819:
+			itemDef.modelZoom = 860;
+			itemDef.modelRotation1 = 96;
+			itemDef.modelRotation2 = 128;
+			itemDef.modelOffset1 = 17;
+			itemDef.modelOffset2 = 125;
+			itemDef.modelId = 6654;
+			itemDef.name = "Guthan Jr";
+			itemDef.description = "A Barrows pet!";
+			break;
+		case 1818:
+			itemDef.modelZoom = 685;
+			itemDef.modelRotation1 = 96;
+			itemDef.modelRotation2 = 118;
+			itemDef.modelOffset1 = 8;
+			itemDef.modelOffset2 = 125;
+			itemDef.modelId = 6657;
+			itemDef.name = "Torag Jr";
+			itemDef.description = "A Barrows pet!";
+			break;
+		case 3255://Steve pet
+			itemDef.name = "Steve";
+			break;
+		case 13513:
+			itemDef.name = "Bonus XP book (35%) (30Min)";
+			itemDef.description = "@red@Provides 35% more experience to whoever claims for 30 minutes!";
+			itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+			break;
+		case 13279:
+			itemDef.name = "Double Drop book (15Min)";
+			itemDef.description = "@red@Provides Double Drops to whoever claims for 15 minutes!";
+			itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+			break;	
+		case 14945:
+itemDef.name = "Bonus XP book (35%) (15Min)";
+itemDef.modelId = 50503;
+itemDef.modelRotation1 = 219;
+itemDef.modelRotation2 = 1979;
+itemDef.modelOffset2 = 1;
+itemDef.modelOffset1 = 4;
+itemDef.modelZoom = 905;
+itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+break;
+		case 14947:
+			itemDef.name = "Bonus XP book (35%) (60Min)";
+itemDef.modelId = 50504;
+itemDef.modelRotation1 = 219;
+itemDef.modelRotation2 = 1979;
+itemDef.modelOffset2 = 1;
+itemDef.modelOffset1 = 4;
+itemDef.modelZoom = 905;
+itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+break;
+		case 14949:
+			itemDef.name = "Bonus XP book (35%) (3Hour)";
+itemDef.modelId = 50505;
+itemDef.modelRotation1 = 219;
+itemDef.modelRotation2 = 1979;
+itemDef.modelOffset2 = 1;
+itemDef.modelOffset1 = 4;
+itemDef.modelZoom = 905;
+itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+break;
+		case 14951:
+			itemDef.name = "Bonus XP book (35%) (90 min)";
+itemDef.modelId = 50506;
+itemDef.modelRotation1 = 219;
+itemDef.modelRotation2 = 1979;
+itemDef.modelOffset2 = 1;
+itemDef.modelOffset1 = 4;
+itemDef.modelZoom = 905;
+itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+break;
+		case 14953:
+			itemDef.name = "Double Drop book (90Min)";
+itemDef.modelId = 50507;
+itemDef.modelRotation1 = 276;
+itemDef.modelRotation2 = 124;
+itemDef.modelOffset2 = 3;
+itemDef.modelOffset1 = 5;
+itemDef.modelZoom = 1789;
+itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+break;
+		case 14955:
+itemDef.name = "Double Drop book (30Min)";
+itemDef.modelId = 50508;
+itemDef.modelRotation1 = 276;
+itemDef.modelRotation2 = 124;
+itemDef.modelOffset2 = 3;
+itemDef.modelOffset1 = 5;
+itemDef.modelZoom = 1789;
+itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+break;
+		case 14957:
+itemDef.name = "Double Drop book (60Min)";
+itemDef.modelId = 50509;
+itemDef.modelRotation1 = 276;
+itemDef.modelRotation2 = 124;
+itemDef.modelOffset2 = 3;
+itemDef.modelOffset1 = 5;
+itemDef.modelZoom = 1789;
+itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+break;
+		case 14959:
+itemDef.name = "Double Drop book (3Hour)";
+itemDef.modelId = 50510;
+itemDef.modelRotation1 = 276;
+itemDef.modelRotation2 = 124;
+itemDef.modelOffset2 = 3;
+itemDef.modelOffset1 = 5;
+itemDef.modelZoom = 1789;
+itemDef.inventoryOptions = new String[] { "Read", null, null, null, "Drop" };
+break;
+
 		case 11179:
 			itemDef.name = "Raid Points";
 			itemDef.description = "Gather these from doing raids.";
 			break;
+			
+		case 20791:
+			itemDef.name = "Skilling Supply Crate";
+			itemDef.description = "A reward from completeing Daily tasks.";
+			break;
 		
-		case 22550:
+		case 22560:
 			itemDef.modelId = 8275;
 			itemDef.name = "Divine Spirit Shield";
 			itemDef.description = "It's a Divine Spirit Shield.";
@@ -111,110 +981,21 @@ public final class ItemDefinition {
 			byte[] ph = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Divine_spirit_shield.png");
 			itemDef.customSpriteLocation = ph;
 			break;
-			
-		case 22501:
-			itemDef.modelId = 8264;
-			itemDef.name = "Statius's full helm";
-			itemDef.description = "It's a Statius full helm.";
-			itemDef.maleModel = 8264;
-			itemDef.femaleModel = 8261;
+		case 22562:
+			itemDef.name = "Dice (up to 100)";
+			itemDef.description = "A 100-sided dice.";
+			itemDef.modelId = 31223;
+			itemDef.modelZoom = 1050;
+			itemDef.modelRotation2 = 215;
+			itemDef.modelRotation1 = 94;
+			itemDef.modelOffset2 = -5;
+			itemDef.modelOffset1 = -10;
 			itemDef.inventoryOptions = new String[5];
-			itemDef.inventoryOptions[1] = "Wield";
-			itemDef.inventoryOptions[4] = "Drop";
-			byte[] ph1 = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Statius's_full_helm.png");
-			itemDef.customSpriteLocation = ph1;
-			break;
-			
-		case 22502:
-			itemDef.modelId = 8265;
-			itemDef.name = "Statius's platebody";
-			itemDef.description = "It's a Statius platebody.";
-			itemDef.maleModel = 8265;
-			itemDef.femaleModel = 8262;
-			itemDef.inventoryOptions = new String[5];
-			itemDef.inventoryOptions[1] = "Wield";
-			itemDef.inventoryOptions[4] = "Drop";
-			byte[] ph2 = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Statius's_platebody.png");
-			itemDef.customSpriteLocation = ph2;
-			break;
-
-			
-		case 22503:
-			itemDef.modelId = 8266;
-			itemDef.name = "Statius's platelegs";
-			itemDef.description = "It's a Statius platelegs.";
-			itemDef.maleModel = 8266;
-			itemDef.femaleModel = 8263;
-			itemDef.inventoryOptions = new String[5];
-			itemDef.inventoryOptions[1] = "Wield";
-			itemDef.inventoryOptions[4] = "Drop";
-			byte[] ph3 = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Statius's_platelegs.png");
-			itemDef.customSpriteLocation = ph3;
-			break;
-			
-		case 22504:
-			itemDef.modelId = 8267;
-			itemDef.name = "Statius's warhammer";
-			itemDef.description = "It's a Statius platelegs.";
-			itemDef.maleModel = 8267;
-			itemDef.femaleModel = 8267;
-			itemDef.inventoryOptions = new String[5];
-			itemDef.inventoryOptions[1] = "Wield";
-			itemDef.inventoryOptions[4] = "Drop";
-			byte[] ph4 = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Statius's_warhammer.png");
-			itemDef.customSpriteLocation = ph4;
-			break;
-			
-		case 22505:
-			itemDef.modelId = 8268;
-			itemDef.name = "Vesta's Longsword";
-			itemDef.description = "It's a Vesta longsword.";
-			itemDef.maleModel = 8268;
-			itemDef.femaleModel = 8268;
-			itemDef.inventoryOptions = new String[5];
-			itemDef.inventoryOptions[1] = "Wield";
-			itemDef.inventoryOptions[4] = "Drop";
-			byte[] ph5 = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Vesta's_longsword.png");
-			itemDef.customSpriteLocation = ph5;
-			break;
-			
-		case 22506:
-			itemDef.modelId = 8269;
-			itemDef.name = "Vesta's Spear";
-			itemDef.description = "It's a Vesta spear.";
-			itemDef.maleModel = 8269;
-			itemDef.femaleModel = 8269;
-			itemDef.inventoryOptions = new String[5];
-			itemDef.inventoryOptions[1] = "Wield";
-			itemDef.inventoryOptions[4] = "Drop";
-			byte[] ph6 = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Vesta's_spear.png");
-			itemDef.customSpriteLocation = ph6;
-			break;
-			
-		case 22507:
-			itemDef.modelId = 8270;
-			itemDef.name = "Vesta's Chainbody";
-			itemDef.description = "It's a Vesta chainbody.";
-			itemDef.maleModel = 8270;
-			itemDef.femaleModel = 8271;
-			itemDef.inventoryOptions = new String[5];
-			itemDef.inventoryOptions[1] = "Wield";
-			itemDef.inventoryOptions[4] = "Drop";
-			byte[] ph7 = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Vesta's_chainbody.png");
-			itemDef.customSpriteLocation = ph7;
-			break;
-			
-		case 22508:
-			itemDef.modelId = 8272;
-			itemDef.name = "Vesta's Plateskirt";
-			itemDef.description = "It's a Vesta plateskirt.";
-			itemDef.maleModel = 8272;
-			itemDef.femaleModel = 8272;
-			itemDef.inventoryOptions = new String[5];
-			itemDef.inventoryOptions[1] = "Wield";
-			itemDef.inventoryOptions[4] = "Drop";
-			byte[] ph8 = FileOperations.readFile(Signlink.getCacheDirectory() + "/Customs/Vesta's_plateskirt.png");
-			itemDef.customSpriteLocation = ph8;
+			itemDef.inventoryOptions[1] = "Public-roll";
+			itemDef.inventoryOptions[2] = null;
+			itemDef.name = "Dice (up to 100)";
+			itemDef.anInt196 = 15;
+			itemDef.anInt184 = 25;
 			break;
 			
 		case 11864:
@@ -225,10 +1006,21 @@ public final class ItemDefinition {
 		case 19645:
 		case 19647:
 		case 19649:
+		case 21264:
+		case 21266:
+		case 21888:
+		case 21890:
+		case 23073:
+		case 23075:
 			itemDef.equipActions[2] = "Log";
 			itemDef.equipActions[1] = "Check";
 			break;
-			
+		case 21347:
+			itemDef.inventoryOptions = new String[5];
+			itemDef.inventoryOptions[1] = "Set Bolt Tips";
+			itemDef.inventoryOptions[2] = "Set Arrowtips";
+			itemDef.inventoryOptions[3] = "Set Javelin Heads";
+			break;
 		case 8152:
             itemDef.name = "@mag@Bank Chest";
             itemDef.inventoryOptions = new String[] { "Open", null, "Check Charges", null, "Drop" };
@@ -289,9 +1081,9 @@ public final class ItemDefinition {
             itemDef.name = "@red@Deadly Key";
             break;
            
-        case 964:
+      /*  case 964:
             itemDef.name = "@red@Deadly Key Piece";
-            break;
+            break;*/
            
         case 6104:
             itemDef.name = "@red@Deadly Key Piece";
@@ -322,11 +1114,11 @@ public final class ItemDefinition {
 				itemDef.name = "Dice (up to 100)";
 				itemDef.description = "A 100-sided dice.";
 				itemDef.modelId = 31223;
-				itemDef.modelZoom = 1104;
+				itemDef.modelZoom = 1050;
 				itemDef.modelRotation2 = 215;
 				itemDef.modelRotation1 = 94;
 				itemDef.modelOffset2 = -5;
-				itemDef.modelOffset1 = -18;
+				itemDef.modelOffset1 = 0;
 				itemDef.inventoryOptions = new String[5];
 				itemDef.inventoryOptions[1] = "Public-roll";
 				itemDef.inventoryOptions[2] = null;
@@ -958,7 +1750,15 @@ public final class ItemDefinition {
 			System.out.println(e);
 		}
 	}
+	
+	   public static void applyTexturing(Model model, int id) {
+		      switch(id) {
+		      case 1843:
+		         model.setTexture(25);
+		         break;
+		      }
 
+		   }
 	public static void dumpList() {
 		try {
 			FileWriter fw = new FileWriter(System.getProperty("user.home") + "/Desktop/item_data_178.json");
@@ -1021,7 +1821,24 @@ public final class ItemDefinition {
 			ioe.printStackTrace();
 		}
 	}
-
+	public static void dumpColors() {
+		try {
+			FileWriter fw = new FileWriter(System.getProperty("user.home") + "/Desktop/item_data.json");
+			for (int i = 19000; i < totalItems; i++) {
+				ItemDefinition itemDefinition = ItemDefinition.forID(i);
+				fw.write("id: " + itemDefinition.id + " - " + itemDefinition.name + "\n");
+				fw.write("model id: " + itemDefinition.modelId + "\n");
+				fw.write("male model id: " + itemDefinition.anInt188 + "\n");
+				fw.write("female model id: " + itemDefinition.anInt164 + "\n");
+				fw.write("modified color: " + Arrays.toString(itemDefinition.modifiedModelColors) + "\n");
+				fw.write("original color: " + Arrays.toString(itemDefinition.originalModelColors) + "\n\n");
+			}
+			fw.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		System.out.println("Done dumping item colors!");
+	}
 	public static void dumpStackable() {
 		try {
 			FileOutputStream out = new FileOutputStream(new File("stackable.dat"));

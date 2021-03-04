@@ -395,8 +395,8 @@ public class Interfaces extends RSInterface {
 		addSpellLarge2(13674 + 975, 563, 560, 562, 1, 1, 1, 30012, 30009, 30011, 84, "Teleport to Bounty\\nTarget",
 				"Teleports you near your Bounty\\nHunter Target", tda, 8, 7, 5);
 
-		addSpellSmall2(22674 + 975, 565, 566, 564, 20, 20, 1, 30014, 30015, 30013, 92, "Lvl-7 Enchant",
-				"For use on zenyte jewellery", tda, 12, 8, 5);
+		addSpellSmall2(22674 + 975, 565, 566, 564, 20, 20, 1, 30014, 30015, 30013, 93, "Lvl-7 Enchant",
+				"For use on zenyte jewellery", tda, 12, 16, 2);
 		
 		addSpellSmaller(22644 + 975, 556, 21880, 7, 1, 30005, 28226, 80, "Wind Surge",
 				"A very high level Air missile", tda, 0, 10, 2);
@@ -1982,7 +1982,7 @@ public class Interfaces extends RSInterface {
 		//gamemode text options
 		addText(33811, "Normal", tda, 1, 0xFFFFFF, false, true);
 		addText(33812, "Ironman", tda, 1, 0xFFFFFF, false, true);
-		addText(33813, "Ultimate Ironman", tda, 1, 0xFFFFFF, false, true);
+		addText(33813, "Hardcore Ironman", tda, 1, 0xFFFFFF, false, true);
 		addText(33814, "Confirm", tda, 2, 0xFF981F, false, true);
 		
 		//description text
@@ -2059,13 +2059,13 @@ public class Interfaces extends RSInterface {
 				tda, 0, 0xFD851A, false, true);
 		addText(42408, "In addition, an Ultimate Iron Man cannot use banks.", tda, 0, 0xFD851A, false, true);
 		addText(42409, "No Iron Man restrictions will apply to this account.", tda, 0, 0xFD851A, false, true);
-		addText(42424, "    x1 experience rates within all skills.", tda, 0, 0xFD851A, false, true);
+		addText(42424, "   		    7% Drop rate boost, lose the rank on death", tda, 0, 0xFD851A, false, true);
 		addText(42410, "You must talk to an npc that will reset your mode after a seven day\\n" + "delay.", tda, 0,
 				0xFD851A, false, true);
 		addText(42411, "The Iron Man restrictions can never be removed.", tda, 0, 0xFD851A, false, true);
-		addText(42412, "Standard Iron Man", tda, 0, 0xFFFFFF, false, true);
-		addText(42413, "Ultimate Iron Man", tda, 0, 0xFFFFFF, false, true);
-		addText(42422, "Extreme Mode", tda, 0, 0xFFFFFF, false, true);
+		addText(42412, "Standard IronMan", tda, 0, 0xFFFFFF, false, true);
+		addText(42413, "Ultimate IronMan", tda, 0, 0xFFFFFF, false, true);
+		addText(42422, "Hardcore Ironman", tda, 0, 0xFFFFFF, false, true);
 		addText(42414, "None", tda, 0, 0xFFFFFF, false, true);
 		addText(42415, "NPC", tda, 0, 0xFFFFFF, false, true);
 		addText(42416, "Permanent", tda, 0, 0xFFFFFF, false, true);
@@ -2129,7 +2129,7 @@ public class Interfaces extends RSInterface {
 				false, true, tda, 1, 406);
 		addTextButton(41017, "Extend Boss Tasks					   (100)", "Extend Boss Tasks", 0xFF981F, false, true,
 				tda, 1, 407);
-		addTextButton(41018, "Recolor Slayer Helmet", "Recolor Slayer Helmet", 0xFF981F, false, true, tda, 1, 408);
+		addTextButton(41018, "Imbue Salve Amulet or Salve (E)	   (350)", "Imbue Salve Amulet", 0xFF981F, false, true, tda, 1, 408);
 		setChildren(14, rsInterface);
 		rsInterface.child(0, 41001, 12, 10);
 		rsInterface.child(1, 41002, 473, 20);
@@ -2159,13 +2159,15 @@ public class Interfaces extends RSInterface {
 		addText(41511, "Slayer Points: ", tda, 3, 0xFF981F);
 		addTextButton(41512, "Learn how to create slayer helmet								   (350)", "Learn",
 				0xFF981F, false, true, tda, 1, 404);
-		addTextButton(41513, "Learn how to create slayer helmet (imbued)				  (150)", "Learn", 0xFF981F,
+		addTextButton(41513, "Learn how to imbue Black Masks & Slayer helmets				  (150)", "Learn", 0xFF981F,
 				false, true, tda, 1, 405);
-		addTextButton(41514, "Cerberus Slayer (Unlocks Cerberus)				  (175)", "Learn", 0xFF981F, false,
+		addTextButton(41514, "Learn about Cerberus (Unlocks Cerberus)				  (275)", "Learn", 0xFF981F, false,
 				true, tda, 1, 406);
-		addTextButton(41515, "Learn how to encounter Superior Slayer Monsters				  (75)", "Learn", 0xFF981F,
+		addTextButton(41515, "Learn how to encounter Superior Slayer Monsters				  (300)", "Learn", 0xFF981F,
 				false, true, tda, 1, 407);
-		setChildren(11, rsInterface);
+		addTextButton(41516, "Learn about finding Slayer Pets while on task				  (1250)", "Learn", 0xFF981F,
+				false, true, tda, 1, 408);
+		setChildren(12, rsInterface);
 		rsInterface.child(0, 41501, 12, 10);
 		rsInterface.child(1, 41502, 473, 20);
 		rsInterface.child(2, 41503, 473, 20);
@@ -2177,6 +2179,8 @@ public class Interfaces extends RSInterface {
 		rsInterface.child(8, 41513, 67, 145);
 		rsInterface.child(9, 41514, 67, 170);
 		rsInterface.child(10, 41515, 67, 195);
+		rsInterface.child(11, 41516, 67, 220);
+
 	}
 
 	public static void slayerInterfaceSub2(TextDrawingArea[] tda) {

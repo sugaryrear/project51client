@@ -1,6 +1,8 @@
 package com.client.features.settings;
 
 import com.client.utilities.FileOperations;
+import com.client.Client;
+import com.client.Configuration;
 import com.client.Stream;
 import com.client.StreamLoader;
 import com.client.sign.Signlink;
@@ -79,7 +81,10 @@ public class InformationFile {
         // Writes the opcode '1' and a string of characters that make up the players pass word
         stream.writeByte(5);
         stream.writeString(storedPassword);
-
+        
+        stream.writeByte(6);
+        stream.writeByte(Configuration.bountyHunter ? 1 : 0);
+        
         // Writes all bytes to the file from a new byte array which has been resized
         FileOperations.writeFile(FILE_LOCATION.toString(), Arrays.copyOf(stream.buffer, stream.currentOffset));
     }
@@ -137,7 +142,10 @@ public class InformationFile {
                 case 5:
                     storedPassword = stream.readString();
                     break;
-
+                    
+                case 6:
+                	Configuration.bountyHunter = stream.readUnsignedByte() == 1;
+                	break;
                 default:
                     throw new IllegalStateException("Opcode #" + opcode + " does not exist.");
             }

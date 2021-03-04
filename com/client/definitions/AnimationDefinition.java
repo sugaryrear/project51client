@@ -553,6 +553,83 @@ public final class AnimationDefinition {
 		return j;
 	}
 
+/*	private void readValues(Stream stream) {
+		int i;
+		while ((i = stream.readUnsignedByte()) != 0) {
+
+			if (i == 1) {
+				anInt352 = stream.readUnsignedWord();
+				primaryFrames = new int[anInt352];
+				secondaryFrames = new int[anInt352];
+				durations = new int[anInt352];
+
+				for (int j = 0; j < anInt352; j++)
+					durations[j] = stream.readUnsignedWord();
+
+
+				for (int j = 0; j < anInt352; j++) {
+					primaryFrames[j] = stream.readUnsignedWord();
+					secondaryFrames[j] = -1;
+				}
+
+				for (int j = 0; j < anInt352; j++) {
+					primaryFrames[j] += stream.readUnsignedWord() << 16;
+				}
+			} else if (i == 2)
+				anInt356 = stream.readUnsignedWord();
+			else if (i == 3) {
+				int k = stream.readUnsignedByte();
+				anIntArray357 = new int[k + 1];
+				for (int l = 0; l < k; l++)
+					anIntArray357[l] = stream.readUnsignedByte();
+				anIntArray357[k] = 9999999;
+			} else if (i == 4)
+				aBoolean358 = true;
+			else if (i == 5)
+				anInt359 = stream.readUnsignedByte();
+			else if (i == 6)
+				anInt360 = stream.readUnsignedWord();
+			else if (i == 7)
+				anInt361 = stream.readUnsignedWord();
+			else if (i == 8)
+				anInt362 = stream.readUnsignedByte();
+			else if (i == 9)
+				anInt363 = stream.readUnsignedByte();
+			else if (i == 10)
+				anInt364 = stream.readUnsignedByte();
+			else if (i == 11)
+				anInt365 = stream.readUnsignedByte();
+			else if (i == 12) {
+				int len = stream.readUnsignedByte();
+				stream.skip(4 * len);
+			} else if(i == 13) {
+				int len = stream.readUnsignedByte();
+				stream.skip(3 * len);
+			} else
+				System.out.println("Error unrecognised seq config code: " + i);
+		}
+		if (anInt352 == 0) {
+			anInt352 = 1;
+			primaryFrames = new int[1];
+			primaryFrames[0] = -1;
+			secondaryFrames = new int[1];
+			secondaryFrames[0] = -1;
+			durations = new int[1];
+			durations[0] = -1;
+		}
+		if (anInt363 == -1)
+			if (anIntArray357 != null)
+				anInt363 = 2;
+			else
+				anInt363 = 0;
+		if (anInt364 == -1) {
+			if (anIntArray357 != null) {
+				anInt364 = 2;
+				return;
+			}
+			anInt364 = 0;
+		}
+	}*/
 	private void readValues(Stream stream) {
 		int i;
 		while ((i = stream.readUnsignedByte()) != 0) {
@@ -630,7 +707,6 @@ public final class AnimationDefinition {
 			anInt364 = 0;
 		}
 	}
-
 	public AnimationDefinition() {
 		anInt356 = -1;
 		aBoolean358 = false;

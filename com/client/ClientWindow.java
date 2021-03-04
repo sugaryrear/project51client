@@ -1,10 +1,8 @@
 package com.client;
 
+import java.awt.event.*;
 import java.net.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.WindowListener;
 
 import javax.swing.*;
 
@@ -17,7 +15,22 @@ public class ClientWindow extends Client implements ActionListener, WindowListen
 	private InformationFile informationFile = new InformationFile();
 	
 	String userNameFrameTitle;
-	
+
+	private void setLogo() {
+		URL url2 = null;
+		boolean update = true;
+		try {
+			url2 = new URL("https://www.dropbox.com/s/48sentezwfe7p76/output-onlinepngtools_1_-removebg-preview.png?dl=1");
+		} catch (MalformedURLException ex) {
+			update = false;
+			ex.printStackTrace();
+		}
+		if (update) {
+			Image bimg = Toolkit.getDefaultToolkit().getImage(url2);
+			frame.setIconImage(bimg);
+			frame.setBackground(Color.BLACK);
+		}
+	}
 	public void initUI() {
 		try {
 			informationFile.read();

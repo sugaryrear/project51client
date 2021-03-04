@@ -389,7 +389,6 @@ public class RSInterface {
 		invStackSizes[i] = invStackSizes[j];
 		invStackSizes[j] = k;
 	}
-
 	public static void slider(int id, double min, double max, int icon, int background, int contentType) {
 		RSInterface widget = addInterface(id);
 		widget.slider = new Slider(Client.cacheSprite3[icon], Client.cacheSprite3[background], min, max);
@@ -672,7 +671,7 @@ public class RSInterface {
         }
         
 	}
-
+	
     public static void infoTab(TextDrawingArea[] tda) {
         RSInterface tab = addTabInterface(47500);
         addText(47501, "@or1@Teleport Tab", tda, 2, 16750899, false, true);
@@ -687,7 +686,7 @@ public class RSInterface {
         configHoverButton(47509, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47509 });
         configHoverButton(47510, "Select", "Interfaces/infoTab/SPRITE", 4, 5, 5, 5, false, new int[] { 47510 });
        
-        addText(47511, "@or1@Dungeons", tda, 1, 16750899, false, true);
+        addText(47511, "@or1@Monsters", tda, 1, 16750899, false, true);
         addText(47512, "@or1@Minigames", tda, 1, 16750899, false, true);
         addText(47513, "@or1@Skilling", tda, 1, 16750899, false, true);
         addText(47514, "@or1@Bosses", tda, 1, 16750899, false, true);
@@ -857,7 +856,7 @@ public class RSInterface {
 		
 		
 		//addText(10221, "@or1@Control Panel", tda, 2, 16750899, false, true);
-		addText(10222, "@or1@Anguish", tda, 2, 16750899, true, true);
+		addText(10222, "@or1@Dragonstone", tda, 2, 16750899, true, true);
 		addSprite(10224, 0, "Interfaces/infoTab/SPRITE");
 		addSprite(10225, 1, "Interfaces/infoTab/SPRITE");
 		configHoverButton(10403, "Select", "Interfaces/OSRSQuestTab/SPRITE", 1, 2, 3, 3, false, new int[] { 10404, 10405, 10406 });
@@ -866,7 +865,7 @@ public class RSInterface {
 		configHoverButton(10406, "Select", "Interfaces/OSRSQuestTab/SPRITE", 10, 11, 12, 12, false, new int[] { 10403, 10404, 10405 });
 		tab.totalChildren(21);
 		tab.child(0, 10224, 0, 35); //pic
-		tab.child(1, 10222, 95, 240); //anguish
+		tab.child(1, 10222, 95, 240); //Dragonstone
 		tab.child(2, 10404, 8, 12); //begin buttons
 		tab.child(3, 10405, 52, 12);
 		tab.child(4, 10406, 96, 13);
@@ -1530,9 +1529,9 @@ public class RSInterface {
 		int[] items = new int[] { 257, 5295, 449, 8841, 8840, 11663, 11665,
 				8839, 8842, 11664, 10551, 7462, 10548 };
 		String[] costs = new String[] { "(30 Pts)", "(15 Pts)", "(15 Pts)",
-				"(160 Pts)", "(175 Pts)", "(150 Pts)", "(150 Pts)",
-				"(175 Pts)", "(110 Pts)", "(150 Pts)", "(300 Pts)",
-				"(80 Pts)", "(60 Pts)" };
+				"(125 Pts)", "(150 Pts)", "(125 Pts)", "(125 Pts)",
+				"(150 Pts)", "(100 Pts)", "(125 Pts)", "(275 Pts)",
+				"(35 Pts)", "(50 Pts)" };
 		for (int index = 0; index < 39; index += 3) {
 			addText(37052 + index, names[index / 3], tda, 1, 0x339900, false,
 					true);
@@ -2360,10 +2359,10 @@ public class RSInterface {
 	public static void wellOfGoodWill(TextDrawingArea[] tda) {
 		RSInterface wogw = addInterface(38000);
 		addSprite(38001, 0, "Interfaces/WellOfGoodWill/IMAGE");
-		addText(38002, "Well Of Goodwill", tda, 2, 0xFF981F, true, true);
-		addText(38003, "Double Experience Points", tda, 2, 0xFF981F, false, true);
+		addText(38002, "Well Of Goodwill - Hour long perks!", tda, 2, 0xFF981F, true, true);
+		addText(38003, "Bonus Experience (50%) ", tda, 2, 0xFF981F, false, true);
 		addText(38004, "Bonus Minigame Points", tda, 2, 0xFF981F, false, true);
-		addText(38005, "Droprate Increase (x2)", tda, 2, 0xFF981F, false, true);
+		addText(38005, "2 Drops 1 Kill", tda, 2, 0xFF981F, false, true);
 		addClickableSprites(38006, "Toggle", "Interfaces/WellOfGoodWill/IMAGE", 5, 5, 6);
 		addClickableSprites(38007, "Toggle", "Interfaces/WellOfGoodWill/IMAGE", 5, 5, 6);
 		addClickableSprites(38008, "Toggle", "Interfaces/WellOfGoodWill/IMAGE", 5, 5, 6);

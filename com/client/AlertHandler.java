@@ -33,7 +33,7 @@ public class AlertHandler {
 					alert.extraY -= 5;
 				if(alert.extraY < 0)
 					alert.extraY = 0;
-				c.alertBack.drawSpriteOpacity(alert.getX(), alert.getY()+alert.extraY, alert.getOpacity());
+				c.alertback.drawSpriteOpacity(alert.getX(), alert.getY()+alert.extraY, alert.getOpacity());
 			} else if (alert.isClosed()) {
 				alert.extraY += 5;
 				if(alert.getOpacity() > 0)
@@ -43,16 +43,16 @@ public class AlertHandler {
 					show = false;
 					alert.active = false;
 				}
-				c.alertBack.drawSpriteOpacity(alert.getX(), alert.getY()+alert.extraY, alert.getOpacity());
+				c.alertback.drawSpriteOpacity(alert.getX(), alert.getY()+alert.extraY, alert.getOpacity());
 			} else {
 				if(alert.getOpacity() < 90)
 					alert.opacity = 90;
 				if (show) {
-					c.alertBack.drawSpriteOpacity(alert.getX(), alert.getY(), hovered ? alert.getOpacity()+25 : alert.getOpacity());
+					c.alertback.drawSpriteOpacity(alert.getX(), alert.getY(), hovered ? alert.getOpacity()+25 : alert.getOpacity());
 					if(hovered)
-						c.alertBorderH.drawSprite(alert.getX(), alert.getY());
+						c.alertborderh.drawSprite(alert.getX(), alert.getY());
 					else
-						c.alertBorder.drawSprite(alert.getX(), alert.getY());
+						c.alertborder.drawSprite(alert.getX(), alert.getY());
 				}
 
 				c.aTextDrawingArea_1271.drawText(0, alert.getTitle(), alert.getY()+16, alert.getX()+243);

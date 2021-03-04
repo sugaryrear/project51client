@@ -120,10 +120,10 @@ public class CacheDownloader {
 				float speedInBytes = 1000f * numWritten / elapsedTime;
 				int timeRemaining =  (int) ((fileSize - numWritten) / speedInBytes);
 				
-				drawLoadingText(percentage, "Anguish - Downloading Cache " + percentage + "%", downloadSpeed, timeRemaining);
+				drawLoadingText(percentage, "Dragonstone - Downloading Cache " + percentage + "%", downloadSpeed, timeRemaining);
 			}
 			System.out.println(localFileName + "\t" + numWritten);
-			drawLoadingText("Anguish - Unzipping...");
+			drawLoadingText("Dragonstone - Unzipping...");
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		} finally {

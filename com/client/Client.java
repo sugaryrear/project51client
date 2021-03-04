@@ -157,9 +157,9 @@ public class Client extends RSApplet {
 	private static boolean removeShiftDropOnMenuOpen;
 
 	public AlertHandler alertHandler;
-	public Sprite alertBack;
-	public Sprite alertBorder;
-	public Sprite alertBorderH;
+	public Sprite alertback;
+	public Sprite alertborder;
+	public Sprite alertborderh;
 	
 	protected JFrame frame;
 	/*
@@ -2110,6 +2110,8 @@ public class Client extends RSApplet {
 														+ itemDef.modelRotation2 + "", 0, "");
 												pushMessage("Offset: <col=255>x" + itemDef.modelOffset1 + " y"
 														+ itemDef.modelOffset2, 0, "");
+												pushMessage("Oringal: <col=255>x" + itemDef.originalModelColors +
+														"Modified" + itemDef.modifiedModelColors, 0, "");
 												menuActionName[menuActionRow] = "#2 (@whi@"
 														+ Arrays.toString(itemDef.originalModelColors) + ")@gre@)(@whi@"
 														+ Arrays.toString(itemDef.modifiedModelColors) + ")@gre@)";
@@ -2512,6 +2514,8 @@ public class Client extends RSApplet {
 						String crown = "";
 						int crownbonus = 0;
 						int friendColor = 0x77b300;
+						int clanColor = 0x9400D3;
+
 								/*
 								 * for(int i=0; i < friendsCount; i++) {
 								//friendsList[i]
@@ -2531,8 +2535,8 @@ public class Client extends RSApplet {
 						if(player.getRights() == 3) {
 							crown = "@cr2@ ";
 							crownbonus = -15;
+				    		newBoldFont.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, clanColor, 1);
 						}
-						
 					    if(currentScreenMode == ScreenMode.FIXED) {
 					    	if(isFriend(player.name)) {
 					    		newBoldFont.drawBasicString(crown + player.name, (spriteDrawX - (player.name.length() * 4) + crownbonus) + 3, spriteDrawY + 7, friendColor, 1);
@@ -3241,6 +3245,7 @@ public class Client extends RSApplet {
 	}
 
 	public void resetLogout() {
+		alertHandler.alert = null;
 		firstLoginMessage = "Enter your username & password.";
 		secondLoginMessage = "";
 		try {
@@ -3272,9 +3277,6 @@ public class Client extends RSApplet {
 		setGameMode(ScreenMode.FIXED);
 
 		//jumphere1
-		alertBack = null;
-		alertBorder = null;
-		alertBorderH = null;
 	}
 
 	public void method45() {
@@ -4442,9 +4444,9 @@ public class Client extends RSApplet {
 		new DrawingArea().drawAlphaGradient(x + ((int) Math.round(percentage * offset)), y,
 				width - ((int) Math.round(percentage * offset) / 2), height, 0x000000, 0x000000, 200);
 		if (percentage >= 198) {
-			newBoldFont.drawCenteredString("Finished loading Anguish", (765 / 2), y + height / 2, 0xffffff, 1);
+			newBoldFont.drawCenteredString("Finished loading YourServerName", (765 / 2), y + height / 2, 0xffffff, 1);
 		} else {
-			newBoldFont.drawCenteredString("Loading Anguish - Please wait - " + (percentage) + "%", (765 / 2),
+			newBoldFont.drawCenteredString("Loading YourServerName - Please wait - " + (percentage) + "%", (765 / 2),
 					y + height / 2, 0xffffff, 1);
 		}
 		loginScreenGraphicsBuffer.drawGraphics(0, 0, super.graphics);
@@ -6539,6 +6541,9 @@ public class Client extends RSApplet {
 		mapArea = null;
 
 		/* Null pointers for custom sprites */
+		alertback = null;
+		alertborder = null;
+		alertborderh = null;
 		multiOverlay = null;
 		chatArea = null;
 		chatButtons = null;
@@ -6655,7 +6660,10 @@ public class Client extends RSApplet {
 				|| name.startsWith("@cr13@") || name.startsWith("@cr14@") || name.startsWith("@cr15@")
 				|| name.startsWith("@cr16@") || name.startsWith("@cr17@") || name.startsWith("@cr18@")
 				|| name.startsWith("@cr19@") || name.startsWith("@cr20@") || name.startsWith("@cr21@")
-				|| name.startsWith("@cr22@") || name.startsWith("@cr23@")) {
+				|| name.startsWith("@cr22@") || name.startsWith("@cr23@") || name.startsWith("@cr24@")
+				|| name.startsWith("@cr25@") || name.startsWith("@cr26@") || name.startsWith("@cr27@")
+				|| name.startsWith("@cr28@") || name.startsWith("@cr29@") || name.startsWith("@cr30@")
+				|| name.startsWith("@cr31@") || name.startsWith("@cr32@")) {
 			name = name.substring(6);
 		} else {
 			name = name.substring(0);
@@ -7473,9 +7481,35 @@ public class Client extends RSApplet {
 					s = s.substring(6);
 				if (s != null && s.startsWith("@cr17@"))
 					s = s.substring(6);
+				if (s != null && s.startsWith("@cr18@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr19@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr20@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr21@"))
+					s = s.substring(6);
 				if (s != null && s.startsWith("@cr22@"))
 					s = s.substring(6);
 				if (s != null && s.startsWith("@cr23@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr24@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr25@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr26@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr27@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr28@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr29@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr30@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr31@"))
+					s = s.substring(6);
+				if (s != null && s.startsWith("@cr31@"))
 					s = s.substring(6);
 				if (s.startsWith("<col=")) {
 					s = s.substring(s.indexOf("</col>") + 6);
@@ -7549,9 +7583,35 @@ public class Client extends RSApplet {
 				s = s.substring(6);
 			if (s != null && s.startsWith("@cr17@"))
 				s = s.substring(6);
+			if (s != null && s.startsWith("@cr18@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr19@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr20@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr21@"))
+				s = s.substring(6);
 			if (s != null && s.startsWith("@cr22@"))
 				s = s.substring(6);
 			if (s != null && s.startsWith("@cr23@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr24@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr25@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr26@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr27@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr28@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr29@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr30@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr31@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr32@"))
 				s = s.substring(6);
 			if ((j1 == 5 || j1 == 6) && (!splitPrivateChat || chatTypeView == 2)
 					&& (j1 == 6 || privateChatMode == 0 || privateChatMode == 1 && isFriendOrSelf(s)))
@@ -7625,9 +7685,36 @@ public class Client extends RSApplet {
 				s = s.substring(6);
 			if (s != null && s.startsWith("@cr17@"))
 				s = s.substring(6);
+			if (s != null && s.startsWith("@cr18@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr19@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr20@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr21@"))
+				s = s.substring(6);
 			if (s != null && s.startsWith("@cr22@"))
 				s = s.substring(6);
 			if (s != null && s.startsWith("@cr23@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr24@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr25@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr26@"))
+				s = s.substring(6);
+			
+			if (s != null && s.startsWith("@cr27@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr28@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr29@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr30@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr31@"))
+				s = s.substring(6);
+			if (s != null && s.startsWith("@cr32@"))
 				s = s.substring(6);
 			if (chatTypeView == 3 && j1 == 4 && (tradeMode == 0 || tradeMode == 1 && isFriendOrSelf(s))) {
 				if (j > k1 - 14 && j <= k1) {
@@ -8052,7 +8139,7 @@ public class Client extends RSApplet {
 			if (friendsNodeIDs[j] == 0)
 				class9.message = "@red@Offline";
 			else if (friendsNodeIDs[j] == nodeID)
-				class9.message = "@gre@W 420";
+				class9.message = "@gre@Online";
 			else
 				class9.message = "@red@Offline";
 			class9.atActionType = 1;
@@ -9043,7 +9130,7 @@ public class Client extends RSApplet {
 				return;
 			}
 			if (k == 6) {
-				firstLoginMessage = "Anguish has been updated!";
+				firstLoginMessage = "YourServerName has been updated!";
 				secondLoginMessage = "Please restart the client.";
 				return;
 			}
@@ -9081,7 +9168,7 @@ public class Client extends RSApplet {
 				return;
 			}
 			if (k == 14) {
-				firstLoginMessage = "Anguish is currently being updated.";
+				firstLoginMessage = "YourServerName is currently being updated.";
 				secondLoginMessage = "Please wait one minute and try again.";
 				return;
 			}
@@ -10562,7 +10649,7 @@ public class Client extends RSApplet {
 		addObject(1738, 1661, 3529, 1, 10, 0); // Tavelery
 		// addObject(4151, 3089, 3494, 1, 10, 0); //barrows
 		addObject(20877, 1572, 3657, 1, 10, 0); // brimhaven
-		addObject(29735, 3077, 3484, 2, 10, 0); //Slayer
+		//addObject(29735, 3077, 3484, 2, 10, 0); //Slayer
 	
 		addObject(26709, 1280, 3551, 1, 10, 0); // stronghold slayer
 		addObject(2123, 1257, 3501, 3, 10, 0); // rellekka slayer
@@ -11031,9 +11118,9 @@ public class Client extends RSApplet {
 			new Sprite(streamLoader_2, "mapdots", 4);
 			scrollBar1 = new Sprite(streamLoader_2, "scrollbar", 0);
 			scrollBar2 = new Sprite(streamLoader_2, "scrollbar", 1);
-			alertBack = new Sprite("Sprites/alertback");
-			alertBorder = new Sprite("Sprites/alertborder");
-			alertBorderH = new Sprite("Sprites/alertborderh");
+			alertback = new Sprite("interfaces/Alerts/alertback");
+			alertborder = new Sprite("interfaces/Alerts/alertborder");
+			alertborderh = new Sprite("interfaces/Alerts/alertborderh");
 			for (int i = 0; i < modIcons.length; i++) {
 				modIcons[i] = new Sprite("Player/MODICONS " + i + "");
 			}
@@ -11080,7 +11167,8 @@ public class Client extends RSApplet {
 			
 
 			if (Configuration.DUMP_DATA) {
-				ItemDefinition.dumpList();
+				//ItemDefinition.dumpColors();
+				//ItemDefinition.dumpList();
 				//ObjectDefinition.dumpList();
 				//NpcDefinition.dumpList();
 			}
@@ -11157,10 +11245,10 @@ public class Client extends RSApplet {
 
 			mouseDetection = new MouseDetection(this);
 			informationFile.read();
-			if (informationFile.isUsernameRemembered()) {
-				myUsername = informationFile.getStoredUsername();
-				myUsername = myUsername.substring(0, 1).toUpperCase() + myUsername.substring(1);
-			}
+		//	if (informationFile.isUsernameRemembered()) {
+			//	myUsername = informationFile.getStoredUsername();
+			//	myUsername = myUsername.substring(0, 1).toUpperCase() + myUsername.substring(1);
+			//}
 			if (informationFile.isPasswordRemembered()) {
 				myPassword = informationFile.getStoredPassword();
 			}
@@ -11410,9 +11498,9 @@ public class Client extends RSApplet {
 			k += 50;
 			g.setColor(Color.white);
 			g.setFont(new Font("Helvetica", 1, 12));
-			g.drawString("1: Go to your user files and delete AnguishCache folder", 30, k);
+			g.drawString("1: Go to your user files and delete YourServerNameCache folder", 30, k);
 			k += 30;
-			g.drawString("2: Delete the Anguish.jar and redownload the loader from our homepage", 30, k);
+			g.drawString("2: Delete the YourServerName.jar and redownload the loader from our homepage", 30, k);
 			k += 30;
 			g.drawString("3: After deleting cache and redownloading client, go ahead and open it", 30, k);
 			k += 30;
@@ -11430,16 +11518,16 @@ public class Client extends RSApplet {
 			aBoolean831 = false;
 			g.setColor(Color.yellow);
 			int l = 35;
-			g.drawString("Error a copy of Anguish already appears to be loaded", 30, l);
+			g.drawString("Error a copy of YourServerName already appears to be loaded", 30, l);
 			l += 50;
 			g.setColor(Color.white);
 			g.drawString("To fix this try the following (in order):", 30, l);
 			l += 50;
 			g.setColor(Color.white);
 			g.setFont(new Font("Helvetica", 1, 12));
-			g.drawString("1: Go to your user files and delete AnguishCache folder", 30, l);
+			g.drawString("1: Go to your user files and delete YourServerNameCache folder", 30, l);
 			l += 30;
-			g.drawString("2: Delete the Anguish.jar and redownload the loader from our homepage", 30, l);
+			g.drawString("2: Delete the YourServerName.jar and redownload the loader from our homepage", 30, l);
 			l += 30;
 			g.drawString("3: After deleting cache and redownloading client, go ahead and open it", 30, l);
 			l += 30;
@@ -14835,7 +14923,7 @@ public class Client extends RSApplet {
 	public Sprite loginAsset2 = new Sprite("Login/remember2");
 	public Sprite loginAsset3 = new Sprite("Login/remember3");
 	public Sprite loginAsset4 = new Sprite("Login/logo");
-	public Sprite loginAsset5 = new Sprite("Login/login_button_nohover");
+//	public Sprite loginAsset5 = new Sprite("Login/login_button_nohover");
 	private String firstLoginMessage = "";
 	private String secondLoginMessage = "";
     Image icon = null;
@@ -14910,9 +14998,9 @@ public class Client extends RSApplet {
 			newSmallFont.drawString("Remember username", 268, 323, 0xffffff, 0x191919, 255);
 			newSmallFont.drawString("Remember password", 414, 323, 0xffffff, 0x191919, 255);
 
-			if(!loginButtonHover) {
-				loginAsset5.drawSprite(241, 268);
-			}
+			//if(!loginButtonHover) {
+		//		loginAsset5.drawSprite(241, 268);
+		//	}
 			
 			if (!informationFile.isUsernameRemembered()) {
 				if (!rememberMeHover) {
@@ -17499,7 +17587,7 @@ public class Client extends RSApplet {
 		anIntArray1203 = new int[5];
 		chatAreaScrollLength = 78;
 		promptInput = "";
-		modIcons = new Sprite[24];
+		modIcons = new Sprite[38];
 		tabID = 3;
 		inputTaken = false;
 		songChanging = true;
@@ -17932,7 +18020,7 @@ public class Client extends RSApplet {
 	private int publicChatMode;
 	private static int anInt1288;
 	public static int anInt1290;
-	public static String server = Configuration.LIVE_SERVER ? "24.11.237.81" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "162.252.8.130" : "127.0.0.1";
+	public static String server = Configuration.LIVE_SERVER ? "127.0.0.1" : "127.0.0.1"; //Configuration.LIVE_SERVER ? "65.27.175.252" : "65.27.175.252";
 	public static boolean controlIsDown;
 	public int drawCount;
 	public int fullscreenInterfaceID;

@@ -32,15 +32,1092 @@ public final class NpcDefinition {
 		stream.currentOffset = streamIndices[i];
 		entityDef.interfaceType = i;
 		entityDef.readValues(stream);
+		if (i == 5693) {
+			entityDef.name = "Pet night beast";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32933};
+			entityDef.standAnim = 2730;
+			entityDef.walkAnim = 2729;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+		if (i == 5671) {
+			entityDef.name = "Pet greater abyssal demon";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32921};
+			entityDef.standAnim = 1536;
+			entityDef.walkAnim = 1534;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+		if (i == 5672) {
+			entityDef.name = "Pet crushing hand";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32922};
+			entityDef.standAnim = 1588;
+			entityDef.walkAnim = 1589;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 50;
+			entityDef.anInt86 = 50;
+
+		}
 
 
+		if (i == 5673) {
+			entityDef.name = "Pet chasm crawler";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32918};
+			entityDef.standAnim = 226;
+			entityDef.walkAnim = 225;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 50;
+			entityDef.anInt86 = 50;
+
+		}
+
+		if (i == 5674) {
+			entityDef.name = "Pet screaming banshee";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32823};
+			entityDef.standAnim = 7545;
+			entityDef.walkAnim = 1104;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+		if (i == 5675) {
+			entityDef.name = "Pet twisted banshee";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32847};
+			entityDef.standAnim = 7545;
+			entityDef.walkAnim = 1104;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+		if (i == 5676) {
+			entityDef.name = "Pet giant rockslug";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32919};
+			entityDef.standAnim = 1566;
+			entityDef.walkAnim = 1564;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+		if (i == 5677) {
+			entityDef.name = "Pet cockathrice";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32920};
+			entityDef.standAnim = 1561;
+			entityDef.walkAnim = 1559;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 60;
+			entityDef.anInt86 = 60;
+
+		}
+
+		if (i == 5678) {
+			entityDef.name = "Pet flaming pyrelord";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32923};
+			entityDef.standAnim = 1578;
+			entityDef.walkAnim = 1579;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 50;
+			entityDef.anInt86 = 50;
+
+		}
+
+
+		if (i == 5679) {
+			entityDef.name = "Pet monstrous basilisk";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32924};
+			entityDef.standAnim = 1545;
+			entityDef.walkAnim = 1544;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+		if (i == 5680) {
+			entityDef.name = "Pet malevolent mage";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32929};
+			entityDef.standAnim = 813;
+			entityDef.walkAnim = 1205;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 70;
+			entityDef.anInt86 = 70;
+
+		}
+
+		if (i == 5681) {
+			entityDef.name = "Pet insatiable bloodveld";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32926};
+			entityDef.standAnim = 1551;
+			entityDef.walkAnim = 1549;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 50;
+			entityDef.anInt86 = 50;
+
+		}
+
+		if (i == 5682) {
+			entityDef.name = "Pet insatiable mutated bloodveld";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32925};
+			entityDef.standAnim = 1551;
+			entityDef.walkAnim = 1549;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 50;
+			entityDef.anInt86 = 50;
+
+		}
+
+		if (i == 5683) {
+			entityDef.name = "Pet vitreous jelly";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32852};
+			entityDef.standAnim = 1583;
+			entityDef.walkAnim = 1584;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+		if (i == 5684) {
+			entityDef.name = "Pet vitreous warped jelly";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32917};
+			entityDef.standAnim = 1583;
+			entityDef.walkAnim = 1584;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 30;
+			entityDef.anInt86 = 30;
+
+		}
+
+
+		if (i == 5685) {
+			entityDef.name = "Pet cave abomination";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32935};
+			entityDef.standAnim = 4231;
+			entityDef.walkAnim = 4236;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 50;
+			entityDef.anInt86 = 50;
+
+		}
+
+
+		if (i == 5686) {
+			entityDef.name = "Pet abhorrent spectre";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32930};
+			entityDef.standAnim = 6371;
+			entityDef.walkAnim = 6372;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+		if (i == 5687) {
+			entityDef.name = "Pet repugnant spectre";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32931};
+			entityDef.standAnim = 6371;
+			entityDef.walkAnim = 6372;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 40;
+			entityDef.anInt86 = 40;
+
+		}
+
+
+		if (i == 5688) {
+			entityDef.name = "Pet choke devil";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32927};
+			entityDef.standAnim = 1556;
+			entityDef.walkAnim = 1554;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 50;
+			entityDef.anInt86 = 50;
+
+		}
+
+
+		if (i == 5689) {
+			entityDef.name = "Pet king kurask";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32934};
+			entityDef.standAnim = 4231;
+			entityDef.walkAnim = 4236;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 30;
+			entityDef.anInt86 = 30;
+
+		}
+
+
+		if (i == 5690) {
+			entityDef.name = "Pet nuclear smoke devil";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32928};
+			entityDef.standAnim = 1829;
+			entityDef.walkAnim = 1828;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 30;
+			entityDef.anInt86 = 30;
+
+		}
+
+		if (i == 5691) {
+			entityDef.name = "Pet marble gargoyle";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 34251};
+			entityDef.standAnim = 7810;
+			entityDef.walkAnim = 7810;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 30;
+			entityDef.anInt86 = 30;
+
+		}
+
+		if (i == 5692) {
+			entityDef.name = "Pet nechryarch";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 32932};
+			entityDef.standAnim = 6371;
+			entityDef.walkAnim = 6372;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 30;
+			entityDef.anInt86 = 30;
+
+		}
+		if (i == 6005) {
+			entityDef.name = "Peter Rabbit";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] {28602};
+			entityDef.standAnim = 6089;
+			entityDef.walkAnim = 6088;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 120;
+			entityDef.anInt86 = 120;
+			entityDef.originalColors = new int []  { 2378 };
+			entityDef.newColors = new int [] { 9152 };
+		}
+		if (i == 3397) {
+			entityDef.name = "Baby Dragon (Onyx)";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 17413, 17427, 17421, 17424 };
+			entityDef.standAnim = 27;
+			entityDef.walkAnim = 21;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };;
+			entityDef.getDegreesToTurn = 64;
+			//entityDef.size = 2;
+            entityDef.originalColors = new int []  { 910, 912, 1938, 1814, 2588, 2469 };
+		    entityDef.newColors = new int [] {-22008, -22013, -22011, -22016, -27459, -27450};
+		    entityDef.anInt91 = 45;
+            entityDef.anInt86 = 45;
+		}
+		
+		if (i == 3398) {
+			entityDef.name = "Baby Dragon (Sapphire)";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 17413, 17427, 17421, 17424 };
+			entityDef.standAnim = 27;
+			entityDef.walkAnim = 21;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };;
+			entityDef.getDegreesToTurn = 64;
+			//entityDef.size = 2;
+            entityDef.originalColors = new int []  { 910, 912, 1938, 1814, 2588, 2469 };
+		    entityDef.newColors = new int [] {-21585, -21590, -21595, -21570, -27459, -27450};
+		    entityDef.anInt91 = 45;
+            entityDef.anInt86 = 45;
+		}
+		
+		if (i == 3405) {
+			entityDef.name = "Baby Dragon (Emerald)";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 17413, 17427, 17421, 17424 };
+			entityDef.standAnim = 27;
+			entityDef.walkAnim = 21;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };;
+			entityDef.getDegreesToTurn = 64;
+			//entityDef.size = 2;
+            entityDef.originalColors = new int []  { 910, 912, 1938, 1814, 2588, 2469 };
+		    entityDef.newColors = new int [] {22443, 22447, 22449, 22451, -27459, -27450};
+		    entityDef.anInt91 = 45;
+            entityDef.anInt86 = 45;
+		}
+		
+		if (i == 3400) {
+			entityDef.name = "Baby Dragon (Ruby)";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 17413, 17427, 17421, 17424 };
+			entityDef.standAnim = 27;
+			entityDef.walkAnim = 21;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };;
+			entityDef.getDegreesToTurn = 64;
+			//entityDef.size = 2;
+            entityDef.originalColors = new int []  { 910, 912, 1938, 1814, 2588, 2469 };
+		    entityDef.newColors = new int [] {931, 935, 940, 943, -27459, -27450};
+		    entityDef.anInt91 = 45;
+            entityDef.anInt86 = 45;
+		}
+		
+		if (i == 3401) {
+			entityDef.name = "Baby Dragon (Diamond)";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 17413, 17427, 17421, 17424 };
+			entityDef.standAnim = 27;
+			entityDef.walkAnim = 21;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };;
+			entityDef.getDegreesToTurn = 64;
+			//entityDef.size = 2;
+            entityDef.originalColors = new int []  { 910, 912, 1938, 1814, 2588, 2469 };
+		    entityDef.newColors = new int [] {127, 125, 123, 120, -27459, -27450};
+		    entityDef.anInt91 = 45;
+            entityDef.anInt86 = 45;
+		}
+		
+		if (i == 3402) {
+			entityDef.name = "Baby Dragon (Dragonstone)";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 17413, 17427, 17421, 17424 };
+			entityDef.standAnim = 27;
+			entityDef.walkAnim = 21;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };;
+			entityDef.getDegreesToTurn = 64;
+			//entityDef.size = 2;
+            entityDef.originalColors = new int []  { 910, 912, 1938, 1814, 2588, 2469 };
+		    entityDef.newColors = new int [] {-14425, -14430, -14435, -14440, -27459, -27450};
+		    entityDef.anInt91 = 45;
+            entityDef.anInt86 = 45;
+            
+		}
+		
+		if (i == 3404) {
+			entityDef.name = "Baby Dragon (Zenyte)";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] { 17413, 17427, 17421, 17424 };
+			entityDef.standAnim = 27;
+			entityDef.walkAnim = 21;
+			entityDef.onMinimap = true;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };;
+			entityDef.getDegreesToTurn = 64;
+			//entityDef.size = 2;
+			//entityDef.anInt91 = 105;
+          //  entityDef.anInt86 = 105;
+            entityDef.originalColors = new int []  { 910, 912, 1938, 1814, 2588, 2469 };
+		    entityDef.newColors = new int [] {5056, 5060, 5065, 5070, -27459, -27450};
+		    entityDef.anInt91 = 45;
+            entityDef.anInt86 = 45;
+            
+		}
+		if (i == 5458) {
+			entityDef.name = "Pet wyrm";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] {36166};
+			entityDef.standAnim = 8266;
+			entityDef.walkAnim = 8266;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", "Transform", null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 35;
+			entityDef.anInt86 = 35;
+
+		}
+		if (i == 5459) {
+			entityDef.name = "Pet drake";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] {36160};
+			entityDef.standAnim = 8274;
+			entityDef.walkAnim = 8273;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 35;
+			entityDef.anInt86 = 35;
+
+		}
+		if (i == 5460) {
+			entityDef.name = "Pet wyrm";
+			entityDef.combatLevel = 0;
+			entityDef.models = new int[] {36167};
+			entityDef.standAnim = 8267;
+			entityDef.walkAnim = 8267;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick-up", "Transform", null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			entityDef.anInt91 = 35;
+			entityDef.anInt86 = 35;
+
+		}
+	if(i==7303) {
+		entityDef.name = "Clue Expert";
+		entityDef.description = "Trade a set of clue scrolls for a better one";
+		entityDef.actions = new String[] { "Talk-to", null, null, null, null };
+	}
 		if (i == 506) {
 			entityDef.name = "Iron Man Store";
 			entityDef.description = "A shop specifically for iron men.";
-		}if(i==3218 || i ==3217){
+		}if(i==3218 || i ==3217) {
 			entityDef.actions = new String[] { "Talk-to", null, null, null, null };
 		}
+	if(i==2989) {
+		entityDef.name = "Prestige Manager";
+		entityDef.actions = new String[] { "Talk-to", null, "Quick-Manage", "Quick-Shop", null };
+	}
+	if(i==1603) {
+		entityDef.actions = new String[] { "Talk-to", null, "Trade", null, null };
+	}
+	//start of quest npcs
+	if (i == 778) {
+		entityDef.name = "Ethereal Elder";
+		entityDef.description = "Wise & worried.. I wonder if she has a quest for me!";
+	}
+	if (i == 777) {
+		entityDef.name = "Distraught Ethereal Elder";
+		entityDef.description = "Something doesn't seem right here..";
+	}
+	if (i == 3291) {
+		entityDef.name = "Petie";
+		entityDef.onMinimap = false;
+		entityDef.actions = new String[5];
+		entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+		entityDef.anInt91 = 90;
+		entityDef.anInt86 = 90;
+	}
+	if (i == 786) {
+		entityDef.actions = new String[] { null, null, "Pick up", null, null };
+		entityDef.models = new int[] { 16480, 16484, 16487, 16471, 16475, 16482, 16474, 16489, 16483, 11049 };
+		entityDef.originalColors = new int[7];
+		entityDef.newColors = new int[7];
+		entityDef.originalColors[0] = 33676;
+		entityDef.newColors[0] = 49346;
+		entityDef.originalColors[1] = 410;
+		entityDef.newColors[1] = 29902;
+		entityDef.originalColors[2] = 33300;
+		entityDef.newColors[2] = 50244;
+		entityDef.originalColors[3] = 36007;
+		entityDef.newColors[3] = 231;
+		entityDef.originalColors[4] = 6573;
+		entityDef.newColors[4] = 54371;
+		entityDef.originalColors[5] = 33036;
+		entityDef.newColors[5] = 35404;
+		entityDef.originalColors[6] = 82;
+		entityDef.newColors[6] = 35404;
+		entityDef.anInt86 = 80;
+		entityDef.anInt91 = 80;
+		entityDef.combatLevel = 0;
+		entityDef.onMinimap = false;
+		entityDef.name = "Ethereal Scavenger";
+		entityDef.standAnim = 813;
+		entityDef.walkAnim = 1205;
+		entityDef.description = "Very good at finding rare loot.";
+	}
+	
+	if (i == 785) {
+		entityDef.models = new int[] { 16480, 16484, 16487, 16471, 16475, 16482, 16474, 35371, 16483 };
+		entityDef.originalColors = new int[20];
+		entityDef.newColors = new int[20];
+		entityDef.originalColors[0] = 33676;
+		entityDef.newColors[0] = 49346;
+		entityDef.originalColors[1] = 410;
+		entityDef.newColors[1] = 29902;
+		entityDef.originalColors[2] = 33300;
+		entityDef.newColors[2] = 50244;
+		entityDef.originalColors[3] = 36007;
+		entityDef.newColors[3] = 231;
+		entityDef.originalColors[4] = 6573;
+		entityDef.newColors[4] = 54371;
+		entityDef.originalColors[5] = 33;//handle
+		entityDef.newColors[5] = 54371;
+		//entityDef.newColors[5] = 35404;
+		entityDef.originalColors[5] = 16;
+		entityDef.originalColors[6] = 24;
+		entityDef.newColors[6] = 54371;
+		entityDef.originalColors[7] = 20;
+		entityDef.newColors[7] = 54371;
+		entityDef.originalColors[8] = 37;
+		entityDef.newColors[8] = 54371;
+		entityDef.originalColors[9] = 28;
+		entityDef.newColors[9] = 54371;
+		entityDef.originalColors[10] = 78;//blade
+		entityDef.newColors[10] = 29902;
+	//	entityDef.originalColors[11] = 78;//blade
+	//	entityDef.newColors[11] = 29902;
+		entityDef.originalColors[11] = 61;//blade
+		entityDef.newColors[11] = 29902;
+		entityDef.originalColors[12] = 49;//blade
+		entityDef.newColors[12] = 29902;
+		//entityDef.newColors[13] = 35404;
+		entityDef.originalColors[13] = 536;//Red spikes
+		entityDef.newColors[13] = 49346;
+		entityDef.originalColors[14] = 784;//bottom section of vial
+		entityDef.newColors[14] = 49346;
+		entityDef.originalColors[15] = 796;//top section of vial
+		entityDef.newColors[15] = 49346;
+		entityDef.originalColors[16] = 790;//middle section of vial
+		entityDef.newColors[16] = 49346;
+		entityDef.originalColors[17] = 41;//bottom of handle
+		entityDef.newColors[17] = 54371;
+		entityDef.originalColors[18] = 33;//middle of handle
+		entityDef.newColors[18] = 54371;
+		entityDef.originalColors[19] = 33036;//middle of handle
+		entityDef.newColors[19] = 31058;
+		entityDef.name = "Ethereal Reaper";
+		entityDef.description = "Something doesn't seem right..";
+	}
+	if (i == 657) {
+		entityDef.models = new int[] { 35349, 35359, 35356, 36928, 33103, 36325, 35371, 31766, 11048 };
+		entityDef.name = "Taavi";
+		entityDef.description = "Something doesn't seem right..";
+		entityDef.standAnim = 813;
+		entityDef.walkAnim = 1205;
+	}
+	if (i == 658) {
+		entityDef.models = new int[] { 35943, 35953, 35950, 36928, 33103, 36325, 35969, 31766, 35376 };
+		entityDef.name = "Aegeus";
+		entityDef.description = "Something doesn't seem right..";
+		entityDef.standAnim = 813;
+		entityDef.walkAnim = 1205;
+	}
+	if (i == 659) {
+		entityDef.models = new int[] { 35944, 35952, 35949, 29249, 34148, 31231, 35772, 31767, 11050 };
+		entityDef.name = "Kagan";
+		entityDef.description = "Something doesn't seem right..";
+		entityDef.standAnim = 813;
+		entityDef.walkAnim = 1205;
+	}
+	if (i == 660) {
+		entityDef.models = new int[] { 35945, 35954, 35948, 34628, 32667, 31781, 29252, 32668, 12778 };
+		entityDef.name = "Obasi";
+		entityDef.description = "Something doesn't seem right..";
+		entityDef.standAnim = 808;
+		entityDef.walkAnim = 819;
+	}
+	if (i == 661) {
+		entityDef.models = new int[] { 36960, 36965, 36964, 36963, 36962, 36968, 36966, 34649, 31652, 36326 };
+		entityDef.name = "Ornate Guard";
+		entityDef.description = "A guard wearing some of the fanciest gear";
+		entityDef.standAnim = 813;
+		entityDef.walkAnim = 1205;
+	}
+	if (i == 3078 || i == 3106) { //Man
+		entityDef.actions = new String[5];
+		entityDef.actions = new String[] { "Pickpocket", null, null, null, null };
+	}
+		if (i == 6035) { //Nieve
+			entityDef.name = "Nieve";
+			entityDef.models = new int[] { 392, 27644, 27640, 29255, 3661, 28827, 9644, 27654, 9640, 11048 };
+			entityDef.standAnim = 813;
+			entityDef.walkAnim = 1205;
+			entityDef.onMinimap = false;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 80;
+			entityDef.anInt91 = 80;
+		}
 		
+		if (i == 6798 || i == 6801) { //Steve and Pieve
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 80;
+			entityDef.anInt91 = 80;
+			entityDef.onMinimap = false;
+		}
+		if (i == 1693) { //Pest control pets
+			entityDef.name = "Splatter";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 80;
+			entityDef.anInt91 = 80;
+			entityDef.onMinimap = false;
+		}
+		if (i == 1712) { //Pest control pets
+			entityDef.name = "Spinner";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 80;
+			entityDef.anInt91 = 80;
+			entityDef.onMinimap = false;
+		}
+		if (i == 1703) { //Pest control pets
+			entityDef.name = "Shifter";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 80;
+			entityDef.anInt91 = 80;
+			entityDef.onMinimap = false;
+		}
+		if (i == 3822) {
+			entityDef.name = "Lava strykewyrm";
+			entityDef.combatLevel = 562;
+			entityDef.models = new int[] {60835};
+			entityDef.standAnim = 5070;
+			entityDef.walkAnim = 5070;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { null, "Attack", null, null, null };
+			entityDef.getDegreesToTurn = 64;
+			//entityDef.size = 2;
+		}
+		/**
+		 * Start of Slayer pets
+		 */
+		if (i == 449) { //Crawling Hand
+			entityDef.name = "Crawling hand";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 482) { //Cave Bug
+			entityDef.name = "Cave bug larva";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			//entityDef.anInt86 = 60;
+			//entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 407) { //Cave Crawler
+			entityDef.name = "Cave crawler";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}	
+		if (i == 3984) {//Banshee
+		entityDef.actions = new String[5];
+		entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+		NpcDefinition banshee = forID(414);
+		entityDef.models = new int[2];
+		entityDef.models[0] = banshee.models[0];
+		entityDef.models[1] = banshee.models[1];
+		entityDef.name = "Banshee";
+		entityDef.combatLevel = 0;
+		entityDef.standAnim = banshee.standAnim;
+		entityDef.walkAnim = banshee.walkAnim;
+		entityDef.anInt86 = 60;
+		entityDef.anInt91 = 60;
+		entityDef.onMinimap = false;
+		entityDef.standAnim = banshee.standAnim;
+		entityDef.walkAnim = banshee.walkAnim;
+		}
+		if (i == 3985) {//Cave Slime
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+		NpcDefinition caveSlime = forID(480);
+		entityDef.models = new int[1];
+		entityDef.models[0] = caveSlime.models[0];
+		entityDef.name = "Cave slime";
+		entityDef.combatLevel = 0;
+		entityDef.standAnim = caveSlime.standAnim;
+		entityDef.walkAnim = caveSlime.walkAnim;
+		entityDef.anInt86 = 60;
+		entityDef.anInt91 = 60;
+		entityDef.onMinimap = false;
+		entityDef.standAnim = caveSlime.standAnim;
+		entityDef.walkAnim = caveSlime.walkAnim;
+		}
+		if (i == 422) { //Rockslug
+			entityDef.name = "Rockslug";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 420) { //Cockatrice
+			entityDef.name = "Cockatrice";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 434) { //Pyrefiend
+			entityDef.name = "Pyrefiend";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 418) { //Basilisk
+			entityDef.name = "Basilisk";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 443) { //Infernal Mage
+			entityDef.name = "Infernal mage";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 486) { //BloodVeld
+			entityDef.name = "Bloodveld";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 440) { //Jelly
+			entityDef.name = "Jelly";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 426) { //Turoth
+			entityDef.name = "Turoth";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 504) { //Cave Horror
+				entityDef.actions = new String[5];
+				entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			NpcDefinition caveHorror = forID(3213);
+			entityDef.models = new int[2];
+			entityDef.models[0] = caveHorror.models[0];
+			entityDef.models[1] = caveHorror.models[1];
+			entityDef.name = "Cave horror";
+			entityDef.combatLevel = 0;
+			entityDef.standAnim = caveHorror.standAnim;
+			entityDef.walkAnim = caveHorror.walkAnim;
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+			entityDef.standAnim = caveHorror.standAnim;
+			entityDef.walkAnim = caveHorror.walkAnim;
+			}
+		if (i == 3) { //Abberrant Spectre
+			entityDef.name = "Aberrant sepctre";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 30;
+			entityDef.anInt91 = 30;
+			entityDef.onMinimap = false;
+		}
+		if (i == 7249) { //Dust Devil
+			entityDef.name = "Dust devil";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 410) { //Kurask
+			entityDef.name = "Kurask";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 60;
+			entityDef.anInt91 = 60;
+			entityDef.onMinimap = false;
+		}
+		if (i == 466) { //Skeletal Wyvern
+			entityDef.name = "Skeletal wyvern";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 50;
+			entityDef.anInt91 = 50;
+			entityDef.onMinimap = false;
+		}
+		if (i == 412) { //Gargoyle
+			entityDef.name = "gargoyle";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 50;
+			entityDef.anInt91 = 50;
+			entityDef.onMinimap = false;
+		}
+		if (i == 8) { //Nechryael
+			entityDef.name = "nechryael";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 50;
+			entityDef.anInt91 = 50;
+			entityDef.onMinimap = false;
+		}
+		if (i == 416) { //Abyssal Demon
+			entityDef.name = "abyssal Demon";
+			entityDef.combatLevel = 0;
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+			entityDef.anInt86 = 30;
+			entityDef.anInt91 = 30;
+			entityDef.onMinimap = false;
+		}
+		if (i == 603) { //Dark Beast
+			entityDef.actions = new String[5];
+			entityDef.actions = new String[] { "Pick Up", null, null, null, null };
+		NpcDefinition darkBeast = forID(4005);
+		entityDef.models = new int[1];
+		entityDef.models[0] = darkBeast.models[0];
+		entityDef.name = "Dark beast";
+		entityDef.combatLevel = 0;
+		entityDef.standAnim = darkBeast.standAnim;
+		entityDef.walkAnim = darkBeast.walkAnim;
+		entityDef.anInt86 = 60;
+		entityDef.anInt91 = 60;
+		entityDef.onMinimap = false;
+		entityDef.standAnim = darkBeast.standAnim;
+		entityDef.walkAnim = darkBeast.walkAnim;
+		}
+		/**
+		 * Barrows pets
+		 */
+		if (i == 5845) {
+		entityDef.actions[0] = "Pick-up";
+		entityDef.actions[2] = "Talk-to";
+		NpcDefinition dharok = forID(1673);
+		//entityDef.readValues(stream);
+		entityDef.models = new int[6];
+		entityDef.models[0] = dharok.models[0];
+		entityDef.models[1] = dharok.models[1];
+		entityDef.models[2] = dharok.models[2];
+		entityDef.models[3] = dharok.models[3];
+		entityDef.models[4] = dharok.models[4];
+		entityDef.models[5] = dharok.models[5];
+		entityDef.name = "Dharok Jr";
+		entityDef.description = "A smaller version of Dharok himself.";
+		entityDef.standAnim = dharok.standAnim;
+		entityDef.walkAnim = dharok.walkAnim;
+		entityDef.anInt86 = 90;
+		entityDef.anInt91 = 90;
+		entityDef.onMinimap = false;
+		}
+		if (i == 5846) {
+		//stream.currentOffset = streamIndices[1674];
+		entityDef.actions[0] = "Pick-up";
+		entityDef.actions[2] = "Talk-to";
+		NpcDefinition guthan = forID(1674);
+		//entityDef.readValues(stream);
+		entityDef.models = new int[6];
+		entityDef.models[0] = guthan.models[0];
+		entityDef.models[1] = guthan.models[1];
+		entityDef.models[2] = guthan.models[2];
+		entityDef.models[3] = guthan.models[3];
+		entityDef.models[4] = guthan.models[4];
+		entityDef.models[5] = guthan.models[5];
+		entityDef.name = "Guthan Jr";
+		entityDef.description = "A smaller version of Guthan himself.";
+		entityDef.standAnim = guthan.standAnim;
+		entityDef.walkAnim = guthan.walkAnim;
+		entityDef.anInt86 = 90;
+		entityDef.anInt91 = 90;
+		entityDef.onMinimap = false;
+		}
+		if (i == 2391) {
+		//stream.currentOffset = streamIndices[1674];
+		entityDef.actions[0] = "Pick-up";
+		entityDef.actions[2] = "Talk-to";
+		NpcDefinition torag = forID(1676);
+		//entityDef.readValues(stream);
+		entityDef.models = new int[6];
+		entityDef.models[0] = torag.models[0];
+		entityDef.models[1] = torag.models[1];
+		entityDef.models[2] = torag.models[2];
+		entityDef.models[3] = torag.models[3];
+		entityDef.models[4] = torag.models[4];
+		entityDef.models[5] = torag.models[5];
+		entityDef.name = "Torag Jr";
+		entityDef.description = "A smaller version of Torag himself.";
+		entityDef.standAnim = torag.standAnim;
+		entityDef.walkAnim = torag.walkAnim;
+		entityDef.anInt86 = 90;
+		entityDef.anInt91 = 90;
+		}
+		if (i == 2392) {
+		//stream.currentOffset = streamIndices[1674];
+		entityDef.actions[0] = "Pick-up";
+		entityDef.actions[2] = "Talk-to";
+		NpcDefinition karil = forID(1675);
+		//entityDef.readValues(stream);
+		entityDef.models = new int[1];
+		entityDef.models[0] = karil.models[0];
+		entityDef.name = "Karil Jr";
+		entityDef.description = "A smaller version of Karil himself.";
+		entityDef.standAnim = karil.standAnim;
+		entityDef.walkAnim = karil.walkAnim;
+		entityDef.anInt86 = 90;
+		entityDef.anInt91 = 90;
+		}
+		if (i == 2393) {
+		//stream.currentOffset = streamIndices[1674];
+		entityDef.actions[0] = "Pick-up";
+		entityDef.actions[2] = "Talk-to";
+		NpcDefinition verac = forID(1677);
+		//entityDef.readValues(stream);
+		entityDef.models = new int[2];
+		entityDef.models[0] = verac.models[0];
+		entityDef.models[1] = verac.models[1];
+		entityDef.name = "Verac Jr";
+		entityDef.description = "A smaller version of Verac himself.";
+		entityDef.standAnim = verac.standAnim;
+		entityDef.walkAnim = verac.walkAnim;
+		entityDef.anInt86 = 90;
+		entityDef.anInt91 = 90;
+		}
+		if (i == 2394) {
+		//stream.currentOffset = streamIndices[1674];
+		entityDef.actions[0] = "Pick-up";
+		entityDef.actions[2] = "Talk-to";
+		NpcDefinition ahrim = forID(1672);
+		//entityDef.readValues(stream);
+		entityDef.models = new int[1];
+		entityDef.models[0] = ahrim.models[0];
+		entityDef.name = "Ahrim Jr";
+		entityDef.description = "A smaller version of Ahrim himself.";
+		entityDef.standAnim = ahrim.standAnim;
+		entityDef.walkAnim = ahrim.walkAnim;
+		entityDef.anInt86 = 90;
+		entityDef.anInt91 = 90;
+		}
+		/**
+		 * End of Barrows pets
+		 */
 		if (i == 771) {
             entityDef.name = "";
             entityDef.models = new int[1];
@@ -54,7 +1131,14 @@ public final class NpcDefinition {
             entityDef.description = "";
             entityDef.onMinimap = false;
         }
-
+		if (i == 2580) {
+		entityDef.actions = new String[] { "Talk-to", null, "Teleport Abyss", null, "Teleport Mine" };
+		}
+		if (i == 7371) {
+		entityDef.actions = new String[] { "Get Daily Task", null, "Open Shop", null, null };
+		entityDef.name = "Daily Manager";
+		entityDef.description = "Handles Daily Tasks & the Daily Point Shop";
+		}
 		if (i == 6295) {
             entityDef.name = "@red@Demon @whi@God";
             entityDef.description = "A mighty foe, only the best can defeat!";
@@ -127,9 +1211,6 @@ public final class NpcDefinition {
 		}
 		if (i==3936){
 			entityDef.actions = new String[] { "Neitiznot", "Jatizso", null, null, null };
-		}
-		if (i==2580){
-			entityDef.actions = new String[] { "Talk-to", "Abyss", null, null, null };
 		}
 		if (i==1056){
 			entityDef.name = "Herblore Shop";
